@@ -78,10 +78,13 @@ Ball performance data sourced from robot testing using a consistent swing robot 
 
 | Condition | Club | Speed |
 |-----------|------|-------|
-| Slow driver | Driver | ~90 mph |
-| Slow mid-iron | 6-iron | ~75 mph |
-| Partial wedge | Sand wedge (35%) | ~50 mph |
-| Full wedge | Sand wedge | ~80 mph |
+| High swing speed driver | Driver | 116 mph |
+| High swing speed irons | 7-iron | 90 mph |
+| Mid swing speed driver | Driver | 102 mph |
+| Mid swing speed irons | 7-iron | 80 mph |
+| Low swing speed driver | Driver | 86 mph |
+| Low swing speed irons | 7-iron | 65 mph |
+| 35-yard wedge | Sand wedge | 42 mph |
 
 ---
 
