@@ -14,6 +14,7 @@
     sortAsc: true,
     mode: 'rankings',
     rankingMetric: null,
+    singleMetric: null,
   };
 
   function setState(update) {
@@ -204,6 +205,21 @@
     return h;
   }
 
+  function renderSingleMetricSelector() {
+    var h = '<div class="blls-ball-selector">';
+    h += '  <label>Metric</label>';
+    h += '  <select id="blls-single-metric">';
+    h += '    <option value="">All Metrics</option>';
+    state.meta.metrics.forEach(function (m) {
+      var displayName = m.replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+      var sel = state.singleMetric === m ? ' selected' : '';
+      h += '    <option value="' + escapeAttr(m) + '"' + sel + '>' + escapeHtml(displayName) + '</option>';
+    });
+    h += '  </select>';
+    h += '</div>';
+    return h;
+  }
+
   function renderBallSelectors() {
     var h = '';
     h += renderModeButtons();
@@ -236,6 +252,8 @@
         h += '  </select>';
         h += '</div>';
       }
+
+      h += renderSingleMetricSelector();
     }
 
     return h;
@@ -303,6 +321,7 @@
     h += '</tr></thead><tbody>';
 
     var metrics = sortedMetrics(ballRow);
+    if (state.singleMetric) metrics = metrics.filter(function (m) { return m === state.singleMetric; });
     metrics.forEach(function (m) {
       var range = getMetricRange(m, state.activeCondition);
       var val = ballRow[m];
@@ -337,7 +356,9 @@
     h += '<th>\u0394</th>';
     h += '</tr></thead><tbody>';
 
-    state.meta.metrics.forEach(function (m) {
+    var compareMetrics = state.meta.metrics.slice();
+    if (state.singleMetric) compareMetrics = compareMetrics.filter(function (m) { return m === state.singleMetric; });
+    compareMetrics.forEach(function (m) {
       var v1 = r1[m];
       var v2 = r2[m];
       var d = (v2 !== undefined && v1 !== undefined) ? v2 - v1 : undefined;
@@ -424,6 +445,13 @@
         }
       };
     });
+
+    var singleMetricSel = document.getElementById('blls-single-metric');
+    if (singleMetricSel) {
+      singleMetricSel.onchange = function () {
+        setState({ singleMetric: this.value || null, sortBy: null });
+      };
+    }
 
     var metricSel = document.getElementById('blls-metric');
     if (metricSel) {
