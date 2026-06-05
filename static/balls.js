@@ -220,6 +220,7 @@
     h += '</tr></thead><tbody>';
 
     var metrics = sortedMetrics(ballRow);
+    metrics.forEach(function (m) {
       var range = getMetricRange(m, state.activeCondition);
       var val = ballRow[m];
       var bw = barWidth(val, range.min, range.max);
