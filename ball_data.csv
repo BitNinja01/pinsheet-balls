@@ -1,0 +1,1321 @@
+metric,condition,ball,value
+ball-speed,slow_driver,Wilson Staff Model X,124.257
+ball-speed,slow_driver,PXG Xtreme Tour X,124.0782
+ball-speed,slow_driver,Maxfli Tour X,124.0447
+ball-speed,slow_driver,Titleist Velocity,124.0307
+ball-speed,slow_driver,Callaway Chrome Tour Triple Diamond,124.0084
+ball-speed,slow_driver,Wilson Staff Model,123.9972
+ball-speed,slow_driver,Callaway Chrome Tour X,123.9888
+ball-speed,slow_driver,Srixon Q-STAR ULTISPEED,123.9497
+ball-speed,slow_driver,PXG Xtreme Tour,123.9413
+ball-speed,slow_driver,Titleist Pro V1,123.8883
+ball-speed,slow_driver,Titleist Tour Soft,123.8715
+ball-speed,slow_driver,Callaway ERC Soft,123.7877
+ball-speed,slow_driver,Mizuno Pro X,123.7486
+ball-speed,slow_driver,Srixon Z-STAR XV,123.676
+ball-speed,slow_driver,Callaway Chrome Tour,123.6424
+ball-speed,slow_driver,Srixon Z-STAR DIAMOND,123.6033
+ball-speed,slow_driver,Bridgestone TOUR B X,123.595
+ball-speed,slow_driver,Maxfli Tour,123.5307
+ball-speed,slow_driver,Member's Mark Pro Series 2,123.5167
+ball-speed,slow_driver,TaylorMade TP5x,123.5167
+ball-speed,slow_driver,Vice Pro Plus,123.4972
+ball-speed,slow_driver,TaylorMade TP5,123.4637
+ball-speed,slow_driver,Pinnacle Rush,123.4385
+ball-speed,slow_driver,Titleist Pro V1x,123.4302
+ball-speed,slow_driver,Titleist TruFeel,123.4246
+ball-speed,slow_driver,Kirkland Performance+ v3.5,123.405
+ball-speed,slow_driver,Mizuno Pro S,123.3715
+ball-speed,slow_driver,Titleist AVX,123.3519
+ball-speed,slow_driver,Srixon Z-STAR DIVIDE,123.338
+ball-speed,slow_driver,Bridgestone TOUR B XS,123.2849
+ball-speed,slow_driver,Titleist Pro V1x Left Dash,123.2709
+ball-speed,slow_driver,Srixon Z-STAR,123.2039
+ball-speed,slow_driver,Vice Pro,123.1788
+ball-speed,slow_driver,Maxfli Tour S,123.0866
+ball-speed,slow_driver,Callaway Chrome Soft,123.0866
+ball-speed,slow_driver,Bridgestone TOUR B RX,123.0782
+ball-speed,slow_driver,TaylorMade Tour Response,123.0391
+ball-speed,slow_driver,Wilson Triad,123.0139
+ball-speed,slow_driver,Callaway Supersoft,122.8017
+ball-speed,slow_driver,Bridgestone TOUR B RXS,122.7905
+ball-speed,slow_driver,TaylorMade SpeedSoft,122.7514
+ball-speed,slow_driver,Srixon Q-STAR TOUR,122.5614
+ball-speed,slow_driver,Vice Pro Air,122.4748
+ball-speed,slow_driver,Srixon SOFT FEEL,122.4302
+ball-speed,slow_mid-iron,PXG Xtreme Tour,88.48
+ball-speed,slow_mid-iron,Titleist Tour Soft,88.4415
+ball-speed,slow_mid-iron,Titleist Velocity,88.44
+ball-speed,slow_mid-iron,Bridgestone TOUR B XS,88.37
+ball-speed,slow_mid-iron,Srixon Z-STAR,88.3567
+ball-speed,slow_mid-iron,Callaway Supersoft,88.35
+ball-speed,slow_mid-iron,Srixon Z-STAR DIVIDE,88.3229
+ball-speed,slow_mid-iron,Titleist Pro V1,88.32
+ball-speed,slow_mid-iron,PXG Xtreme Tour X,88.3133
+ball-speed,slow_mid-iron,Titleist TruFeel,88.31
+ball-speed,slow_mid-iron,Srixon Z-STAR DIAMOND,88.3014
+ball-speed,slow_mid-iron,Bridgestone TOUR B RXS,88.3
+ball-speed,slow_mid-iron,Wilson Staff Model X,88.2867
+ball-speed,slow_mid-iron,Srixon Q-STAR ULTISPEED,88.28
+ball-speed,slow_mid-iron,TaylorMade Tour Response,88.27
+ball-speed,slow_mid-iron,Titleist AVX,88.24
+ball-speed,slow_mid-iron,Callaway Chrome Tour,88.2286
+ball-speed,slow_mid-iron,Callaway Chrome Soft,88.22
+ball-speed,slow_mid-iron,Vice Pro,88.2114
+ball-speed,slow_mid-iron,TaylorMade TP5,88.21
+ball-speed,slow_mid-iron,TaylorMade SpeedSoft,88.2054
+ball-speed,slow_mid-iron,Srixon Q-STAR TOUR,88.1623
+ball-speed,slow_mid-iron,Bridgestone TOUR B RX,88.15
+ball-speed,slow_mid-iron,Vice Pro Plus,88.1282
+ball-speed,slow_mid-iron,Maxfli Tour,88.08
+ball-speed,slow_mid-iron,Callaway Chrome Tour X,88.0712
+ball-speed,slow_mid-iron,Wilson Staff Model,88.07
+ball-speed,slow_mid-iron,Maxfli Tour S,88.0671
+ball-speed,slow_mid-iron,Kirkland Performance+ v3.5,88.05
+ball-speed,slow_mid-iron,Maxfli Tour X,88.0465
+ball-speed,slow_mid-iron,Srixon Z-STAR XV,88.01
+ball-speed,slow_mid-iron,Wilson Triad,87.9989
+ball-speed,slow_mid-iron,Callaway Chrome Tour Triple Diamond,87.99
+ball-speed,slow_mid-iron,Callaway ERC Soft,87.9534
+ball-speed,slow_mid-iron,Bridgestone TOUR B X,87.93
+ball-speed,slow_mid-iron,Srixon SOFT FEEL,87.9154
+ball-speed,slow_mid-iron,Vice Pro Air,87.87
+ball-speed,slow_mid-iron,TaylorMade TP5x,87.8595
+ball-speed,slow_mid-iron,Pinnacle Rush,87.75
+ball-speed,slow_mid-iron,Titleist Pro V1x Left Dash,87.7423
+ball-speed,slow_mid-iron,Titleist Pro V1x,87.65
+ball-speed,slow_mid-iron,Member's Mark Pro Series 2,87.6312
+ball-speed,slow_mid-iron,Mizuno Pro X,87.55
+ball-speed,slow_mid-iron,Mizuno Pro S,87.5051
+ball-speed,wedge-35-percent_sand-wedge,Titleist Pro V1,44.7
+ball-speed,wedge-35-percent_sand-wedge,Callaway Supersoft,44.62
+ball-speed,wedge-35-percent_sand-wedge,TaylorMade Tour Response,44.56
+ball-speed,wedge-35-percent_sand-wedge,Wilson Staff Model X,44.5273
+ball-speed,wedge-35-percent_sand-wedge,Titleist Tour Soft,44.5
+ball-speed,wedge-35-percent_sand-wedge,Srixon Q-STAR ULTISPEED,44.4652
+ball-speed,wedge-35-percent_sand-wedge,Callaway Chrome Soft,44.37
+ball-speed,wedge-35-percent_sand-wedge,Bridgestone TOUR B RX,44.3417
+ball-speed,wedge-35-percent_sand-wedge,Srixon Q-STAR TOUR,44.33
+ball-speed,wedge-35-percent_sand-wedge,Wilson Triad,44.3243
+ball-speed,wedge-35-percent_sand-wedge,Vice Pro,44.3243
+ball-speed,wedge-35-percent_sand-wedge,Wilson Staff Model,44.31
+ball-speed,wedge-35-percent_sand-wedge,TaylorMade TP5,44.31
+ball-speed,wedge-35-percent_sand-wedge,Titleist TruFeel,44.31
+ball-speed,wedge-35-percent_sand-wedge,Bridgestone TOUR B XS,44.2735
+ball-speed,wedge-35-percent_sand-wedge,Maxfli Tour X,44.27
+ball-speed,wedge-35-percent_sand-wedge,Srixon SOFT FEEL,44.2683
+ball-speed,wedge-35-percent_sand-wedge,Maxfli Tour,44.26
+ball-speed,wedge-35-percent_sand-wedge,Maxfli Tour S,44.2441
+ball-speed,wedge-35-percent_sand-wedge,Bridgestone TOUR B X,44.23
+ball-speed,wedge-35-percent_sand-wedge,Vice Pro Air,44.2186
+ball-speed,wedge-35-percent_sand-wedge,TaylorMade TP5x,44.1995
+ball-speed,wedge-35-percent_sand-wedge,Bridgestone TOUR B RXS,44.19
+ball-speed,wedge-35-percent_sand-wedge,Srixon Z-STAR DIAMOND,44.1867
+ball-speed,wedge-35-percent_sand-wedge,Srixon Z-STAR,44.18
+ball-speed,wedge-35-percent_sand-wedge,Callaway Chrome Tour X,44.1767
+ball-speed,wedge-35-percent_sand-wedge,Srixon Z-STAR XV,44.17
+ball-speed,wedge-35-percent_sand-wedge,Vice Pro Plus,44.1542
+ball-speed,wedge-35-percent_sand-wedge,PXG Xtreme Tour X,44.14
+ball-speed,wedge-35-percent_sand-wedge,PXG Xtreme Tour,44.0886
+ball-speed,wedge-35-percent_sand-wedge,Titleist AVX,44.08
+ball-speed,wedge-35-percent_sand-wedge,TaylorMade SpeedSoft,44.07
+ball-speed,wedge-35-percent_sand-wedge,Srixon Z-STAR DIVIDE,44.06
+ball-speed,wedge-35-percent_sand-wedge,Callaway Chrome Tour,44.0
+ball-speed,wedge-35-percent_sand-wedge,Mizuno Pro X,43.9814
+ball-speed,wedge-35-percent_sand-wedge,Titleist Pro V1x,43.98
+ball-speed,wedge-35-percent_sand-wedge,Callaway ERC Soft,43.9707
+ball-speed,wedge-35-percent_sand-wedge,Kirkland Performance+ v3.5,43.88
+ball-speed,wedge-35-percent_sand-wedge,Mizuno Pro S,43.8
+ball-speed,wedge-35-percent_sand-wedge,Pinnacle Rush,43.77
+ball-speed,wedge-35-percent_sand-wedge,Callaway Chrome Tour Triple Diamond,43.77
+ball-speed,wedge-35-percent_sand-wedge,Titleist Pro V1x Left Dash,43.6788
+ball-speed,wedge-35-percent_sand-wedge,Member's Mark Pro Series 2,43.67
+ball-speed,wedge-35-percent_sand-wedge,Titleist Velocity,43.5349
+ball-speed,wedge-full_sand-wedge,TaylorMade Tour Response,82.2206
+ball-speed,wedge-full_sand-wedge,Titleist TruFeel,81.9483
+ball-speed,wedge-full_sand-wedge,Srixon Q-STAR ULTISPEED,81.9155
+ball-speed,wedge-full_sand-wedge,Titleist Pro V1x,81.7183
+ball-speed,wedge-full_sand-wedge,Bridgestone TOUR B RX,81.6009
+ball-speed,wedge-full_sand-wedge,Callaway Supersoft,81.5868
+ball-speed,wedge-full_sand-wedge,Wilson Triad,81.5493
+ball-speed,wedge-full_sand-wedge,Vice Pro Air,81.5446
+ball-speed,wedge-full_sand-wedge,Srixon SOFT FEEL,81.4882
+ball-speed,wedge-full_sand-wedge,Vice Pro Plus,81.4601
+ball-speed,wedge-full_sand-wedge,Vice Pro,81.3896
+ball-speed,wedge-full_sand-wedge,Callaway Chrome Tour X,81.3803
+ball-speed,wedge-full_sand-wedge,Titleist Tour Soft,81.3521
+ball-speed,wedge-full_sand-wedge,Mizuno Pro X,81.3333
+ball-speed,wedge-full_sand-wedge,Callaway Chrome Tour Triple Diamond,81.2206
+ball-speed,wedge-full_sand-wedge,Maxfli Tour,81.2159
+ball-speed,wedge-full_sand-wedge,Bridgestone TOUR B X,81.1831
+ball-speed,wedge-full_sand-wedge,TaylorMade TP5,81.169
+ball-speed,wedge-full_sand-wedge,Titleist AVX,81.0798
+ball-speed,wedge-full_sand-wedge,TaylorMade TP5x,81.0704
+ball-speed,wedge-full_sand-wedge,Srixon Z-STAR DIAMOND,81.0375
+ball-speed,wedge-full_sand-wedge,Callaway ERC Soft,81.0375
+ball-speed,wedge-full_sand-wedge,Wilson Staff Model X,81.0
+ball-speed,wedge-full_sand-wedge,Maxfli Tour X,81.0
+ball-speed,wedge-full_sand-wedge,Titleist Pro V1x Left Dash,80.9626
+ball-speed,wedge-full_sand-wedge,Pinnacle Rush,80.9299
+ball-speed,wedge-full_sand-wedge,PXG Xtreme Tour X,80.9252
+ball-speed,wedge-full_sand-wedge,Srixon Z-STAR,80.8831
+ball-speed,wedge-full_sand-wedge,Bridgestone TOUR B XS,80.8831
+ball-speed,wedge-full_sand-wedge,Srixon Z-STAR XV,80.8645
+ball-speed,wedge-full_sand-wedge,Maxfli Tour S,80.8551
+ball-speed,wedge-full_sand-wedge,PXG Xtreme Tour,80.8084
+ball-speed,wedge-full_sand-wedge,Bridgestone TOUR B RXS,80.799
+ball-speed,wedge-full_sand-wedge,Member's Mark Pro Series 2,80.799
+ball-speed,wedge-full_sand-wedge,Kirkland Performance+ v3.5,80.7897
+ball-speed,wedge-full_sand-wedge,Titleist Pro V1,80.7476
+ball-speed,wedge-full_sand-wedge,Srixon Q-STAR TOUR,80.7009
+ball-speed,wedge-full_sand-wedge,Srixon Z-STAR DIVIDE,80.5467
+ball-speed,wedge-full_sand-wedge,Callaway Chrome Soft,80.5187
+ball-speed,wedge-full_sand-wedge,Wilson Staff Model,80.5
+ball-speed,wedge-full_sand-wedge,Callaway Chrome Tour,80.3364
+ball-speed,wedge-full_sand-wedge,Titleist Velocity,80.0841
+ball-speed,wedge-full_sand-wedge,Mizuno Pro S,80.0467
+ball-speed,wedge-full_sand-wedge,TaylorMade SpeedSoft,79.1226
+carry,slow_driver,Titleist Velocity,191.0214
+carry,slow_driver,PXG Xtreme Tour,190.9784
+carry,slow_driver,Srixon Q-STAR ULTISPEED,190.5161
+carry,slow_driver,Titleist Tour Soft,190.0107
+carry,slow_driver,Wilson Staff Model X,189.9999
+carry,slow_driver,Maxfli Tour S,189.9999
+carry,slow_driver,Callaway Chrome Tour Triple Diamond,189.9999
+carry,slow_driver,Mizuno Pro X,189.4999
+carry,slow_driver,Maxfli Tour X,189.4999
+carry,slow_driver,Callaway Chrome Tour X,189.4999
+carry,slow_driver,PXG Xtreme Tour X,189.4999
+carry,slow_driver,Titleist Pro V1,188.9999
+carry,slow_driver,Titleist AVX,188.9999
+carry,slow_driver,Callaway Chrome Soft,188.4946
+carry,slow_driver,Titleist Pro V1x,188.4946
+carry,slow_driver,Srixon Z-STAR XV,188.4946
+carry,slow_driver,Titleist TruFeel,188.4946
+carry,slow_driver,Pinnacle Rush,188.4946
+carry,slow_driver,Callaway ERC Soft,188.4946
+carry,slow_driver,Maxfli Tour,187.9999
+carry,slow_driver,Callaway Chrome Tour,187.9999
+carry,slow_driver,Wilson Triad,187.9999
+carry,slow_driver,Vice Pro Plus,187.9999
+carry,slow_driver,Titleist Pro V1x Left Dash,187.9999
+carry,slow_driver,Srixon Z-STAR DIAMOND,187.9999
+carry,slow_driver,Callaway Supersoft,187.9892
+carry,slow_driver,Kirkland Performance+ v3.5,187.5053
+carry,slow_driver,Bridgestone TOUR B X,187.4946
+carry,slow_driver,Bridgestone TOUR B RX,187.4946
+carry,slow_driver,Wilson Staff Model,186.9999
+carry,slow_driver,Srixon Z-STAR DIVIDE,186.9999
+carry,slow_driver,Srixon Z-STAR,186.9999
+carry,slow_driver,Mizuno Pro S,186.9999
+carry,slow_driver,Bridgestone TOUR B RXS,186.9891
+carry,slow_driver,Vice Pro,186.4999
+carry,slow_driver,TaylorMade TP5x,186.4782
+carry,slow_driver,TaylorMade SpeedSoft,186.4456
+carry,slow_driver,Member's Mark Pro Series 2,185.9892
+carry,slow_driver,Bridgestone TOUR B XS,185.9892
+carry,slow_driver,Srixon Q-STAR TOUR,185.9784
+carry,slow_driver,Vice Pro Air,184.9565
+carry,slow_driver,TaylorMade Tour Response,184.9565
+carry,slow_driver,Srixon SOFT FEEL,184.3804
+carry,slow_driver,TaylorMade TP5,183.9565
+carry,slow_mid-iron,Titleist TruFeel,119.01
+carry,slow_mid-iron,Callaway Supersoft,118.909
+carry,slow_mid-iron,Callaway ERC Soft,118.7777
+carry,slow_mid-iron,PXG Xtreme Tour X,118.7272
+carry,slow_mid-iron,TaylorMade SpeedSoft,118.4545
+carry,slow_mid-iron,Titleist Pro V1x Left Dash,118.3434
+carry,slow_mid-iron,Callaway Chrome Tour Triple Diamond,118.2525
+carry,slow_mid-iron,Srixon Q-STAR ULTISPEED,118.2121
+carry,slow_mid-iron,Srixon SOFT FEEL,118.2121
+carry,slow_mid-iron,Maxfli Tour X,118.1717
+carry,slow_mid-iron,Bridgestone TOUR B X,118.1616
+carry,slow_mid-iron,Titleist AVX,118.1515
+carry,slow_mid-iron,Vice Pro Plus,117.8888
+carry,slow_mid-iron,TaylorMade TP5x,117.808
+carry,slow_mid-iron,Wilson Staff Model X,117.7575
+carry,slow_mid-iron,Titleist Velocity,117.7575
+carry,slow_mid-iron,Bridgestone TOUR B RX,117.6161
+carry,slow_mid-iron,Maxfli Tour,117.4444
+carry,slow_mid-iron,Mizuno Pro S,117.3232
+carry,slow_mid-iron,Titleist Pro V1,117.2727
+carry,slow_mid-iron,Srixon Z-STAR DIVIDE,117.2323
+carry,slow_mid-iron,Srixon Z-STAR,117.2121
+carry,slow_mid-iron,Wilson Staff Model,116.9797
+carry,slow_mid-iron,Titleist Tour Soft,116.8989
+carry,slow_mid-iron,PXG Xtreme Tour,116.8282
+carry,slow_mid-iron,Vice Pro Air,116.6262
+carry,slow_mid-iron,Callaway Chrome Tour,116.5656
+carry,slow_mid-iron,Srixon Z-STAR DIAMOND,116.5454
+carry,slow_mid-iron,Member's Mark Pro Series 2,116.4444
+carry,slow_mid-iron,Vice Pro,116.3636
+carry,slow_mid-iron,Wilson Triad,116.2323
+carry,slow_mid-iron,Kirkland Performance+ v3.5,116.111
+carry,slow_mid-iron,Callaway Chrome Soft,115.8888
+carry,slow_mid-iron,TaylorMade Tour Response,115.8181
+carry,slow_mid-iron,Pinnacle Rush,115.7676
+carry,slow_mid-iron,Mizuno Pro X,115.4646
+carry,slow_mid-iron,TaylorMade TP5,115.4141
+carry,slow_mid-iron,Bridgestone TOUR B XS,115.3838
+carry,slow_mid-iron,Srixon Z-STAR XV,115.0807
+carry,slow_mid-iron,Bridgestone TOUR B RXS,114.8888
+carry,slow_mid-iron,Callaway Chrome Tour X,114.7979
+carry,slow_mid-iron,Maxfli Tour S,114.0201
+carry,slow_mid-iron,Srixon Q-STAR TOUR,113.4343
+carry,slow_mid-iron,Titleist Pro V1x,112.404
+carry,wedge-35-percent_sand-wedge,Callaway Supersoft,37.8333
+carry,wedge-35-percent_sand-wedge,TaylorMade SpeedSoft,37.5873
+carry,wedge-35-percent_sand-wedge,Titleist Tour Soft,37.492
+carry,wedge-35-percent_sand-wedge,Srixon Q-STAR ULTISPEED,37.492
+carry,wedge-35-percent_sand-wedge,Titleist TruFeel,37.3928
+carry,wedge-35-percent_sand-wedge,Titleist Velocity,37.3452
+carry,wedge-35-percent_sand-wedge,Srixon SOFT FEEL,37.1468
+carry,wedge-35-percent_sand-wedge,Pinnacle Rush,37.0952
+carry,wedge-35-percent_sand-wedge,TaylorMade Tour Response,36.747
+carry,wedge-35-percent_sand-wedge,Titleist Pro V1,36.6996
+carry,wedge-35-percent_sand-wedge,Wilson Staff Model X,36.3992
+carry,wedge-35-percent_sand-wedge,Srixon Q-STAR TOUR,36.3992
+carry,wedge-35-percent_sand-wedge,Callaway Chrome Soft,36.3992
+carry,wedge-35-percent_sand-wedge,Maxfli Tour S,36.3478
+carry,wedge-35-percent_sand-wedge,Vice Pro Air,36.2964
+carry,wedge-35-percent_sand-wedge,Wilson Staff Model,36.1937
+carry,wedge-35-percent_sand-wedge,Vice Pro,36.1937
+carry,wedge-35-percent_sand-wedge,Callaway ERC Soft,36.1937
+carry,wedge-35-percent_sand-wedge,Bridgestone TOUR B RX,36.1937
+carry,wedge-35-percent_sand-wedge,Wilson Triad,36.1462
+carry,wedge-35-percent_sand-wedge,TaylorMade TP5x,36.1462
+carry,wedge-35-percent_sand-wedge,PXG Xtreme Tour X,36.0948
+carry,wedge-35-percent_sand-wedge,Vice Pro Plus,35.9921
+carry,wedge-35-percent_sand-wedge,TaylorMade TP5,35.9921
+carry,wedge-35-percent_sand-wedge,Maxfli Tour X,35.9921
+carry,wedge-35-percent_sand-wedge,Maxfli Tour,35.9921
+carry,wedge-35-percent_sand-wedge,Bridgestone TOUR B XS,35.9921
+carry,wedge-35-percent_sand-wedge,Bridgestone TOUR B RXS,35.9407
+carry,wedge-35-percent_sand-wedge,Titleist AVX,35.8893
+carry,wedge-35-percent_sand-wedge,Srixon Z-STAR DIAMOND,35.8893
+carry,wedge-35-percent_sand-wedge,Srixon Z-STAR,35.8893
+carry,wedge-35-percent_sand-wedge,PXG Xtreme Tour,35.8893
+carry,wedge-35-percent_sand-wedge,Bridgestone TOUR B X,35.8893
+carry,wedge-35-percent_sand-wedge,Srixon Z-STAR XV,35.7865
+carry,wedge-35-percent_sand-wedge,Mizuno Pro X,35.7865
+carry,wedge-35-percent_sand-wedge,Callaway Chrome Tour X,35.7865
+carry,wedge-35-percent_sand-wedge,Callaway Chrome Tour,35.7352
+carry,wedge-35-percent_sand-wedge,Titleist Pro V1x,35.6838
+carry,wedge-35-percent_sand-wedge,Srixon Z-STAR DIVIDE,35.6838
+carry,wedge-35-percent_sand-wedge,Kirkland Performance+ v3.5,35.6838
+carry,wedge-35-percent_sand-wedge,Mizuno Pro S,35.581
+carry,wedge-35-percent_sand-wedge,Callaway Chrome Tour Triple Diamond,35.4782
+carry,wedge-35-percent_sand-wedge,Titleist Pro V1x Left Dash,35.2727
+carry,wedge-35-percent_sand-wedge,Member's Mark Pro Series 2,35.2213
+carry,wedge-full_sand-wedge,TaylorMade Tour Response,102.0169
+carry,wedge-full_sand-wedge,Titleist TruFeel,101.4745
+carry,wedge-full_sand-wedge,Srixon Q-STAR ULTISPEED,101.3813
+carry,wedge-full_sand-wedge,Bridgestone TOUR B RX,101.0338
+carry,wedge-full_sand-wedge,Titleist Pro V1x,100.9914
+carry,wedge-full_sand-wedge,Vice Pro Air,100.9401
+carry,wedge-full_sand-wedge,Vice Pro,100.7863
+carry,wedge-full_sand-wedge,Vice Pro Plus,100.6923
+carry,wedge-full_sand-wedge,Srixon SOFT FEEL,100.6923
+carry,wedge-full_sand-wedge,Wilson Triad,100.4957
+carry,wedge-full_sand-wedge,Mizuno Pro X,100.4957
+carry,wedge-full_sand-wedge,Callaway Supersoft,100.3418
+carry,wedge-full_sand-wedge,Callaway Chrome Tour Triple Diamond,100.2905
+carry,wedge-full_sand-wedge,TaylorMade TP5,100.0427
+carry,wedge-full_sand-wedge,Bridgestone TOUR B X,100.0427
+carry,wedge-full_sand-wedge,Titleist Tour Soft,99.9915
+carry,wedge-full_sand-wedge,Titleist Pro V1x Left Dash,99.9915
+carry,wedge-full_sand-wedge,Maxfli Tour,99.9915
+carry,wedge-full_sand-wedge,Titleist AVX,99.9406
+carry,wedge-full_sand-wedge,Callaway ERC Soft,99.7966
+carry,wedge-full_sand-wedge,Pinnacle Rush,99.6949
+carry,wedge-full_sand-wedge,Callaway Chrome Tour X,99.644
+carry,wedge-full_sand-wedge,Maxfli Tour S,99.4999
+carry,wedge-full_sand-wedge,Member's Mark Pro Series 2,99.4491
+carry,wedge-full_sand-wedge,Bridgestone TOUR B RXS,99.3983
+carry,wedge-full_sand-wedge,PXG Xtreme Tour,99.3474
+carry,wedge-full_sand-wedge,Srixon Z-STAR DIAMOND,99.2966
+carry,wedge-full_sand-wedge,Titleist Pro V1,99.2457
+carry,wedge-full_sand-wedge,Maxfli Tour X,99.2457
+carry,wedge-full_sand-wedge,Srixon Z-STAR,99.1949
+carry,wedge-full_sand-wedge,Bridgestone TOUR B XS,99.1949
+carry,wedge-full_sand-wedge,PXG Xtreme Tour X,99.1525
+carry,wedge-full_sand-wedge,TaylorMade TP5x,99.1016
+carry,wedge-full_sand-wedge,Srixon Z-STAR XV,99.1016
+carry,wedge-full_sand-wedge,Wilson Staff Model X,98.9491
+carry,wedge-full_sand-wedge,Srixon Z-STAR DIVIDE,98.8983
+carry,wedge-full_sand-wedge,Wilson Staff Model,98.6949
+carry,wedge-full_sand-wedge,Srixon Q-STAR TOUR,98.6949
+carry,wedge-full_sand-wedge,Mizuno Pro S,98.644
+carry,wedge-full_sand-wedge,Kirkland Performance+ v3.5,98.5932
+carry,wedge-full_sand-wedge,Callaway Chrome Soft,98.4999
+carry,wedge-full_sand-wedge,Titleist Velocity,98.3474
+carry,wedge-full_sand-wedge,Callaway Chrome Tour,97.8898
+carry,wedge-full_sand-wedge,TaylorMade SpeedSoft,96.466
+descent-angle,slow_driver,TaylorMade TP5,30.9205
+descent-angle,slow_driver,Srixon Z-STAR DIVIDE,30.6821
+descent-angle,slow_driver,Vice Pro Plus,30.49
+descent-angle,slow_driver,TaylorMade TP5x,30.4172
+descent-angle,slow_driver,PXG Xtreme Tour,30.4172
+descent-angle,slow_driver,Member's Mark Pro Series 2,30.1589
+descent-angle,slow_driver,Srixon Z-STAR XV,30.0397
+descent-angle,slow_driver,Maxfli Tour X,29.8533
+descent-angle,slow_driver,Kirkland Performance+ v3.5,29.84
+descent-angle,slow_driver,Callaway Chrome Tour X,29.8266
+descent-angle,slow_driver,Titleist Velocity,29.8
+descent-angle,slow_driver,Srixon Q-STAR TOUR,29.76
+descent-angle,slow_driver,Bridgestone TOUR B X,29.72
+descent-angle,slow_driver,Srixon Z-STAR,29.7066
+descent-angle,slow_driver,Wilson Staff Model,29.6066
+descent-angle,slow_driver,Bridgestone TOUR B XS,29.5933
+descent-angle,slow_driver,Bridgestone TOUR B RX,29.52
+descent-angle,slow_driver,Srixon Z-STAR DIAMOND,29.4666
+descent-angle,slow_driver,Callaway Chrome Soft,29.4333
+descent-angle,slow_driver,Maxfli Tour,29.3533
+descent-angle,slow_driver,Titleist Tour Soft,29.3333
+descent-angle,slow_driver,Wilson Staff Model X,29.2266
+descent-angle,slow_driver,Titleist Pro V1x,29.0866
+descent-angle,slow_driver,Mizuno Pro X,29.0533
+descent-angle,slow_driver,Vice Pro,28.9735
+descent-angle,slow_driver,Callaway ERC Soft,28.9404
+descent-angle,slow_driver,Maxfli Tour S,28.9271
+descent-angle,slow_driver,TaylorMade Tour Response,28.9072
+descent-angle,slow_driver,Vice Pro Air,28.9006
+descent-angle,slow_driver,PXG Xtreme Tour X,28.8609
+descent-angle,slow_driver,Titleist Pro V1,28.7615
+descent-angle,slow_driver,Titleist Pro V1x Left Dash,28.7549
+descent-angle,slow_driver,Callaway Chrome Tour,28.7152
+descent-angle,slow_driver,Bridgestone TOUR B RXS,28.6556
+descent-angle,slow_driver,Wilson Triad,28.6159
+descent-angle,slow_driver,Srixon Q-STAR ULTISPEED,28.351
+descent-angle,slow_driver,TaylorMade SpeedSoft,28.3311
+descent-angle,slow_driver,Mizuno Pro S,28.3046
+descent-angle,slow_driver,Callaway Chrome Tour Triple Diamond,28.2053
+descent-angle,slow_driver,Titleist AVX,27.9733
+descent-angle,slow_driver,Pinnacle Rush,27.8866
+descent-angle,slow_driver,Titleist TruFeel,27.34
+descent-angle,slow_driver,Callaway Supersoft,26.5533
+descent-angle,slow_driver,Srixon SOFT FEEL,26.5333
+descent-angle,slow_mid-iron,PXG Xtreme Tour,42.9124
+descent-angle,slow_mid-iron,Maxfli Tour S,42.8175
+descent-angle,slow_mid-iron,Bridgestone TOUR B RXS,42.197
+descent-angle,slow_mid-iron,Srixon Q-STAR TOUR,41.8161
+descent-angle,slow_mid-iron,Vice Pro,41.7573
+descent-angle,slow_mid-iron,Bridgestone TOUR B XS,41.75
+descent-angle,slow_mid-iron,Srixon SOFT FEEL,41.5367
+descent-angle,slow_mid-iron,Callaway Chrome Soft,41.4926
+descent-angle,slow_mid-iron,Titleist Velocity,41.4264
+descent-angle,slow_mid-iron,Wilson Triad,41.3676
+descent-angle,slow_mid-iron,Vice Pro Air,41.3161
+descent-angle,slow_mid-iron,Callaway Chrome Tour,41.2941
+descent-angle,slow_mid-iron,Titleist AVX,41.272
+descent-angle,slow_mid-iron,Mizuno Pro X,41.2426
+descent-angle,slow_mid-iron,Srixon Q-STAR ULTISPEED,41.0955
+descent-angle,slow_mid-iron,Titleist TruFeel,41.0441
+descent-angle,slow_mid-iron,TaylorMade TP5,40.8905
+descent-angle,slow_mid-iron,Kirkland Performance+ v3.5,40.854
+descent-angle,slow_mid-iron,Pinnacle Rush,40.854
+descent-angle,slow_mid-iron,Callaway Supersoft,40.8394
+descent-angle,slow_mid-iron,TaylorMade Tour Response,40.8029
+descent-angle,slow_mid-iron,Titleist Pro V1x,40.7299
+descent-angle,slow_mid-iron,Titleist Tour Soft,40.7153
+descent-angle,slow_mid-iron,Callaway Chrome Tour X,40.6861
+descent-angle,slow_mid-iron,Vice Pro Plus,40.3503
+descent-angle,slow_mid-iron,Titleist Pro V1,40.1605
+descent-angle,slow_mid-iron,Maxfli Tour,39.9411
+descent-angle,slow_mid-iron,TaylorMade SpeedSoft,39.8897
+descent-angle,slow_mid-iron,Callaway ERC Soft,39.875
+descent-angle,slow_mid-iron,Wilson Staff Model X,39.8455
+descent-angle,slow_mid-iron,PXG Xtreme Tour X,39.8308
+descent-angle,slow_mid-iron,Callaway Chrome Tour Triple Diamond,39.7647
+descent-angle,slow_mid-iron,Titleist Pro V1x Left Dash,39.7132
+descent-angle,slow_mid-iron,Srixon Z-STAR DIAMOND,39.7132
+descent-angle,slow_mid-iron,Srixon Z-STAR XV,39.7132
+descent-angle,slow_mid-iron,Wilson Staff Model,39.6764
+descent-angle,slow_mid-iron,Mizuno Pro S,39.5808
+descent-angle,slow_mid-iron,TaylorMade TP5x,39.4411
+descent-angle,slow_mid-iron,Maxfli Tour X,39.3823
+descent-angle,slow_mid-iron,Bridgestone TOUR B RX,39.3382
+descent-angle,slow_mid-iron,Bridgestone TOUR B X,38.7518
+descent-angle,slow_mid-iron,Srixon Z-STAR,38.6861
+descent-angle,slow_mid-iron,Srixon Z-STAR DIVIDE,38.5693
+descent-angle,slow_mid-iron,Member's Mark Pro Series 2,38.0802
+descent-angle,wedge-35-percent_sand-wedge,Titleist Velocity,40.9042
+descent-angle,wedge-35-percent_sand-wedge,TaylorMade SpeedSoft,39.6021
+descent-angle,wedge-35-percent_sand-wedge,Pinnacle Rush,39.344
+descent-angle,wedge-35-percent_sand-wedge,Titleist TruFeel,38.0638
+descent-angle,wedge-35-percent_sand-wedge,Callaway Supersoft,37.7096
+descent-angle,wedge-35-percent_sand-wedge,Srixon Q-STAR ULTISPEED,37.3118
+descent-angle,wedge-35-percent_sand-wedge,Srixon SOFT FEEL,37.0644
+descent-angle,wedge-35-percent_sand-wedge,Titleist Tour Soft,36.9467
+descent-angle,wedge-35-percent_sand-wedge,Callaway ERC Soft,35.7741
+descent-angle,wedge-35-percent_sand-wedge,TaylorMade Tour Response,35.0107
+descent-angle,wedge-35-percent_sand-wedge,Kirkland Performance+ v3.5,34.9787
+descent-angle,wedge-35-percent_sand-wedge,Maxfli Tour S,34.9787
+descent-angle,wedge-35-percent_sand-wedge,Srixon Q-STAR TOUR,34.968
+descent-angle,wedge-35-percent_sand-wedge,Callaway Chrome Soft,34.9042
+descent-angle,wedge-35-percent_sand-wedge,TaylorMade TP5x,34.8404
+descent-angle,wedge-35-percent_sand-wedge,Titleist AVX,34.7765
+descent-angle,wedge-35-percent_sand-wedge,PXG Xtreme Tour,34.7765
+descent-angle,wedge-35-percent_sand-wedge,Vice Pro Plus,34.7446
+descent-angle,wedge-35-percent_sand-wedge,Callaway Chrome Tour Triple Diamond,34.734
+descent-angle,wedge-35-percent_sand-wedge,Vice Pro Air,34.6914
+descent-angle,wedge-35-percent_sand-wedge,Mizuno Pro S,34.6489
+descent-angle,wedge-35-percent_sand-wedge,Member's Mark Pro Series 2,34.5957
+descent-angle,wedge-35-percent_sand-wedge,PXG Xtreme Tour X,34.5957
+descent-angle,wedge-35-percent_sand-wedge,Mizuno Pro X,34.5318
+descent-angle,wedge-35-percent_sand-wedge,TaylorMade TP5,34.468
+descent-angle,wedge-35-percent_sand-wedge,Maxfli Tour X,34.468
+descent-angle,wedge-35-percent_sand-wedge,Maxfli Tour,34.4467
+descent-angle,wedge-35-percent_sand-wedge,Srixon Z-STAR DIVIDE,34.4467
+descent-angle,wedge-35-percent_sand-wedge,Titleist Pro V1x Left Dash,34.4467
+descent-angle,wedge-35-percent_sand-wedge,Bridgestone TOUR B RX,34.4255
+descent-angle,wedge-35-percent_sand-wedge,Callaway Chrome Tour,34.4148
+descent-angle,wedge-35-percent_sand-wedge,Wilson Staff Model,34.3723
+descent-angle,wedge-35-percent_sand-wedge,Vice Pro,34.3723
+descent-angle,wedge-35-percent_sand-wedge,Titleist Pro V1,34.351
+descent-angle,wedge-35-percent_sand-wedge,Bridgestone TOUR B RXS,34.3404
+descent-angle,wedge-35-percent_sand-wedge,Srixon Z-STAR XV,34.3084
+descent-angle,wedge-35-percent_sand-wedge,Wilson Triad,34.2978
+descent-angle,wedge-35-percent_sand-wedge,Srixon Z-STAR,34.2978
+descent-angle,wedge-35-percent_sand-wedge,Wilson Staff Model X,34.2765
+descent-angle,wedge-35-percent_sand-wedge,Srixon Z-STAR DIAMOND,34.2446
+descent-angle,wedge-35-percent_sand-wedge,Titleist Pro V1x,34.1489
+descent-angle,wedge-35-percent_sand-wedge,Bridgestone TOUR B X,34.1489
+descent-angle,wedge-35-percent_sand-wedge,Callaway Chrome Tour X,34.1382
+descent-angle,wedge-35-percent_sand-wedge,Bridgestone TOUR B XS,33.851
+descent-angle,wedge-full_sand-wedge,Vice Pro Plus,47.6
+descent-angle,wedge-full_sand-wedge,Callaway Supersoft,47.4771
+descent-angle,wedge-full_sand-wedge,Bridgestone TOUR B X,47.18
+descent-angle,wedge-full_sand-wedge,Titleist TruFeel,47.1571
+descent-angle,wedge-full_sand-wedge,TaylorMade Tour Response,47.1171
+descent-angle,wedge-full_sand-wedge,Pinnacle Rush,46.8971
+descent-angle,wedge-full_sand-wedge,Titleist Pro V1x Left Dash,46.8343
+descent-angle,wedge-full_sand-wedge,Callaway ERC Soft,46.8257
+descent-angle,wedge-full_sand-wedge,Srixon Q-STAR ULTISPEED,46.7828
+descent-angle,wedge-full_sand-wedge,Srixon Q-STAR TOUR,46.7343
+descent-angle,wedge-full_sand-wedge,Titleist AVX,46.6971
+descent-angle,wedge-full_sand-wedge,Mizuno Pro X,46.6543
+descent-angle,wedge-full_sand-wedge,TaylorMade SpeedSoft,46.64
+descent-angle,wedge-full_sand-wedge,Wilson Staff Model,46.6
+descent-angle,wedge-full_sand-wedge,Srixon SOFT FEEL,46.58
+descent-angle,wedge-full_sand-wedge,Titleist Pro V1,46.5486
+descent-angle,wedge-full_sand-wedge,Vice Pro Air,46.5314
+descent-angle,wedge-full_sand-wedge,Titleist Tour Soft,46.5086
+descent-angle,wedge-full_sand-wedge,TaylorMade TP5x,46.4428
+descent-angle,wedge-full_sand-wedge,PXG Xtreme Tour X,46.44
+descent-angle,wedge-full_sand-wedge,Callaway Chrome Tour Triple Diamond,46.44
+descent-angle,wedge-full_sand-wedge,Maxfli Tour S,46.3914
+descent-angle,wedge-full_sand-wedge,Titleist Velocity,46.3571
+descent-angle,wedge-full_sand-wedge,Maxfli Tour X,46.2971
+descent-angle,wedge-full_sand-wedge,Callaway Chrome Soft,46.2514
+descent-angle,wedge-full_sand-wedge,Wilson Staff Model X,46.24
+descent-angle,wedge-full_sand-wedge,Mizuno Pro S,46.2314
+descent-angle,wedge-full_sand-wedge,Srixon Z-STAR DIVIDE,46.2057
+descent-angle,wedge-full_sand-wedge,Srixon Z-STAR DIAMOND,46.16
+descent-angle,wedge-full_sand-wedge,Bridgestone TOUR B RXS,46.1143
+descent-angle,wedge-full_sand-wedge,Bridgestone TOUR B RX,46.08
+descent-angle,wedge-full_sand-wedge,Callaway Chrome Tour,46.0771
+descent-angle,wedge-full_sand-wedge,Titleist Pro V1x,46.0714
+descent-angle,wedge-full_sand-wedge,Srixon Z-STAR,46.0486
+descent-angle,wedge-full_sand-wedge,Maxfli Tour,45.9943
+descent-angle,wedge-full_sand-wedge,TaylorMade TP5,45.9628
+descent-angle,wedge-full_sand-wedge,Srixon Z-STAR XV,45.96
+descent-angle,wedge-full_sand-wedge,PXG Xtreme Tour,45.96
+descent-angle,wedge-full_sand-wedge,Wilson Triad,45.92
+descent-angle,wedge-full_sand-wedge,Vice Pro,45.86
+descent-angle,wedge-full_sand-wedge,Member's Mark Pro Series 2,45.8428
+descent-angle,wedge-full_sand-wedge,Bridgestone TOUR B XS,45.8428
+descent-angle,wedge-full_sand-wedge,Kirkland Performance+ v3.5,45.7914
+descent-angle,wedge-full_sand-wedge,Callaway Chrome Tour X,45.7143
+launch-angle,slow_driver,Callaway Supersoft,12.98
+launch-angle,slow_driver,Srixon SOFT FEEL,12.89
+launch-angle,slow_driver,TaylorMade SpeedSoft,12.8707
+launch-angle,slow_driver,Callaway Chrome Soft,12.77
+launch-angle,slow_driver,Titleist TruFeel,12.7584
+launch-angle,slow_driver,Vice Pro Air,12.66
+launch-angle,slow_driver,Maxfli Tour S,12.6341
+launch-angle,slow_driver,Titleist AVX,12.63
+launch-angle,slow_driver,Pinnacle Rush,12.63
+launch-angle,slow_driver,Srixon Q-STAR TOUR,12.63
+launch-angle,slow_driver,TaylorMade Tour Response,12.6029
+launch-angle,slow_driver,Kirkland Performance+ v3.5,12.6
+launch-angle,slow_driver,Srixon Q-STAR ULTISPEED,12.5863
+launch-angle,slow_driver,Bridgestone TOUR B RXS,12.56
+launch-angle,slow_driver,Callaway ERC Soft,12.5409
+launch-angle,slow_driver,PXG Xtreme Tour,12.49
+launch-angle,slow_driver,Srixon Z-STAR DIVIDE,12.4627
+launch-angle,slow_driver,TaylorMade TP5x,12.46
+launch-angle,slow_driver,Titleist Velocity,12.4543
+launch-angle,slow_driver,Wilson Triad,12.45
+launch-angle,slow_driver,Mizuno Pro S,12.45
+launch-angle,slow_driver,Maxfli Tour X,12.415
+launch-angle,slow_driver,Titleist Pro V1,12.4
+launch-angle,slow_driver,Callaway Chrome Tour,12.4
+launch-angle,slow_driver,Vice Pro Plus,12.4
+launch-angle,slow_driver,Maxfli Tour,12.396
+launch-angle,slow_driver,PXG Xtreme Tour X,12.37
+launch-angle,slow_driver,Vice Pro,12.3682
+launch-angle,slow_driver,Titleist Pro V1x Left Dash,12.36
+launch-angle,slow_driver,Mizuno Pro X,12.3533
+launch-angle,slow_driver,Callaway Chrome Tour Triple Diamond,12.35
+launch-angle,slow_driver,Member's Mark Pro Series 2,12.35
+launch-angle,slow_driver,Srixon Z-STAR XV,12.33
+launch-angle,slow_driver,Titleist Tour Soft,12.28
+launch-angle,slow_driver,Srixon Z-STAR DIAMOND,12.2765
+launch-angle,slow_driver,Srixon Z-STAR,12.25
+launch-angle,slow_driver,Titleist Pro V1x,12.2441
+launch-angle,slow_driver,Wilson Staff Model X,12.21
+launch-angle,slow_driver,Wilson Staff Model,12.2038
+launch-angle,slow_driver,Callaway Chrome Tour X,12.19
+launch-angle,slow_driver,Bridgestone TOUR B XS,12.1731
+launch-angle,slow_driver,Bridgestone TOUR B X,12.1337
+launch-angle,slow_driver,Bridgestone TOUR B RX,12.09
+launch-angle,slow_driver,TaylorMade TP5,12.0632
+launch-angle,slow_mid-iron,Callaway ERC Soft,24.0901
+launch-angle,slow_mid-iron,Vice Pro Air,23.8388
+launch-angle,slow_mid-iron,Titleist AVX,23.7131
+launch-angle,slow_mid-iron,Srixon SOFT FEEL,23.6994
+launch-angle,slow_mid-iron,Mizuno Pro S,23.6912
+launch-angle,slow_mid-iron,TaylorMade Tour Response,23.6912
+launch-angle,slow_mid-iron,Callaway Chrome Soft,23.6721
+launch-angle,slow_mid-iron,TaylorMade SpeedSoft,23.6721
+launch-angle,slow_mid-iron,Maxfli Tour S,23.6503
+launch-angle,slow_mid-iron,Bridgestone TOUR B RX,23.6475
+launch-angle,slow_mid-iron,Wilson Triad,23.6229
+launch-angle,slow_mid-iron,Callaway Supersoft,23.6011
+launch-angle,slow_mid-iron,Vice Pro,23.5956
+launch-angle,slow_mid-iron,Callaway Chrome Tour Triple Diamond,23.5901
+launch-angle,slow_mid-iron,TaylorMade TP5x,23.4863
+launch-angle,slow_mid-iron,PXG Xtreme Tour,23.4863
+launch-angle,slow_mid-iron,Titleist TruFeel,23.4754
+launch-angle,slow_mid-iron,Member's Mark Pro Series 2,23.4371
+launch-angle,slow_mid-iron,TaylorMade TP5,23.3852
+launch-angle,slow_mid-iron,Titleist Pro V1x Left Dash,23.377
+launch-angle,slow_mid-iron,Mizuno Pro X,23.3388
+launch-angle,slow_mid-iron,Vice Pro Plus,23.3388
+launch-angle,slow_mid-iron,Bridgestone TOUR B RXS,23.306
+launch-angle,slow_mid-iron,Srixon Q-STAR ULTISPEED,23.2595
+launch-angle,slow_mid-iron,Srixon Q-STAR TOUR,23.2568
+launch-angle,slow_mid-iron,Maxfli Tour X,23.2541
+launch-angle,slow_mid-iron,PXG Xtreme Tour X,23.2049
+launch-angle,slow_mid-iron,Callaway Chrome Tour,23.1912
+launch-angle,slow_mid-iron,Bridgestone TOUR B X,23.1721
+launch-angle,slow_mid-iron,Maxfli Tour,23.1639
+launch-angle,slow_mid-iron,Titleist Velocity,23.0792
+launch-angle,slow_mid-iron,Wilson Staff Model,23.0683
+launch-angle,slow_mid-iron,Titleist Pro V1,22.9918
+launch-angle,slow_mid-iron,Kirkland Performance+ v3.5,22.8852
+launch-angle,slow_mid-iron,Pinnacle Rush,22.8743
+launch-angle,slow_mid-iron,Srixon Z-STAR XV,22.8306
+launch-angle,slow_mid-iron,Titleist Pro V1x,22.683
+launch-angle,slow_mid-iron,Bridgestone TOUR B XS,22.6093
+launch-angle,slow_mid-iron,Titleist Tour Soft,22.6011
+launch-angle,slow_mid-iron,Wilson Staff Model X,22.5656
+launch-angle,slow_mid-iron,Callaway Chrome Tour X,22.3934
+launch-angle,slow_mid-iron,Srixon Z-STAR DIVIDE,22.3279
+launch-angle,slow_mid-iron,Srixon Z-STAR,22.3251
+launch-angle,slow_mid-iron,Srixon Z-STAR DIAMOND,22.2869
+launch-angle,wedge-35-percent_sand-wedge,Titleist Velocity,35.7741
+launch-angle,wedge-35-percent_sand-wedge,TaylorMade SpeedSoft,34.3151
+launch-angle,wedge-35-percent_sand-wedge,Pinnacle Rush,34.1086
+launch-angle,wedge-35-percent_sand-wedge,Titleist TruFeel,32.6774
+launch-angle,wedge-35-percent_sand-wedge,Callaway Supersoft,32.2795
+launch-angle,wedge-35-percent_sand-wedge,Srixon Q-STAR ULTISPEED,31.9238
+launch-angle,wedge-35-percent_sand-wedge,Srixon SOFT FEEL,31.7282
+launch-angle,wedge-35-percent_sand-wedge,Titleist Tour Soft,31.5325
+launch-angle,wedge-35-percent_sand-wedge,Callaway ERC Soft,30.4999
+launch-angle,wedge-35-percent_sand-wedge,Kirkland Performance+ v3.5,29.7717
+launch-angle,wedge-35-percent_sand-wedge,Maxfli Tour S,29.6738
+launch-angle,wedge-35-percent_sand-wedge,TaylorMade Tour Response,29.6521
+launch-angle,wedge-35-percent_sand-wedge,Srixon Q-STAR TOUR,29.6304
+launch-angle,wedge-35-percent_sand-wedge,Callaway Chrome Soft,29.6304
+launch-angle,wedge-35-percent_sand-wedge,Callaway Chrome Tour Triple Diamond,29.576
+launch-angle,wedge-35-percent_sand-wedge,Mizuno Pro S,29.5434
+launch-angle,wedge-35-percent_sand-wedge,TaylorMade TP5x,29.5434
+launch-angle,wedge-35-percent_sand-wedge,PXG Xtreme Tour,29.5217
+launch-angle,wedge-35-percent_sand-wedge,Titleist AVX,29.5108
+launch-angle,wedge-35-percent_sand-wedge,Vice Pro Air,29.4565
+launch-angle,wedge-35-percent_sand-wedge,Member's Mark Pro Series 2,29.4456
+launch-angle,wedge-35-percent_sand-wedge,Vice Pro Plus,29.4238
+launch-angle,wedge-35-percent_sand-wedge,PXG Xtreme Tour X,29.3804
+launch-angle,wedge-35-percent_sand-wedge,Mizuno Pro X,29.3695
+launch-angle,wedge-35-percent_sand-wedge,Titleist Pro V1x Left Dash,29.326
+launch-angle,wedge-35-percent_sand-wedge,Srixon Z-STAR DIVIDE,29.2391
+launch-angle,wedge-35-percent_sand-wedge,Callaway Chrome Tour,29.2391
+launch-angle,wedge-35-percent_sand-wedge,Maxfli Tour,29.1847
+launch-angle,wedge-35-percent_sand-wedge,Maxfli Tour X,29.1521
+launch-angle,wedge-35-percent_sand-wedge,Bridgestone TOUR B RX,29.1521
+launch-angle,wedge-35-percent_sand-wedge,Bridgestone TOUR B RXS,29.1304
+launch-angle,wedge-35-percent_sand-wedge,Vice Pro,29.1195
+launch-angle,wedge-35-percent_sand-wedge,TaylorMade TP5,29.0978
+launch-angle,wedge-35-percent_sand-wedge,Srixon Z-STAR,29.0651
+launch-angle,wedge-35-percent_sand-wedge,Wilson Triad,29.0651
+launch-angle,wedge-35-percent_sand-wedge,Wilson Staff Model,29.0434
+launch-angle,wedge-35-percent_sand-wedge,Srixon Z-STAR XV,29.0434
+launch-angle,wedge-35-percent_sand-wedge,Titleist Pro V1,28.9999
+launch-angle,wedge-35-percent_sand-wedge,Srixon Z-STAR DIAMOND,28.9891
+launch-angle,wedge-35-percent_sand-wedge,Titleist Pro V1x,28.9782
+launch-angle,wedge-35-percent_sand-wedge,Wilson Staff Model X,28.9565
+launch-angle,wedge-35-percent_sand-wedge,Bridgestone TOUR B X,28.9021
+launch-angle,wedge-35-percent_sand-wedge,Callaway Chrome Tour X,28.8695
+launch-angle,wedge-35-percent_sand-wedge,Bridgestone TOUR B XS,28.6195
+launch-angle,wedge-full_sand-wedge,Vice Pro Plus,28.9754
+launch-angle,wedge-full_sand-wedge,Callaway Supersoft,28.7623
+launch-angle,wedge-full_sand-wedge,TaylorMade SpeedSoft,28.6352
+launch-angle,wedge-full_sand-wedge,Bridgestone TOUR B X,28.5942
+launch-angle,wedge-full_sand-wedge,Titleist Pro V1x Left Dash,28.1516
+launch-angle,wedge-full_sand-wedge,Titleist TruFeel,28.1147
+launch-angle,wedge-full_sand-wedge,TaylorMade Tour Response,28.1065
+launch-angle,wedge-full_sand-wedge,Pinnacle Rush,28.0778
+launch-angle,wedge-full_sand-wedge,Srixon Q-STAR TOUR,28.0696
+launch-angle,wedge-full_sand-wedge,Callaway ERC Soft,28.0246
+launch-angle,wedge-full_sand-wedge,Srixon SOFT FEEL,27.9959
+launch-angle,wedge-full_sand-wedge,Srixon Q-STAR ULTISPEED,27.9877
+launch-angle,wedge-full_sand-wedge,Mizuno Pro X,27.9795
+launch-angle,wedge-full_sand-wedge,Titleist Velocity,27.959
+launch-angle,wedge-full_sand-wedge,Titleist AVX,27.918
+launch-angle,wedge-full_sand-wedge,Titleist Pro V1,27.9016
+launch-angle,wedge-full_sand-wedge,Mizuno Pro S,27.877
+launch-angle,wedge-full_sand-wedge,Wilson Staff Model,27.877
+launch-angle,wedge-full_sand-wedge,Vice Pro Air,27.7951
+launch-angle,wedge-full_sand-wedge,Maxfli Tour S,27.7172
+launch-angle,wedge-full_sand-wedge,PXG Xtreme Tour X,27.6065
+launch-angle,wedge-full_sand-wedge,Callaway Chrome Soft,27.4918
+launch-angle,wedge-full_sand-wedge,TaylorMade TP5x,27.4713
+launch-angle,wedge-full_sand-wedge,Srixon Z-STAR DIVIDE,27.4262
+launch-angle,wedge-full_sand-wedge,Callaway Chrome Tour Triple Diamond,27.4221
+launch-angle,wedge-full_sand-wedge,Callaway Chrome Tour,27.3237
+launch-angle,wedge-full_sand-wedge,Bridgestone TOUR B RX,27.2992
+launch-angle,wedge-full_sand-wedge,Bridgestone TOUR B RXS,27.2828
+launch-angle,wedge-full_sand-wedge,Titleist Tour Soft,27.2582
+launch-angle,wedge-full_sand-wedge,Maxfli Tour X,27.25
+launch-angle,wedge-full_sand-wedge,PXG Xtreme Tour,27.1803
+launch-angle,wedge-full_sand-wedge,Member's Mark Pro Series 2,27.127
+launch-angle,wedge-full_sand-wedge,Wilson Staff Model X,27.1188
+launch-angle,wedge-full_sand-wedge,Maxfli Tour,27.1065
+launch-angle,wedge-full_sand-wedge,Srixon Z-STAR,27.0778
+launch-angle,wedge-full_sand-wedge,Srixon Z-STAR DIAMOND,27.0287
+launch-angle,wedge-full_sand-wedge,Vice Pro,26.9959
+launch-angle,wedge-full_sand-wedge,Srixon Z-STAR XV,26.9918
+launch-angle,wedge-full_sand-wedge,TaylorMade TP5,26.8811
+launch-angle,wedge-full_sand-wedge,Wilson Triad,26.8606
+launch-angle,wedge-full_sand-wedge,Bridgestone TOUR B XS,26.8606
+launch-angle,wedge-full_sand-wedge,Titleist Pro V1x,26.8155
+launch-angle,wedge-full_sand-wedge,Kirkland Performance+ v3.5,26.8074
+launch-angle,wedge-full_sand-wedge,Callaway Chrome Tour X,26.2705
+max-height-distance,slow_driver,PXG Xtreme Tour,356.5096
+max-height-distance,slow_driver,Titleist Velocity,353.9597
+max-height-distance,slow_driver,Callaway Chrome Tour X,353.5197
+max-height-distance,slow_driver,Maxfli Tour X,353.4398
+max-height-distance,slow_driver,Titleist Tour Soft,352.5997
+max-height-distance,slow_driver,Wilson Staff Model X,352.5197
+max-height-distance,slow_driver,Vice Pro Plus,352.3598
+max-height-distance,slow_driver,Mizuno Pro X,352.0398
+max-height-distance,slow_driver,Srixon Z-STAR XV,351.2398
+max-height-distance,slow_driver,Bridgestone TOUR B RX,351.1597
+max-height-distance,slow_driver,Wilson Staff Model,350.7198
+max-height-distance,slow_driver,PXG Xtreme Tour X,350.5598
+max-height-distance,slow_driver,Bridgestone TOUR B X,350.5197
+max-height-distance,slow_driver,Srixon Z-STAR DIVIDE,350.3997
+max-height-distance,slow_driver,Srixon Z-STAR,350.3197
+max-height-distance,slow_driver,Callaway Chrome Tour Triple Diamond,350.1997
+max-height-distance,slow_driver,Maxfli Tour S,350.0797
+max-height-distance,slow_driver,Kirkland Performance+ v3.5,349.6798
+max-height-distance,slow_driver,Callaway Chrome Soft,349.6798
+max-height-distance,slow_driver,Titleist Pro V1,349.5598
+max-height-distance,slow_driver,Srixon Z-STAR DIAMOND,349.2797
+max-height-distance,slow_driver,TaylorMade TP5x,348.7197
+max-height-distance,slow_driver,Srixon Q-STAR ULTISPEED,348.5997
+max-height-distance,slow_driver,Titleist Pro V1x,348.5598
+max-height-distance,slow_driver,Titleist Pro V1x Left Dash,347.6798
+max-height-distance,slow_driver,Member's Mark Pro Series 2,347.5998
+max-height-distance,slow_driver,Callaway ERC Soft,347.2797
+max-height-distance,slow_driver,Wilson Triad,347.0398
+max-height-distance,slow_driver,Callaway Chrome Tour,346.9597
+max-height-distance,slow_driver,Bridgestone TOUR B RXS,346.8397
+max-height-distance,slow_driver,Srixon Q-STAR TOUR,346.7998
+max-height-distance,slow_driver,Bridgestone TOUR B XS,346.7198
+max-height-distance,slow_driver,Maxfli Tour,346.4398
+max-height-distance,slow_driver,Titleist AVX,346.2797
+max-height-distance,slow_driver,Vice Pro,345.0797
+max-height-distance,slow_driver,Mizuno Pro S,344.9597
+max-height-distance,slow_driver,Pinnacle Rush,343.3598
+max-height-distance,slow_driver,Vice Pro Air,342.4398
+max-height-distance,slow_driver,TaylorMade Tour Response,342.1198
+max-height-distance,slow_driver,TaylorMade TP5,342.0797
+max-height-distance,slow_driver,TaylorMade SpeedSoft,341.4115
+max-height-distance,slow_driver,Titleist TruFeel,340.9017
+max-height-distance,slow_driver,Callaway Supersoft,334.8397
+max-height-distance,slow_driver,Srixon SOFT FEEL,330.3997
+max-height-distance,slow_mid-iron,Titleist AVX,216.1095
+max-height-distance,slow_mid-iron,Titleist TruFeel,216.0958
+max-height-distance,slow_mid-iron,Srixon SOFT FEEL,215.923
+max-height-distance,slow_mid-iron,Titleist Velocity,215.8845
+max-height-distance,slow_mid-iron,Callaway Supersoft,215.7948
+max-height-distance,slow_mid-iron,Srixon Q-STAR ULTISPEED,215.7179
+max-height-distance,slow_mid-iron,PXG Xtreme Tour,215.5768
+max-height-distance,slow_mid-iron,Vice Pro,214.4025
+max-height-distance,slow_mid-iron,Bridgestone TOUR B XS,214.2207
+max-height-distance,slow_mid-iron,Callaway Chrome Tour,213.8589
+max-height-distance,slow_mid-iron,Titleist Tour Soft,213.8076
+max-height-distance,slow_mid-iron,Maxfli Tour X,213.7307
+max-height-distance,slow_mid-iron,Vice Pro Air,213.7179
+max-height-distance,slow_mid-iron,Maxfli Tour,213.6153
+max-height-distance,slow_mid-iron,Wilson Triad,213.4999
+max-height-distance,slow_mid-iron,Maxfli Tour S,213.3461
+max-height-distance,slow_mid-iron,TaylorMade SpeedSoft,213.205
+max-height-distance,slow_mid-iron,Callaway Chrome Soft,213.1922
+max-height-distance,slow_mid-iron,Titleist Pro V1,213.1794
+max-height-distance,slow_mid-iron,TaylorMade Tour Response,212.7012
+max-height-distance,slow_mid-iron,TaylorMade TP5x,212.6493
+max-height-distance,slow_mid-iron,Pinnacle Rush,212.5584
+max-height-distance,slow_mid-iron,Callaway ERC Soft,212.4545
+max-height-distance,slow_mid-iron,Mizuno Pro S,212.3376
+max-height-distance,slow_mid-iron,Vice Pro Plus,212.3246
+max-height-distance,slow_mid-iron,PXG Xtreme Tour X,212.2726
+max-height-distance,slow_mid-iron,Callaway Chrome Tour X,212.2207
+max-height-distance,slow_mid-iron,TaylorMade TP5,211.923
+max-height-distance,slow_mid-iron,Callaway Chrome Tour Triple Diamond,211.8333
+max-height-distance,slow_mid-iron,Bridgestone TOUR B RXS,211.6281
+max-height-distance,slow_mid-iron,Wilson Staff Model,211.564
+max-height-distance,slow_mid-iron,Mizuno Pro X,211.3333
+max-height-distance,slow_mid-iron,Wilson Staff Model X,211.2435
+max-height-distance,slow_mid-iron,Kirkland Performance+ v3.5,210.883
+max-height-distance,slow_mid-iron,Titleist Pro V1x Left Dash,210.8311
+max-height-distance,slow_mid-iron,Bridgestone TOUR B RX,210.8181
+max-height-distance,slow_mid-iron,Srixon Z-STAR DIAMOND,210.6623
+max-height-distance,slow_mid-iron,Srixon Q-STAR TOUR,210.6233
+max-height-distance,slow_mid-iron,Srixon Z-STAR,210.5973
+max-height-distance,slow_mid-iron,Srixon Z-STAR XV,210.2986
+max-height-distance,slow_mid-iron,Bridgestone TOUR B X,209.7179
+max-height-distance,slow_mid-iron,Srixon Z-STAR DIVIDE,209.705
+max-height-distance,slow_mid-iron,Member's Mark Pro Series 2,208.8717
+max-height-distance,slow_mid-iron,Titleist Pro V1x,207.6794
+max-height,slow_driver,TaylorMade TP5,60.1599
+max-height,slow_driver,Srixon Z-STAR DIVIDE,59.7921
+max-height,slow_driver,TaylorMade TP5x,59.7272
+max-height,slow_driver,PXG Xtreme Tour,59.6752
+max-height,slow_driver,Vice Pro Plus,59.4675
+max-height,slow_driver,Member's Mark Pro Series 2,59.0908
+max-height,slow_driver,Titleist Velocity,58.9743
+max-height,slow_driver,Srixon Z-STAR XV,58.7948
+max-height,slow_driver,Srixon Q-STAR TOUR,58.3845
+max-height,slow_driver,Maxfli Tour X,58.3333
+max-height,slow_driver,Kirkland Performance+ v3.5,58.1025
+max-height,slow_driver,Callaway Chrome Soft,58.0512
+max-height,slow_driver,Wilson Staff Model,57.9871
+max-height,slow_driver,Srixon Z-STAR,57.7563
+max-height,slow_driver,Wilson Staff Model X,57.6922
+max-height,slow_driver,Callaway ERC Soft,57.6025
+max-height,slow_driver,Bridgestone TOUR B X,57.564
+max-height,slow_driver,Titleist Tour Soft,57.2948
+max-height,slow_driver,Bridgestone TOUR B XS,57.1666
+max-height,slow_driver,TaylorMade Tour Response,57.1538
+max-height,slow_driver,Maxfli Tour S,57.0768
+max-height,slow_driver,Bridgestone TOUR B RX,57.0256
+max-height,slow_driver,Callaway Chrome Tour X,56.9358
+max-height,slow_driver,Srixon Z-STAR DIAMOND,56.923
+max-height,slow_driver,Maxfli Tour,56.8076
+max-height,slow_driver,Vice Pro Air,56.5127
+max-height,slow_driver,Titleist Pro V1,56.4999
+max-height,slow_driver,PXG Xtreme Tour X,56.4358
+max-height,slow_driver,Titleist Pro V1x Left Dash,56.4358
+max-height,slow_driver,Titleist Pro V1x,56.3333
+max-height,slow_driver,Callaway Chrome Tour,56.1538
+max-height,slow_driver,TaylorMade SpeedSoft,55.9869
+max-height,slow_driver,Bridgestone TOUR B RXS,55.948
+max-height,slow_driver,Mizuno Pro X,55.8181
+max-height,slow_driver,Vice Pro,55.7662
+max-height,slow_driver,Callaway Chrome Tour Triple Diamond,55.7272
+max-height,slow_driver,Wilson Triad,55.6882
+max-height,slow_driver,Srixon Q-STAR ULTISPEED,55.1688
+max-height,slow_driver,Titleist AVX,54.5384
+max-height,slow_driver,Mizuno Pro S,54.4999
+max-height,slow_driver,Titleist TruFeel,53.923
+max-height,slow_driver,Pinnacle Rush,53.705
+max-height,slow_driver,Callaway Supersoft,52.7692
+max-height,slow_driver,Srixon SOFT FEEL,51.6666
+max-height,slow_mid-iron,PXG Xtreme Tour,62.5049
+max-height,slow_mid-iron,Maxfli Tour S,62.3465
+max-height,slow_mid-iron,Callaway Chrome Soft,61.7821
+max-height,slow_mid-iron,Titleist AVX,61.6732
+max-height,slow_mid-iron,Vice Pro Air,61.5049
+max-height,slow_mid-iron,Vice Pro,61.495
+max-height,slow_mid-iron,Srixon SOFT FEEL,61.4653
+max-height,slow_mid-iron,TaylorMade Tour Response,61.3762
+max-height,slow_mid-iron,Callaway Supersoft,61.2475
+max-height,slow_mid-iron,Wilson Triad,61.1881
+max-height,slow_mid-iron,Titleist TruFeel,60.9405
+max-height,slow_mid-iron,Srixon Q-STAR TOUR,60.8613
+max-height,slow_mid-iron,Titleist Velocity,60.8613
+max-height,slow_mid-iron,Bridgestone TOUR B RXS,60.7722
+max-height,slow_mid-iron,Srixon Q-STAR ULTISPEED,60.6336
+max-height,slow_mid-iron,Callaway ERC Soft,60.5247
+max-height,slow_mid-iron,TaylorMade TP5,60.2673
+max-height,slow_mid-iron,Callaway Chrome Tour,60.198
+max-height,slow_mid-iron,Bridgestone TOUR B XS,60.1485
+max-height,slow_mid-iron,TaylorMade SpeedSoft,59.792
+max-height,slow_mid-iron,Mizuno Pro X,59.6732
+max-height,slow_mid-iron,Vice Pro Plus,59.3564
+max-height,slow_mid-iron,Mizuno Pro S,59.0098
+max-height,slow_mid-iron,Titleist Tour Soft,58.9999
+max-height,slow_mid-iron,Callaway Chrome Tour Triple Diamond,58.99
+max-height,slow_mid-iron,Titleist Pro V1,58.9405
+max-height,slow_mid-iron,TaylorMade TP5x,58.9207
+max-height,slow_mid-iron,Maxfli Tour X,58.891
+max-height,slow_mid-iron,Maxfli Tour,58.8514
+max-height,slow_mid-iron,Bridgestone TOUR B RX,58.8217
+max-height,slow_mid-iron,Kirkland Performance+ v3.5,58.6732
+max-height,slow_mid-iron,Pinnacle Rush,58.6534
+max-height,slow_mid-iron,PXG Xtreme Tour X,58.5841
+max-height,slow_mid-iron,Callaway Chrome Tour X,58.4851
+max-height,slow_mid-iron,Titleist Pro V1x Left Dash,58.1584
+max-height,slow_mid-iron,Wilson Staff Model,58.0395
+max-height,slow_mid-iron,Srixon Z-STAR XV,57.8415
+max-height,slow_mid-iron,Wilson Staff Model X,57.8316
+max-height,slow_mid-iron,Titleist Pro V1x,57.6435
+max-height,slow_mid-iron,Member's Mark Pro Series 2,57.3366
+max-height,slow_mid-iron,Bridgestone TOUR B X,56.9702
+max-height,slow_mid-iron,Srixon Z-STAR DIAMOND,56.2574
+max-height,slow_mid-iron,Srixon Z-STAR,56.1088
+max-height,slow_mid-iron,Srixon Z-STAR DIVIDE,55.9702
+max-height,wedge-35-percent_sand-wedge,Titleist Velocity,22.04
+max-height,wedge-35-percent_sand-wedge,TaylorMade SpeedSoft,21.24
+max-height,wedge-35-percent_sand-wedge,Pinnacle Rush,20.864
+max-height,wedge-35-percent_sand-wedge,Titleist TruFeel,20.136
+max-height,wedge-35-percent_sand-wedge,Callaway Supersoft,20.0
+max-height,wedge-35-percent_sand-wedge,Srixon Q-STAR ULTISPEED,19.624
+max-height,wedge-35-percent_sand-wedge,Titleist Tour Soft,19.328
+max-height,wedge-35-percent_sand-wedge,Srixon SOFT FEEL,19.3199
+max-height,wedge-35-percent_sand-wedge,Callaway ERC Soft,18.1199
+max-height,wedge-35-percent_sand-wedge,TaylorMade Tour Response,17.8319
+max-height,wedge-35-percent_sand-wedge,Callaway Chrome Soft,17.6639
+max-height,wedge-35-percent_sand-wedge,Srixon Q-STAR TOUR,17.648
+max-height,wedge-35-percent_sand-wedge,Maxfli Tour S,17.6319
+max-height,wedge-35-percent_sand-wedge,TaylorMade TP5x,17.456
+max-height,wedge-35-percent_sand-wedge,Kirkland Performance+ v3.5,17.424
+max-height,wedge-35-percent_sand-wedge,Vice Pro Air,17.4
+max-height,wedge-35-percent_sand-wedge,Vice Pro Plus,17.36
+max-height,wedge-35-percent_sand-wedge,PXG Xtreme Tour,17.36
+max-height,wedge-35-percent_sand-wedge,Titleist Pro V1,17.3519
+max-height,wedge-35-percent_sand-wedge,Titleist AVX,17.3519
+max-height,wedge-35-percent_sand-wedge,PXG Xtreme Tour X,17.304
+max-height,wedge-35-percent_sand-wedge,Wilson Staff Model X,17.224
+max-height,wedge-35-percent_sand-wedge,Maxfli Tour,17.224
+max-height,wedge-35-percent_sand-wedge,Bridgestone TOUR B RX,17.2159
+max-height,wedge-35-percent_sand-wedge,Vice Pro,17.2
+max-height,wedge-35-percent_sand-wedge,Maxfli Tour X,17.1919
+max-height,wedge-35-percent_sand-wedge,Wilson Triad,17.1839
+max-height,wedge-35-percent_sand-wedge,Callaway Chrome Tour Triple Diamond,17.176
+max-height,wedge-35-percent_sand-wedge,TaylorMade TP5,17.176
+max-height,wedge-35-percent_sand-wedge,Wilson Staff Model,17.16
+max-height,wedge-35-percent_sand-wedge,Mizuno Pro X,17.16
+max-height,wedge-35-percent_sand-wedge,Mizuno Pro S,17.144
+max-height,wedge-35-percent_sand-wedge,Srixon Z-STAR DIVIDE,17.1279
+max-height,wedge-35-percent_sand-wedge,Bridgestone TOUR B RXS,17.104
+max-height,wedge-35-percent_sand-wedge,Callaway Chrome Tour,17.0639
+max-height,wedge-35-percent_sand-wedge,Srixon Z-STAR,17.0559
+max-height,wedge-35-percent_sand-wedge,Srixon Z-STAR XV,17.008
+max-height,wedge-35-percent_sand-wedge,Srixon Z-STAR DIAMOND,16.9999
+max-height,wedge-35-percent_sand-wedge,Member's Mark Pro Series 2,16.968
+max-height,wedge-35-percent_sand-wedge,Bridgestone TOUR B X,16.944
+max-height,wedge-35-percent_sand-wedge,Titleist Pro V1x Left Dash,16.88
+max-height,wedge-35-percent_sand-wedge,Callaway Chrome Tour X,16.88
+max-height,wedge-35-percent_sand-wedge,Titleist Pro V1x,16.816
+max-height,wedge-35-percent_sand-wedge,Bridgestone TOUR B XS,16.7599
+max-height,wedge-full_sand-wedge,Vice Pro Plus,69.0651
+max-height,wedge-full_sand-wedge,Callaway Supersoft,68.826
+max-height,wedge-full_sand-wedge,TaylorMade Tour Response,68.1738
+max-height,wedge-full_sand-wedge,Titleist TruFeel,67.7311
+max-height,wedge-full_sand-wedge,Bridgestone TOUR B X,67.4731
+max-height,wedge-full_sand-wedge,Srixon Q-STAR ULTISPEED,67.2687
+max-height,wedge-full_sand-wedge,Srixon SOFT FEEL,66.4085
+max-height,wedge-full_sand-wedge,Mizuno Pro X,66.0644
+max-height,wedge-full_sand-wedge,Vice Pro Air,65.9462
+max-height,wedge-full_sand-wedge,Titleist Pro V1x Left Dash,65.9354
+max-height,wedge-full_sand-wedge,Pinnacle Rush,65.7849
+max-height,wedge-full_sand-wedge,Callaway ERC Soft,65.7741
+max-height,wedge-full_sand-wedge,Titleist AVX,65.5376
+max-height,wedge-full_sand-wedge,Srixon Q-STAR TOUR,65.2795
+max-height,wedge-full_sand-wedge,Titleist Pro V1,64.9032
+max-height,wedge-full_sand-wedge,Bridgestone TOUR B RX,64.6343
+max-height,wedge-full_sand-wedge,Callaway Chrome Tour Triple Diamond,64.5806
+max-height,wedge-full_sand-wedge,Titleist Tour Soft,64.5591
+max-height,wedge-full_sand-wedge,Maxfli Tour S,64.5483
+max-height,wedge-full_sand-wedge,TaylorMade TP5x,64.4731
+max-height,wedge-full_sand-wedge,PXG Xtreme Tour X,64.4408
+max-height,wedge-full_sand-wedge,Wilson Staff Model,64.3978
+max-height,wedge-full_sand-wedge,Titleist Pro V1x,63.8494
+max-height,wedge-full_sand-wedge,Titleist Velocity,63.7526
+max-height,wedge-full_sand-wedge,TaylorMade SpeedSoft,63.7419
+max-height,wedge-full_sand-wedge,Maxfli Tour X,63.7419
+max-height,wedge-full_sand-wedge,Wilson Triad,63.6236
+max-height,wedge-full_sand-wedge,Maxfli Tour,63.5698
+max-height,wedge-full_sand-wedge,Vice Pro,63.4731
+max-height,wedge-full_sand-wedge,Wilson Staff Model X,63.43
+max-height,wedge-full_sand-wedge,Callaway Chrome Soft,63.3548
+max-height,wedge-full_sand-wedge,Mizuno Pro S,63.3225
+max-height,wedge-full_sand-wedge,Bridgestone TOUR B RXS,63.3225
+max-height,wedge-full_sand-wedge,Srixon Z-STAR DIAMOND,63.2795
+max-height,wedge-full_sand-wedge,Srixon Z-STAR DIVIDE,63.172
+max-height,wedge-full_sand-wedge,Srixon Z-STAR,63.0107
+max-height,wedge-full_sand-wedge,PXG Xtreme Tour,62.9999
+max-height,wedge-full_sand-wedge,TaylorMade TP5,62.9784
+max-height,wedge-full_sand-wedge,Srixon Z-STAR XV,62.7204
+max-height,wedge-full_sand-wedge,Member's Mark Pro Series 2,62.6881
+max-height,wedge-full_sand-wedge,Callaway Chrome Tour,62.5698
+max-height,wedge-full_sand-wedge,Bridgestone TOUR B XS,62.3978
+max-height,wedge-full_sand-wedge,Kirkland Performance+ v3.5,62.0322
+max-height,wedge-full_sand-wedge,Callaway Chrome Tour X,61.9569
+spin,slow_driver,Callaway Chrome Tour X,3490.2691
+spin,slow_driver,TaylorMade TP5,3326.7518
+spin,slow_driver,Bridgestone TOUR B X,3326.7518
+spin,slow_driver,Srixon Z-STAR DIAMOND,3323.9349
+spin,slow_driver,Bridgestone TOUR B XS,3312.6673
+spin,slow_driver,TaylorMade TP5x,3295.8247
+spin,slow_driver,Wilson Staff Model X,3293.0469
+spin,slow_driver,Srixon Z-STAR XV,3288.8802
+spin,slow_driver,Mizuno Pro X,3277.7691
+spin,slow_driver,Vice Pro Plus,3248.6024
+spin,slow_driver,Maxfli Tour X,3244.4358
+spin,slow_driver,Titleist Pro V1x,3243.0469
+spin,slow_driver,Titleist Tour Soft,3231.9358
+spin,slow_driver,Srixon Z-STAR,3230.5469
+spin,slow_driver,Wilson Staff Model,3204.158
+spin,slow_driver,Titleist Velocity,3204.158
+spin,slow_driver,Bridgestone TOUR B RX,3164.7799
+spin,slow_driver,Callaway Chrome Tour,3152.1039
+spin,slow_driver,Callaway Chrome Tour Triple Diamond,3138.0194
+spin,slow_driver,Pinnacle Rush,3126.7518
+spin,slow_driver,Titleist Pro V1,3119.7095
+spin,slow_driver,Member's Mark Pro Series 2,3107.0335
+spin,slow_driver,Srixon Z-STAR DIVIDE,3087.3151
+spin,slow_driver,PXG Xtreme Tour X,3071.8222
+spin,slow_driver,Vice Pro,3067.5968
+spin,slow_driver,Titleist Pro V1x Left Dash,3035.2025
+spin,slow_driver,Titleist AVX,3032.3856
+spin,slow_driver,Mizuno Pro S,3015.4842
+spin,slow_driver,Kirkland Performance+ v3.5,3008.4419
+spin,slow_driver,Callaway ERC Soft,3005.625
+spin,slow_driver,Wilson Triad,3002.8081
+spin,slow_driver,PXG Xtreme Tour,2994.4358
+spin,slow_driver,Bridgestone TOUR B RXS,2993.0469
+spin,slow_driver,Maxfli Tour,2956.9358
+spin,slow_driver,Callaway Chrome Soft,2949.9913
+spin,slow_driver,Srixon Q-STAR ULTISPEED,2943.0469
+spin,slow_driver,Titleist TruFeel,2909.7135
+spin,slow_driver,Srixon Q-STAR TOUR,2905.5469
+spin,slow_driver,Maxfli Tour S,2857.7377
+spin,slow_driver,Vice Pro Air,2856.3292
+spin,slow_driver,TaylorMade SpeedSoft,2768.0469
+spin,slow_driver,Srixon SOFT FEEL,2761.1024
+spin,slow_driver,TaylorMade Tour Response,2740.2691
+spin,slow_driver,Callaway Supersoft,2588.7236
+spin,slow_mid-iron,Titleist Tour Soft,13176870.5699
+spin,slow_mid-iron,Srixon Z-STAR DIAMOND,5419.5956
+spin,slow_mid-iron,Callaway Chrome Tour X,5349.0074
+spin,slow_mid-iron,Titleist Pro V1x,5341.1642
+spin,slow_mid-iron,Srixon Z-STAR,5327.4387
+spin,slow_mid-iron,Pinnacle Rush,5250.9681
+spin,slow_mid-iron,Srixon Z-STAR XV,5164.6936
+spin,slow_mid-iron,Wilson Staff Model X,5127.4387
+spin,slow_mid-iron,Srixon Z-STAR DIVIDE,5025.9875
+spin,slow_mid-iron,Bridgestone TOUR B XS,5025.9875
+spin,slow_mid-iron,Titleist Pro V1,5017.9875
+spin,slow_mid-iron,Titleist Velocity,4996.0662
+spin,slow_mid-iron,Wilson Staff Model,4903.9093
+spin,slow_mid-iron,Kirkland Performance+ v3.5,4898.027
+spin,slow_mid-iron,Titleist TruFeel,4872.5368
+spin,slow_mid-iron,Vice Pro Plus,4847.0466
+spin,slow_mid-iron,Bridgestone TOUR B X,4847.0466
+spin,slow_mid-iron,Mizuno Pro X,4831.3603
+spin,slow_mid-iron,PXG Xtreme Tour X,4813.7132
+spin,slow_mid-iron,Srixon Q-STAR ULTISPEED,4798.027
+spin,slow_mid-iron,TaylorMade TP5,4796.0662
+spin,slow_mid-iron,Maxfli Tour,4778.4191
+spin,slow_mid-iron,Maxfli Tour X,4764.6936
+spin,slow_mid-iron,Callaway Supersoft,4760.7721
+spin,slow_mid-iron,Callaway Chrome Tour,4735.2819
+spin,slow_mid-iron,Srixon SOFT FEEL,4719.5956
+spin,slow_mid-iron,Bridgestone TOUR B RXS,4707.8309
+spin,slow_mid-iron,Srixon Q-STAR TOUR,4703.9093
+spin,slow_mid-iron,TaylorMade TP5x,4696.0662
+spin,slow_mid-iron,TaylorMade SpeedSoft,4666.6544
+spin,slow_mid-iron,PXG Xtreme Tour,4593.9875
+spin,slow_mid-iron,Callaway Chrome Tour Triple Diamond,4573.9875
+spin,slow_mid-iron,Titleist Pro V1x Left Dash,4567.9875
+spin,slow_mid-iron,Titleist AVX,4482.3407
+spin,slow_mid-iron,Callaway Chrome Soft,4460.7721
+spin,slow_mid-iron,Vice Pro,4456.8505
+spin,slow_mid-iron,Wilson Triad,4447.0466
+spin,slow_mid-iron,Bridgestone TOUR B RX,4441.1642
+spin,slow_mid-iron,Member's Mark Pro Series 2,4380.3799
+spin,slow_mid-iron,Maxfli Tour S,4352.9289
+spin,slow_mid-iron,Mizuno Pro S,4329.3995
+spin,slow_mid-iron,Vice Pro Air,4323.5172
+spin,slow_mid-iron,Callaway ERC Soft,4292.1446
+spin,slow_mid-iron,TaylorMade Tour Response,4264.6936
+spin,wedge-35-percent_sand-wedge,TaylorMade TP5,6033.2917
+spin,wedge-35-percent_sand-wedge,Bridgestone TOUR B XS,5999.9614
+spin,wedge-35-percent_sand-wedge,Wilson Staff Model X,5993.7886
+spin,wedge-35-percent_sand-wedge,Callaway Chrome Tour X,5956.7515
+spin,wedge-35-percent_sand-wedge,Maxfli Tour X,5950.5787
+spin,wedge-35-percent_sand-wedge,Wilson Staff Model,5938.233
+spin,wedge-35-percent_sand-wedge,Srixon Z-STAR DIAMOND,5901.196
+spin,wedge-35-percent_sand-wedge,Titleist Pro V1x,5870.3318
+spin,wedge-35-percent_sand-wedge,Bridgestone TOUR B X,5851.8133
+spin,wedge-35-percent_sand-wedge,Srixon Z-STAR,5839.4676
+spin,wedge-35-percent_sand-wedge,Srixon Z-STAR XV,5839.4676
+spin,wedge-35-percent_sand-wedge,Vice Pro Plus,5827.1219
+spin,wedge-35-percent_sand-wedge,Srixon Z-STAR DIVIDE,5820.9491
+spin,wedge-35-percent_sand-wedge,TaylorMade TP5x,5814.7762
+spin,wedge-35-percent_sand-wedge,Maxfli Tour,5796.2577
+spin,wedge-35-percent_sand-wedge,Vice Pro,5771.5664
+spin,wedge-35-percent_sand-wedge,Wilson Triad,5746.875
+spin,wedge-35-percent_sand-wedge,Callaway Chrome Tour,5734.5293
+spin,wedge-35-percent_sand-wedge,Bridgestone TOUR B RXS,5716.0108
+spin,wedge-35-percent_sand-wedge,Bridgestone TOUR B RX,5716.0108
+spin,wedge-35-percent_sand-wedge,Titleist Pro V1x Left Dash,5697.4923
+spin,wedge-35-percent_sand-wedge,Titleist Pro V1,5691.3194
+spin,wedge-35-percent_sand-wedge,PXG Xtreme Tour X,5685.1466
+spin,wedge-35-percent_sand-wedge,Callaway Chrome Tour Triple Diamond,5654.2824
+spin,wedge-35-percent_sand-wedge,Mizuno Pro X,5641.9367
+spin,wedge-35-percent_sand-wedge,PXG Xtreme Tour,5635.7639
+spin,wedge-35-percent_sand-wedge,Titleist AVX,5629.591
+spin,wedge-35-percent_sand-wedge,Srixon Q-STAR TOUR,5623.4182
+spin,wedge-35-percent_sand-wedge,Callaway Chrome Soft,5592.554
+spin,wedge-35-percent_sand-wedge,Vice Pro Air,5592.554
+spin,wedge-35-percent_sand-wedge,TaylorMade Tour Response,5586.3812
+spin,wedge-35-percent_sand-wedge,Maxfli Tour S,5580.2083
+spin,wedge-35-percent_sand-wedge,Member's Mark Pro Series 2,5580.2083
+spin,wedge-35-percent_sand-wedge,Kirkland Performance+ v3.5,5580.2083
+spin,wedge-35-percent_sand-wedge,Mizuno Pro S,5493.7886
+spin,wedge-35-percent_sand-wedge,Callaway ERC Soft,5191.3194
+spin,wedge-35-percent_sand-wedge,Srixon SOFT FEEL,4623.4182
+spin,wedge-35-percent_sand-wedge,Titleist Tour Soft,4580.2083
+spin,wedge-35-percent_sand-wedge,Callaway Supersoft,4382.6775
+spin,wedge-35-percent_sand-wedge,Srixon Q-STAR ULTISPEED,4364.159
+spin,wedge-35-percent_sand-wedge,Titleist TruFeel,4197.4923
+spin,wedge-35-percent_sand-wedge,Pinnacle Rush,3228.3565
+spin,wedge-35-percent_sand-wedge,TaylorMade SpeedSoft,3172.8009
+spin,wedge-35-percent_sand-wedge,Titleist Velocity,2060.9375
+spin,wedge-full_sand-wedge,Callaway Chrome Tour X,10146.9729
+spin,wedge-full_sand-wedge,Wilson Staff Model X,9845.7681
+spin,wedge-full_sand-wedge,Kirkland Performance+ v3.5,9828.9006
+spin,wedge-full_sand-wedge,Srixon Z-STAR DIAMOND,9771.0693
+spin,wedge-full_sand-wedge,TaylorMade TP5,9771.0693
+spin,wedge-full_sand-wedge,Titleist Tour Soft,9763.8404
+spin,wedge-full_sand-wedge,Maxfli Tour X,9749.3825
+spin,wedge-full_sand-wedge,Srixon Z-STAR,9744.5633
+spin,wedge-full_sand-wedge,Bridgestone TOUR B XS,9701.1898
+spin,wedge-full_sand-wedge,Srixon Z-STAR XV,9701.1898
+spin,wedge-full_sand-wedge,Callaway Chrome Tour,9679.503
+spin,wedge-full_sand-wedge,Titleist Pro V1x,9672.2741
+spin,wedge-full_sand-wedge,Srixon Z-STAR DIVIDE,9602.3946
+spin,wedge-full_sand-wedge,TaylorMade TP5x,9578.2982
+spin,wedge-full_sand-wedge,Callaway Chrome Soft,9573.4789
+spin,wedge-full_sand-wedge,Wilson Triad,9539.744
+spin,wedge-full_sand-wedge,Bridgestone TOUR B RXS,9518.0572
+spin,wedge-full_sand-wedge,Wilson Staff Model,9489.1416
+spin,wedge-full_sand-wedge,PXG Xtreme Tour,9484.3223
+spin,wedge-full_sand-wedge,Callaway Chrome Tour Triple Diamond,9460.2259
+spin,wedge-full_sand-wedge,Maxfli Tour,9407.2139
+spin,wedge-full_sand-wedge,Titleist Velocity,9395.1657
+spin,wedge-full_sand-wedge,Member's Mark Pro Series 2,9383.1175
+spin,wedge-full_sand-wedge,PXG Xtreme Tour X,9354.2018
+spin,wedge-full_sand-wedge,Titleist Pro V1,9322.8765
+spin,wedge-full_sand-wedge,Vice Pro,9315.6476
+spin,wedge-full_sand-wedge,Srixon Q-STAR TOUR,9267.4548
+spin,wedge-full_sand-wedge,Pinnacle Rush,9265.0452
+spin,wedge-full_sand-wedge,Titleist AVX,9260.2259
+spin,wedge-full_sand-wedge,Callaway ERC Soft,9257.8163
+spin,wedge-full_sand-wedge,Maxfli Tour S,9224.0813
+spin,wedge-full_sand-wedge,TaylorMade SpeedSoft,9178.2982
+spin,wedge-full_sand-wedge,Mizuno Pro S,9142.1536
+spin,wedge-full_sand-wedge,Titleist TruFeel,9101.1898
+spin,wedge-full_sand-wedge,Srixon Q-STAR ULTISPEED,9045.7681
+spin,wedge-full_sand-wedge,Srixon SOFT FEEL,9038.5392
+spin,wedge-full_sand-wedge,Titleist Pro V1x Left Dash,9009.6235
+spin,wedge-full_sand-wedge,Bridgestone TOUR B RX,9002.3946
+spin,wedge-full_sand-wedge,TaylorMade Tour Response,8983.1175
+spin,wedge-full_sand-wedge,Callaway Supersoft,8932.5151
+spin,wedge-full_sand-wedge,Vice Pro Air,8896.3705
+spin,wedge-full_sand-wedge,Mizuno Pro X,8862.6355
+spin,wedge-full_sand-wedge,Bridgestone TOUR B X,8685.6994
+spin,wedge-full_sand-wedge,Vice Pro Plus,8614.2708
+total,slow_driver,Callaway Chrome Tour Triple Diamond,224.2363
+total,slow_driver,Srixon Q-STAR ULTISPEED,223.9258
+total,slow_driver,Callaway Supersoft,223.9073
+total,slow_driver,Titleist TruFeel,223.4073
+total,slow_driver,PXG Xtreme Tour X,223.148
+total,slow_driver,Maxfli Tour S,222.5635
+total,slow_driver,Titleist AVX,222.4726
+total,slow_driver,Titleist Pro V1,222.3453
+total,slow_driver,Titleist Velocity,222.109
+total,slow_driver,Wilson Staff Model X,222.0362
+total,slow_driver,Pinnacle Rush,222.0362
+total,slow_driver,Titleist Tour Soft,221.9073
+total,slow_driver,Titleist Pro V1x Left Dash,221.8332
+total,slow_driver,Bridgestone TOUR B RXS,221.3888
+total,slow_driver,Callaway ERC Soft,221.2962
+total,slow_driver,Srixon Z-STAR DIAMOND,221.2777
+total,slow_driver,Callaway Chrome Tour,221.0554
+total,slow_driver,Wilson Triad,220.8726
+total,slow_driver,Srixon SOFT FEEL,220.7635
+total,slow_driver,Mizuno Pro X,220.6544
+total,slow_driver,Maxfli Tour X,220.509
+total,slow_driver,PXG Xtreme Tour,220.509
+total,slow_driver,TaylorMade SpeedSoft,220.4908
+total,slow_driver,Mizuno Pro S,220.1999
+total,slow_driver,Callaway Chrome Soft,220.1999
+total,slow_driver,Titleist Pro V1x,219.7221
+total,slow_driver,Callaway Chrome Tour X,219.648
+total,slow_driver,Bridgestone TOUR B RX,219.611
+total,slow_driver,Bridgestone TOUR B X,219.4628
+total,slow_driver,Wilson Staff Model,219.2221
+total,slow_driver,Srixon Z-STAR XV,218.9635
+total,slow_driver,Vice Pro,218.9272
+total,slow_driver,Srixon Z-STAR,218.8908
+total,slow_driver,Kirkland Performance+ v3.5,218.8544
+total,slow_driver,Srixon Q-STAR TOUR,218.5817
+total,slow_driver,Vice Pro Plus,218.5453
+total,slow_driver,Vice Pro Air,218.5272
+total,slow_driver,Maxfli Tour,218.0726
+total,slow_driver,TaylorMade Tour Response,217.6666
+total,slow_driver,TaylorMade TP5x,217.4443
+total,slow_driver,Bridgestone TOUR B XS,217.1295
+total,slow_driver,Srixon Z-STAR DIVIDE,216.109
+total,slow_driver,Member's Mark Pro Series 2,215.6851
+total,slow_driver,TaylorMade TP5,212.2363
+total,slow_mid-iron,Vice Pro Plus,134.1175
+total,slow_mid-iron,Titleist Pro V1x Left Dash,134.0783
+total,slow_mid-iron,Callaway ERC Soft,133.9018
+total,slow_mid-iron,Bridgestone TOUR B X,133.843
+total,slow_mid-iron,Maxfli Tour,133.3136
+total,slow_mid-iron,Wilson Staff Model X,133.2156
+total,slow_mid-iron,Member's Mark Pro Series 2,132.673
+total,slow_mid-iron,PXG Xtreme Tour X,132.596
+total,slow_mid-iron,Mizuno Pro S,132.596
+total,slow_mid-iron,Bridgestone TOUR B RX,132.4037
+total,slow_mid-iron,TaylorMade SpeedSoft,132.346
+total,slow_mid-iron,Callaway Chrome Tour Triple Diamond,131.9999
+total,slow_mid-iron,Callaway Supersoft,131.8822
+total,slow_mid-iron,Titleist TruFeel,131.7058
+total,slow_mid-iron,Srixon Z-STAR DIVIDE,131.3528
+total,slow_mid-iron,Srixon Z-STAR,131.1763
+total,slow_mid-iron,Srixon Q-STAR ULTISPEED,131.1371
+total,slow_mid-iron,Srixon SOFT FEEL,131.1371
+total,slow_mid-iron,Titleist AVX,131.0587
+total,slow_mid-iron,Srixon Z-STAR DIAMOND,130.9018
+total,slow_mid-iron,Wilson Staff Model,130.7254
+total,slow_mid-iron,Maxfli Tour X,130.5097
+total,slow_mid-iron,Titleist Pro V1,130.2352
+total,slow_mid-iron,Titleist Velocity,129.6077
+total,slow_mid-iron,Callaway Chrome Tour,129.5685
+total,slow_mid-iron,PXG Xtreme Tour,129.4705
+total,slow_mid-iron,TaylorMade TP5x,129.4313
+total,slow_mid-iron,Vice Pro,129.4313
+total,slow_mid-iron,Vice Pro Air,129.3332
+total,slow_mid-iron,Wilson Triad,129.0587
+total,slow_mid-iron,Kirkland Performance+ v3.5,128.8234
+total,slow_mid-iron,TaylorMade Tour Response,128.7646
+total,slow_mid-iron,Callaway Chrome Soft,127.7883
+total,slow_mid-iron,TaylorMade TP5,127.7114
+total,slow_mid-iron,Pinnacle Rush,127.673
+total,slow_mid-iron,Titleist Tour Soft,127.423
+total,slow_mid-iron,Bridgestone TOUR B XS,127.0383
+total,slow_mid-iron,Mizuno Pro X,126.7646
+total,slow_mid-iron,Bridgestone TOUR B RXS,126.5685
+total,slow_mid-iron,Srixon Z-STAR XV,126.1763
+total,slow_mid-iron,Srixon Q-STAR TOUR,125.1371
+total,slow_mid-iron,Callaway Chrome Tour X,124.6469
+total,slow_mid-iron,Maxfli Tour S,124.0391
+total,slow_mid-iron,Titleist Pro V1x,121.353
+total,wedge-35-percent_sand-wedge,Titleist Velocity,43.9945
+total,wedge-35-percent_sand-wedge,Srixon Q-STAR ULTISPEED,43.4021
+total,wedge-35-percent_sand-wedge,Titleist Tour Soft,43.3478
+total,wedge-35-percent_sand-wedge,Titleist Pro V1,43.25
+total,wedge-35-percent_sand-wedge,Callaway Supersoft,43.25
+total,wedge-35-percent_sand-wedge,TaylorMade Tour Response,42.6956
+total,wedge-35-percent_sand-wedge,TaylorMade SpeedSoft,42.6956
+total,wedge-35-percent_sand-wedge,Titleist TruFeel,42.6467
+total,wedge-35-percent_sand-wedge,Pinnacle Rush,42.4945
+total,wedge-35-percent_sand-wedge,Callaway Chrome Soft,42.4945
+total,wedge-35-percent_sand-wedge,Bridgestone TOUR B RX,42.4945
+total,wedge-35-percent_sand-wedge,Srixon SOFT FEEL,42.3913
+total,wedge-35-percent_sand-wedge,Wilson Triad,42.3369
+total,wedge-35-percent_sand-wedge,Wilson Staff Model X,42.288
+total,wedge-35-percent_sand-wedge,Maxfli Tour S,42.288
+total,wedge-35-percent_sand-wedge,Bridgestone TOUR B RXS,42.1847
+total,wedge-35-percent_sand-wedge,Vice Pro,42.1358
+total,wedge-35-percent_sand-wedge,Maxfli Tour,42.1358
+total,wedge-35-percent_sand-wedge,Vice Pro Air,42.0815
+total,wedge-35-percent_sand-wedge,TaylorMade TP5,41.9782
+total,wedge-35-percent_sand-wedge,PXG Xtreme Tour X,41.9782
+total,wedge-35-percent_sand-wedge,Callaway ERC Soft,41.9293
+total,wedge-35-percent_sand-wedge,Bridgestone TOUR B X,41.9293
+total,wedge-35-percent_sand-wedge,Srixon Z-STAR,41.875
+total,wedge-35-percent_sand-wedge,Maxfli Tour X,41.875
+total,wedge-35-percent_sand-wedge,Callaway Chrome Tour X,41.875
+total,wedge-35-percent_sand-wedge,TaylorMade TP5x,41.8261
+total,wedge-35-percent_sand-wedge,Srixon Q-STAR TOUR,41.7228
+total,wedge-35-percent_sand-wedge,Bridgestone TOUR B XS,41.5652
+total,wedge-35-percent_sand-wedge,Titleist Pro V1x,41.5163
+total,wedge-35-percent_sand-wedge,Mizuno Pro S,41.5163
+total,wedge-35-percent_sand-wedge,Callaway Chrome Tour,41.5163
+total,wedge-35-percent_sand-wedge,Wilson Staff Model,41.4619
+total,wedge-35-percent_sand-wedge,Titleist AVX,41.4619
+total,wedge-35-percent_sand-wedge,Srixon Z-STAR DIAMOND,41.4619
+total,wedge-35-percent_sand-wedge,Callaway Chrome Tour Triple Diamond,41.4619
+total,wedge-35-percent_sand-wedge,Srixon Z-STAR DIVIDE,41.3587
+total,wedge-35-percent_sand-wedge,PXG Xtreme Tour,41.3587
+total,wedge-35-percent_sand-wedge,Mizuno Pro X,41.3587
+total,wedge-35-percent_sand-wedge,Vice Pro Plus,41.3043
+total,wedge-35-percent_sand-wedge,Srixon Z-STAR XV,41.3043
+total,wedge-35-percent_sand-wedge,Kirkland Performance+ v3.5,41.0434
+total,wedge-35-percent_sand-wedge,Titleist Pro V1x Left Dash,40.9891
+total,wedge-35-percent_sand-wedge,Member's Mark Pro Series 2,40.4076
+total,wedge-full_sand-wedge,TaylorMade Tour Response,107.4999
+total,wedge-full_sand-wedge,Vice Pro Plus,106.7741
+total,wedge-full_sand-wedge,Srixon Q-STAR ULTISPEED,106.7204
+total,wedge-full_sand-wedge,Srixon SOFT FEEL,106.3763
+total,wedge-full_sand-wedge,Vice Pro Air,106.2257
+total,wedge-full_sand-wedge,Mizuno Pro X,106.1827
+total,wedge-full_sand-wedge,Bridgestone TOUR B RX,106.129
+total,wedge-full_sand-wedge,Titleist Pro V1x,105.9354
+total,wedge-full_sand-wedge,Callaway Supersoft,105.9354
+total,wedge-full_sand-wedge,Titleist TruFeel,105.7419
+total,wedge-full_sand-wedge,Wilson Triad,105.6881
+total,wedge-full_sand-wedge,Maxfli Tour,105.2903
+total,wedge-full_sand-wedge,Callaway ERC Soft,105.2903
+total,wedge-full_sand-wedge,Bridgestone TOUR B X,104.6989
+total,wedge-full_sand-wedge,Bridgestone TOUR B RXS,104.5913
+total,wedge-full_sand-wedge,Vice Pro,104.5483
+total,wedge-full_sand-wedge,Titleist Tour Soft,104.3978
+total,wedge-full_sand-wedge,Maxfli Tour S,104.2472
+total,wedge-full_sand-wedge,Srixon Z-STAR,104.1935
+total,wedge-full_sand-wedge,PXG Xtreme Tour,104.1505
+total,wedge-full_sand-wedge,Titleist Pro V1,104.0967
+total,wedge-full_sand-wedge,Srixon Q-STAR TOUR,104.0967
+total,wedge-full_sand-wedge,Pinnacle Rush,104.0429
+total,wedge-full_sand-wedge,Titleist AVX,103.9999
+total,wedge-full_sand-wedge,Callaway Chrome Tour Triple Diamond,103.8404
+total,wedge-full_sand-wedge,Titleist Pro V1x Left Dash,103.7978
+total,wedge-full_sand-wedge,TaylorMade TP5x,103.6914
+total,wedge-full_sand-wedge,Srixon Z-STAR DIVIDE,103.6914
+total,wedge-full_sand-wedge,PXG Xtreme Tour X,103.6489
+total,wedge-full_sand-wedge,Callaway Chrome Tour X,103.6489
+total,wedge-full_sand-wedge,TaylorMade TP5,103.5425
+total,wedge-full_sand-wedge,Maxfli Tour X,103.5425
+total,wedge-full_sand-wedge,Bridgestone TOUR B XS,103.5425
+total,wedge-full_sand-wedge,Srixon Z-STAR DIAMOND,103.4999
+total,wedge-full_sand-wedge,Member's Mark Pro Series 2,103.4999
+total,wedge-full_sand-wedge,Kirkland Performance+ v3.5,103.4467
+total,wedge-full_sand-wedge,Srixon Z-STAR XV,103.3936
+total,wedge-full_sand-wedge,Wilson Staff Model,103.2021
+total,wedge-full_sand-wedge,Titleist Velocity,102.8494
+total,wedge-full_sand-wedge,Mizuno Pro S,102.7956
+total,wedge-full_sand-wedge,Callaway Chrome Soft,102.7956
+total,wedge-full_sand-wedge,Callaway Chrome Tour,102.6881
+total,wedge-full_sand-wedge,Wilson Staff Model X,102.6451
+total,wedge-full_sand-wedge,TaylorMade SpeedSoft,100.4838
