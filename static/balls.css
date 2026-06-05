@@ -1,0 +1,199 @@
+/* Ball Comparison Plugin — styles */
+
+.blls-loading {
+  margin-top: 48px;
+  text-align: center;
+  color: var(--ps-ink-2);
+  font-size: 14px;
+}
+
+.blls-error {
+  margin-top: 48px;
+  text-align: center;
+  color: var(--ps-warn);
+  font-size: 14px;
+}
+
+.blls-empty {
+  margin-top: 32px;
+  text-align: center;
+  color: var(--ps-ink-2);
+  font-size: 14px;
+  padding: 48px 0;
+}
+
+.blls-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 16px;
+  margin-top: 20px;
+  padding: 16px;
+  background: var(--ps-surf-1);
+  border-radius: 8px;
+}
+
+.blls-ball-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.blls-ball-selector label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--ps-ink-2);
+  font-weight: 600;
+}
+
+.blls-ball-selector select {
+  min-width: 240px;
+  padding: 6px 10px;
+  border: 1px solid var(--ps-bord);
+  border-radius: 6px;
+  background: var(--ps-surf-2);
+  color: var(--ps-ink-1);
+  font-size: 13px;
+}
+
+.blls-condition-tabs {
+  display: flex;
+  gap: 2px;
+  margin-top: 16px;
+  background: var(--ps-surf-1);
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.blls-tab {
+  flex: 1;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--ps-ink-2);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.15s, color 0.15s;
+}
+
+.blls-tab:hover {
+  color: var(--ps-ink-1);
+  background: var(--ps-surf-2);
+}
+
+.blls-tab--active {
+  background: var(--ps-surf-3);
+  color: var(--ps-ink-1);
+  font-weight: 600;
+}
+
+.blls-table-wrapper {
+  margin-top: 16px;
+  overflow-x: auto;
+}
+
+.blls-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.blls-table th {
+  text-align: left;
+  padding: 10px 12px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--ps-ink-2);
+  font-weight: 600;
+  border-bottom: 1px solid var(--ps-bord);
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+}
+
+.blls-table th:hover {
+  color: var(--ps-ink-1);
+}
+
+.blls-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--ps-bord);
+  vertical-align: middle;
+}
+
+.blls-table tr:last-child td {
+  border-bottom: none;
+}
+
+.blls-table tr:hover td {
+  background: var(--ps-surf-1);
+}
+
+.blls-metric-name {
+  color: var(--ps-ink-2);
+  font-weight: 500;
+  white-space: nowrap;
+  width: 1%;
+}
+
+.blls-value {
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+.blls-bar-cell {
+  width: 30%;
+}
+
+.blls-bar {
+  display: inline-block;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--ps-green);
+  opacity: 0.5;
+  min-width: 2px;
+  vertical-align: middle;
+}
+
+.blls-delta {
+  color: var(--ps-green);
+  font-weight: 600;
+}
+
+.blls-delta--neg {
+  color: var(--ps-warn);
+}
+
+.blls-delta--zero {
+  color: var(--ps-ink-2);
+}
+
+.blls-table th.blls-sorted {
+  color: var(--ps-green);
+}
+
+.blls-compare-header {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: var(--ps-surf-1);
+  border-radius: 8px;
+  align-items: center;
+}
+
+.blls-compare-header span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ps-ink-1);
+}
+
+.blls-compare-header .blls-vs {
+  color: var(--ps-ink-2);
+  font-weight: 400;
+}

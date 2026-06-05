@@ -1,0 +1,1 @@
+# No external dependencies — uses Flask from the parent app and Python stdlib only
