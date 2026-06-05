@@ -10,7 +10,8 @@
     activeCondition: 'slow_driver',
     sortBy: null,
     sortAsc: true,
-    compareMode: false,
+    mode: 'rankings',
+    rankingMetric: null,
   };
 
   function setState(update) {
@@ -34,6 +35,8 @@
         state.meta = { balls: data.balls, conditions: data.conditions, metrics: data.metrics };
         state.data = data.rows;
         state.activeCondition = data.conditions[0] || 'slow_driver';
+        state.rankingMetric = data.metrics[0] || null;
+        state.mode = 'rankings';
         render();
       })
       .catch(function (err) {
@@ -112,13 +115,15 @@
     html += '</div>';
     html += renderConditionTabs();
 
-    if (state.compareMode && state.selectedBalls.length === 2) {
+    if (state.mode === 'compare' && state.selectedBalls.length === 2) {
       html += renderCompareHeader();
     }
 
-    if (state.selectedBalls.length === 0) {
+    if (state.mode === 'rankings') {
+      html += renderRankingsTable();
+    } else if (state.selectedBalls.length === 0) {
       html += '<div class="blls-empty">Select a ball to view performance data.</div>';
-    } else if (state.compareMode && state.selectedBalls.length === 2) {
+    } else if (state.mode === 'compare' && state.selectedBalls.length === 2) {
       html += renderCompareTable();
     } else {
       html += renderSingleTable();
@@ -128,37 +133,67 @@
     attachEvents();
   }
 
-  function renderBallSelectors() {
-    var h = '';
-    h += '<div class="blls-ball-selector">';
-    h += '  <label>Ball</label>';
-    h += '  <select id="blls-ball-1">';
-    h += '    <option value="">Select a ball...</option>';
-    state.meta.balls.forEach(function (b) {
-      var sel = state.selectedBalls[0] === b ? ' selected' : '';
-      if (state.compareMode && state.selectedBalls[1] === b) return;
-      h += '    <option value="' + escapeAttr(b) + '"' + sel + '>' + escapeHtml(b) + '</option>';
+  function renderModeButtons() {
+    var modes = [
+      { id: 'single',   label: 'Single' },
+      { id: 'compare',  label: 'Compare' },
+      { id: 'rankings', label: 'Rankings' },
+    ];
+    var h = '<div class="blls-mode-buttons">';
+    modes.forEach(function (m) {
+      var active = state.mode === m.id ? ' blls-mode--active' : '';
+      h += '<button class="blls-mode-btn' + active + '" data-mode="' + m.id + '">' + m.label + '</button>';
+    });
+    h += '</div>';
+    return h;
+  }
+
+  function renderMetricSelector() {
+    var h = '<div class="blls-ball-selector">';
+    h += '  <label>Metric</label>';
+    h += '  <select id="blls-metric">';
+    state.meta.metrics.forEach(function (m) {
+      var displayName = m.replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+      var sel = state.rankingMetric === m ? ' selected' : '';
+      h += '    <option value="' + escapeAttr(m) + '"' + sel + '>' + escapeHtml(displayName) + '</option>';
     });
     h += '  </select>';
     h += '</div>';
+    return h;
+  }
 
-    var hasTwo = state.selectedBalls.length === 2;
-    h += '<button id="blls-toggle-compare" class="ps-btn ps-btn--ghost">';
-    h += hasTwo ? 'Single' : 'Compare';
-    h += '</button>';
+  function renderBallSelectors() {
+    var h = '';
+    h += renderModeButtons();
 
-    if (state.compareMode && state.selectedBalls.length === 2) {
+    if (state.mode === 'rankings') {
+      h += renderMetricSelector();
+    } else {
       h += '<div class="blls-ball-selector">';
-      h += '  <label>vs</label>';
-      h += '  <select id="blls-ball-2">';
+      h += '  <label>Ball</label>';
+      h += '  <select id="blls-ball-1">';
       h += '    <option value="">Select a ball...</option>';
       state.meta.balls.forEach(function (b) {
-        var sel = state.selectedBalls[1] === b ? ' selected' : '';
-        if (state.selectedBalls[0] === b) return;
+        var sel = state.selectedBalls[0] === b ? ' selected' : '';
+        if (state.mode === 'compare' && state.selectedBalls[1] === b) return;
         h += '    <option value="' + escapeAttr(b) + '"' + sel + '>' + escapeHtml(b) + '</option>';
       });
       h += '  </select>';
       h += '</div>';
+
+      if (state.mode === 'compare') {
+        h += '<div class="blls-ball-selector">';
+        h += '  <label>vs</label>';
+        h += '  <select id="blls-ball-2">';
+        h += '    <option value="">Select a ball...</option>';
+        state.meta.balls.forEach(function (b) {
+          var sel = state.selectedBalls[1] === b ? ' selected' : '';
+          if (state.selectedBalls[0] === b) return;
+          h += '    <option value="' + escapeAttr(b) + '"' + sel + '>' + escapeHtml(b) + '</option>';
+        });
+        h += '  </select>';
+        h += '</div>';
+      }
     }
 
     return h;
@@ -271,6 +306,45 @@
     return h;
   }
 
+  function renderRankingsTable() {
+    var metric = state.rankingMetric;
+    if (!metric) return '<div class="blls-empty">Select a metric to rank balls.</div>';
+
+    var condition = state.activeCondition;
+    var rows = rowsForCondition(condition)
+      .filter(function (r) { return r[metric] !== undefined && r[metric] !== null; })
+      .slice()
+      .sort(function (a, b) { return b[metric] - a[metric]; });
+
+    if (rows.length === 0) return '<div class="blls-empty">No data for this condition.</div>';
+
+    var range = getMetricRange(metric, condition);
+    var metricLabel = metric.replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+
+    var h = '<div class="blls-table-wrapper"><table class="blls-table blls-rank-table">';
+    h += '<thead><tr>';
+    h += '<th class="blls-rank-col">#</th>';
+    h += '<th>Ball</th>';
+    h += '<th>' + escapeHtml(metricLabel) + '</th>';
+    h += '<th>Range</th>';
+    h += '</tr></thead><tbody>';
+
+    rows.forEach(function (r, i) {
+      var val = r[metric];
+      var bw = barWidth(val, range.min, range.max);
+      var isBest = i === 0;
+      h += '<tr class="' + (isBest ? 'blls-row--best' : '') + '">';
+      h += '<td class="blls-rank-col">' + (i + 1) + '</td>';
+      h += '<td>' + escapeHtml(r.ball) + '</td>';
+      h += '<td><span class="blls-value' + (isBest ? ' blls-value--best' : '') + '">' + fmt(val) + '</span></td>';
+      h += '<td class="blls-bar-cell"><span class="blls-bar' + (isBest ? ' blls-bar--best' : '') + '" style="width:' + bw.toFixed(0) + '%"></span></td>';
+      h += '</tr>';
+    });
+
+    h += '</tbody></table></div>';
+    return h;
+  }
+
   function attachEvents() {
     var sel1 = document.getElementById('blls-ball-1');
     if (sel1) {
@@ -284,18 +358,29 @@
     if (sel2) {
       sel2.onchange = function () {
         var val = this.value;
-        if (val) setState({ selectedBalls: [state.selectedBalls[0], val], compareMode: true });
+        if (val) setState({ selectedBalls: [state.selectedBalls[0], val] });
       };
     }
 
-    var toggle = document.getElementById('blls-toggle-compare');
-    if (toggle) {
-      toggle.onclick = function () {
-        if (state.compareMode) {
-          setState({ compareMode: false, selectedBalls: [state.selectedBalls[0]] });
-        } else if (state.selectedBalls.length === 1) {
-          setState({ compareMode: true, selectedBalls: [state.selectedBalls[0]] });
+    var modeBtns = document.querySelectorAll('.blls-mode-btn');
+    modeBtns.forEach(function (btn) {
+      btn.onclick = function () {
+        var mode = this.getAttribute('data-mode');
+        if (state.mode === mode) return;
+        if (mode === 'rankings') {
+          setState({ mode: 'rankings', selectedBalls: [], rankingMetric: state.rankingMetric || state.meta.metrics[0] });
+        } else if (mode === 'compare') {
+          setState({ mode: 'compare', selectedBalls: state.selectedBalls.length > 0 ? [state.selectedBalls[0]] : [] });
+        } else {
+          setState({ mode: 'single', selectedBalls: state.selectedBalls.length > 0 ? [state.selectedBalls[0]] : [] });
         }
+      };
+    });
+
+    var metricSel = document.getElementById('blls-metric');
+    if (metricSel) {
+      metricSel.onchange = function () {
+        setState({ rankingMetric: this.value });
       };
     }
 

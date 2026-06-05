@@ -197,3 +197,64 @@
   color: var(--ps-ink-2);
   font-weight: 400;
 }
+
+.blls-mode-buttons {
+  display: flex;
+  gap: 0;
+  align-self: flex-end;
+  border: 1px solid var(--ps-bord);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.blls-mode-btn {
+  padding: 6px 14px;
+  border: none;
+  background: transparent;
+  color: var(--ps-ink-2);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.blls-mode-btn + .blls-mode-btn {
+  border-left: 1px solid var(--ps-bord);
+}
+
+.blls-mode-btn:hover {
+  background: var(--ps-surf-2);
+  color: var(--ps-ink-1);
+}
+
+.blls-mode--active {
+  background: var(--ps-surf-3);
+  color: var(--ps-ink-1);
+  font-weight: 600;
+}
+
+.blls-rank-col {
+  width: 1%;
+  white-space: nowrap;
+  color: var(--ps-ink-2);
+  font-weight: 500;
+  text-align: center;
+}
+
+.blls-row--best td {
+  background: rgba(93, 180, 154, 0.06);
+}
+
+.blls-row--best:hover td {
+  background: rgba(93, 180, 154, 0.1);
+}
+
+.blls-value--best {
+  color: var(--ps-green);
+  font-weight: 600;
+}
+
+.blls-bar--best {
+  background: var(--ps-green);
+  opacity: 0.7;
+}
