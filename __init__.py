@@ -19,10 +19,13 @@ plugin_info = {
 def register(app):
     _parent = Path(__file__).parent
 
-    # Register pinsheet_balls subpackage in sys.modules so that
-    # blueprint.py's relative import (from .data) resolves correctly.
+    # Register pinsheet_balls as a proper package (with __path__) so that
+    # blueprint.py's from .data import resolves correctly.
+    _pkg_dir = str(_parent / "pinsheet_balls")
     _pkg_spec = importlib.util.spec_from_file_location(
-        "pinsheet_balls", str(_parent / "pinsheet_balls" / "__init__.py"),
+        "pinsheet_balls",
+        str(_parent / "pinsheet_balls" / "__init__.py"),
+        submodule_search_locations=[_pkg_dir],
     )
     _pkg_mod = importlib.util.module_from_spec(_pkg_spec)
     sys.modules["pinsheet_balls"] = _pkg_mod
