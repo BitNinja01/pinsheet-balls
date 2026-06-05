@@ -15,6 +15,8 @@
     mode: 'rankings',
     rankingMetric: null,
     singleMetric: null,
+    scatterXMetric: null,
+    scatterYMetric: null,
   };
 
   function setState(update) {
@@ -43,6 +45,8 @@
         state.activeSpeed = parsed.speed;
         state.activeShot = parsed.shot;
         state.rankingMetric = data.metrics[0] || null;
+        state.scatterXMetric = data.metrics[0] || null;
+        state.scatterYMetric = data.metrics[1] || data.metrics[0] || null;
         state.mode = 'rankings';
         render();
       })
@@ -156,13 +160,17 @@
     html += '<div class="blls-controls">';
     html += renderBallSelectors();
     html += '</div>';
-    if (state.mode !== 'matrix') html += renderConditionTabs();
+    if (state.mode !== 'matrix' && state.mode !== 'cards') html += renderConditionTabs();
 
     if (state.mode === 'compare' && state.selectedBalls.length === 2) {
       html += renderCompareHeader();
     }
 
-    if (state.mode === 'matrix') {
+    if (state.mode === 'cards') {
+      html += renderCardsView();
+    } else if (state.mode === 'scatter') {
+      html += renderScatterView();
+    } else if (state.mode === 'matrix') {
       html += renderMatrixTable();
     } else if (state.mode === 'rankings') {
       html += renderRankingsTable();
@@ -190,6 +198,8 @@
       { id: 'compare',  label: 'Compare' },
       { id: 'rankings', label: 'Rankings' },
       { id: 'matrix',   label: 'Matrix' },
+      { id: 'cards',    label: 'Cards' },
+      { id: 'scatter',  label: 'Scatter' },
     ];
     var h = '<div class="blls-mode-buttons">';
     modes.forEach(function (m) {
@@ -200,13 +210,13 @@
     return h;
   }
 
-  function renderMetricSelector() {
+  function renderMetricSelector(id, stateKey, label) {
     var h = '<div class="blls-ball-selector">';
-    h += '  <label>Metric</label>';
-    h += '  <select id="blls-metric">';
+    h += '  <label>' + escapeHtml(label) + '</label>';
+    h += '  <select id="' + escapeAttr(id) + '">';
     state.meta.metrics.forEach(function (m) {
       var displayName = m.replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
-      var sel = state.rankingMetric === m ? ' selected' : '';
+      var sel = state[stateKey] === m ? ' selected' : '';
       h += '    <option value="' + escapeAttr(m) + '"' + sel + '>' + escapeHtml(displayName) + '</option>';
     });
     h += '  </select>';
@@ -233,8 +243,11 @@
     var h = '';
     h += renderModeButtons();
 
-    if (state.mode === 'rankings' || state.mode === 'matrix') {
-      h += renderMetricSelector();
+    if (state.mode === 'scatter') {
+      h += renderMetricSelector('blls-scatter-x', 'scatterXMetric', 'X Metric');
+      h += renderMetricSelector('blls-scatter-y', 'scatterYMetric', 'Y Metric');
+    } else if (state.mode === 'rankings' || state.mode === 'matrix' || state.mode === 'cards') {
+      h += renderMetricSelector('blls-metric', 'rankingMetric', 'Metric');
     } else {
       h += '<div class="blls-ball-selector">';
       h += '  <label>Ball</label>';
@@ -512,6 +525,100 @@
     return h;
   }
 
+  function renderCardsView() {
+    var metric = state.rankingMetric;
+    if (!metric) return '<div class="blls-empty">Select a metric.</div>';
+
+    var metricLabel = metric.replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+    var h = '<div class="blls-cards-grid">';
+
+    state.meta.conditions.forEach(function (c) {
+      var condRows = rowsForCondition(c)
+        .filter(function (r) { return r[metric] !== undefined && r[metric] !== null; })
+        .slice()
+        .sort(function (a, b) { return b[metric] - a[metric]; });
+
+      if (condRows.length === 0) return;
+
+      var range = getMetricRange(metric, c);
+      var bestVal = condRows[0][metric];
+
+      h += '<div class="blls-card">';
+      h += '<div class="blls-card-header">' + escapeHtml(conditionLabel(c)) + '</div>';
+      h += '<div class="blls-card-body">';
+
+      condRows.forEach(function (r, i) {
+        var val = r[metric];
+        var bw = barWidth(val, range.min, range.max);
+        var isBest = i === 0;
+        var gap = i > 0 ? bestVal - val : 0;
+        h += '<div class="blls-card-row' + (isBest ? ' blls-row--best' : '') + '">';
+        h += '<span class="blls-card-rank">' + (i + 1) + '</span>';
+        h += '<span class="blls-card-ball">' + escapeHtml(r.ball) + '</span>';
+        h += '<span class="blls-card-val"><span class="blls-value' + (isBest ? ' blls-value--best' : '') + '">' + fmt(val) + '</span></span>';
+        h += '<span class="blls-card-gap">';
+        if (isBest) {
+          h += '<span class="blls-badge-best">\u25B2 best</span>';
+        } else {
+          h += '<span class="blls-gap">\u2212' + fmt(gap) + '</span>';
+        }
+        h += '</span>';
+        h += '<span class="blls-card-bar"><span class="blls-bar' + (isBest ? ' blls-bar--best' : '') + '" style="width:' + bw.toFixed(0) + '%"></span></span>';
+        h += '</div>';
+      });
+
+      h += '</div></div>';
+    });
+
+    h += '</div>';
+    return h;
+  }
+
+  function renderScatterView() {
+    var xMetric = state.scatterXMetric;
+    var yMetric = state.scatterYMetric;
+    if (!xMetric || !yMetric) return '<div class="blls-empty">Select X and Y metrics.</div>';
+
+    var condition = state.activeCondition;
+    var rows = rowsForCondition(condition);
+    if (rows.length === 0) return '<div class="blls-empty">No data for this condition.</div>';
+
+    var xRange = getMetricRange(xMetric, condition);
+    var yRange = getMetricRange(yMetric, condition);
+
+    var W = 700, H = 420;
+    var PAD = { top: 16, right: 16, bottom: 40, left: 56 };
+    var plotW = W - PAD.left - PAD.right;
+    var plotH = H - PAD.top - PAD.bottom;
+
+    function scaleX(v) { return PAD.left + ((v - xRange.min) / ((xRange.max - xRange.min) || 1)) * plotW; }
+    function scaleY(v) { return PAD.top + plotH - ((v - yRange.min) / ((yRange.max - yRange.min) || 1)) * plotH; }
+
+    var xLabel = xMetric.replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+    var yLabel = yMetric.replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+
+    var h = '<div class="blls-scatter-container">';
+    h += '<svg width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '" class="blls-scatter-svg">';
+
+    h += '<line x1="' + PAD.left + '" y1="' + PAD.top + '" x2="' + PAD.left + '" y2="' + (PAD.top + plotH) + '" stroke="var(--ps-bord)" />';
+    h += '<line x1="' + PAD.left + '" y1="' + (PAD.top + plotH) + '" x2="' + (PAD.left + plotW) + '" y2="' + (PAD.top + plotH) + '" stroke="var(--ps-bord)" />';
+
+    h += '<text x="' + (PAD.left + plotW / 2) + '" y="' + (H - 6) + '" text-anchor="middle" font-size="11" fill="var(--ps-ink-2)" font-family="var(--ps-font-mono, monospace)">' + escapeHtml(xLabel) + '</text>';
+    h += '<text x="12" y="' + (PAD.top + plotH / 2) + '" text-anchor="middle" font-size="11" fill="var(--ps-ink-2)" font-family="var(--ps-font-mono, monospace)" transform="rotate(-90, 12, ' + (PAD.top + plotH / 2) + ')">' + escapeHtml(yLabel) + '</text>';
+
+    rows.forEach(function (r) {
+      var xv = r[xMetric], yv = r[yMetric];
+      if (xv === undefined || yv === undefined) return;
+      var cx = scaleX(xv), cy = scaleY(yv);
+      h += '<circle cx="' + cx + '" cy="' + cy + '" r="4" fill="var(--ps-green)" opacity="0.55" class="blls-scatter-dot" data-ball="' + escapeAttr(r.ball) + '" />';
+    });
+
+    h += '</svg>';
+    h += '<div class="blls-scatter-tooltip" id="blls-scatter-tooltip"></div>';
+    h += '</div>';
+    return h;
+  }
+
   function attachEvents() {
     var sel1 = document.getElementById('blls-ball-1');
     if (sel1) {
@@ -534,8 +641,10 @@
       btn.onclick = function () {
         var mode = this.getAttribute('data-mode');
         if (state.mode === mode) return;
-        if (mode === 'rankings' || mode === 'matrix') {
+        if (mode === 'rankings' || mode === 'matrix' || mode === 'cards') {
           setState({ mode: mode, selectedBalls: [], rankingMetric: state.rankingMetric || state.meta.metrics[0] });
+        } else if (mode === 'scatter') {
+          setState({ mode: 'scatter', selectedBalls: [] });
         } else if (mode === 'compare') {
           setState({ mode: 'compare', selectedBalls: state.selectedBalls.length > 0 ? [state.selectedBalls[0]] : [] });
         } else {
@@ -558,6 +667,20 @@
       };
     }
 
+    var scatterXSel = document.getElementById('blls-scatter-x');
+    if (scatterXSel) {
+      scatterXSel.onchange = function () {
+        setState({ scatterXMetric: this.value });
+      };
+    }
+
+    var scatterYSel = document.getElementById('blls-scatter-y');
+    if (scatterYSel) {
+      scatterYSel.onchange = function () {
+        setState({ scatterYMetric: this.value });
+      };
+    }
+
     var condContainer = document.getElementById('balls-content').querySelector('.blls-condition-tabs');
     if (condContainer) {
       condContainer.onclick = function (e) {
@@ -576,6 +699,27 @@
           return;
         }
       };
+    }
+
+    // Scatter tooltip
+    var scatterSvg = document.querySelector('.blls-scatter-svg');
+    if (scatterSvg) {
+      scatterSvg.addEventListener('mousemove', function (e) {
+        var target = e.target;
+        if (target.tagName === 'circle' && target.getAttribute('data-ball')) {
+          var tooltip = document.getElementById('blls-scatter-tooltip');
+          if (tooltip) {
+            tooltip.textContent = target.getAttribute('data-ball');
+            tooltip.style.display = 'block';
+            tooltip.style.left = (e.pageX + 12) + 'px';
+            tooltip.style.top = (e.pageY - 28) + 'px';
+          }
+        }
+      });
+      scatterSvg.addEventListener('mouseleave', function () {
+        var tooltip = document.getElementById('blls-scatter-tooltip');
+        if (tooltip) tooltip.style.display = 'none';
+      });
     }
 
     // Sort toggle on ball column header

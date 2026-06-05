@@ -332,3 +332,113 @@
 .blls-cell--best:hover {
   background: rgba(93, 180, 154, 0.1);
 }
+
+.blls-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.blls-card {
+  background: var(--ps-surf-1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.blls-card-header {
+  padding: 10px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--ps-ink-2);
+  border-bottom: 1px solid var(--ps-bord);
+}
+
+.blls-card-body {
+  padding: 4px 0;
+}
+
+.blls-card-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  font-size: 12px;
+}
+
+.blls-card-row:hover {
+  background: var(--ps-surf-2);
+}
+
+.blls-card-rank {
+  width: 20px;
+  text-align: right;
+  color: var(--ps-ink-2);
+  font-weight: 500;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.blls-card-ball {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.blls-card-val {
+  flex-shrink: 0;
+  text-align: right;
+  min-width: 48px;
+}
+
+.blls-card-gap {
+  flex-shrink: 0;
+  text-align: right;
+  min-width: 60px;
+}
+
+.blls-card-bar {
+  width: 50px;
+  flex-shrink: 0;
+}
+
+.blls-scatter-container {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.blls-scatter-svg {
+  background: var(--ps-surf-1);
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+}
+
+.blls-scatter-dot {
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.blls-scatter-dot:hover {
+  opacity: 1;
+  r: 6;
+}
+
+.blls-scatter-tooltip {
+  display: none;
+  position: fixed;
+  background: var(--ps-ink-1);
+  color: var(--ps-surf-1);
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 100;
+}
