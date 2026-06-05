@@ -7,7 +7,7 @@ from source.request_data import base_context
 
 from .data import load_ball_data
 
-bp = Blueprint("balls", __name__, template_folder="templates")
+bp = Blueprint("balls", __name__)
 
 _cache: dict | None = None
 

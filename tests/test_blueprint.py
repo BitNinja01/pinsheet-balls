@@ -1,20 +1,36 @@
 """Tests for blueprint.py — Flask routes."""
+from pathlib import Path
+
+import jinja2
 import pytest
+from flask import Flask
+
+from pinsheet_balls.blueprint import bp as _bp
+
+
+def _make_app():
+    app = Flask(__name__)
+    app.root_path = str(Path(__file__).resolve().parent.parent)
+    app.config["SECRET_KEY"] = "test"
+    app.config["TESTING"] = True
+    app.config["LOGIN_DISABLED"] = True
+    app.jinja_loader = jinja2.ChoiceLoader([
+        app.jinja_loader,
+        jinja2.FunctionLoader(lambda name: (
+            '{% block content %}{% endblock %}' if name == 'base.html' else None
+        )),
+    ])
+    app.register_blueprint(_bp, url_prefix="/plugins/balls")
+    return app
 
 
 @pytest.fixture
 def app(sample_csv, monkeypatch):
     monkeypatch.setattr("pinsheet_balls.data.DATA_FILE", sample_csv)
-    from pinsheet_balls.blueprint import bp, _clear_cache
     monkeypatch.setattr("pinsheet_balls.blueprint.base_context", lambda **x: {"settings": {}, "all_users": []})
+    from pinsheet_balls.blueprint import _clear_cache
     _clear_cache()
-    from flask import Flask
-    app = Flask(__name__)
-    app.config["SECRET_KEY"] = "test"
-    app.config["TESTING"] = True
-    app.config["LOGIN_DISABLED"] = True
-    app.register_blueprint(bp, url_prefix="/plugins/balls")
-    return app
+    return _make_app()
 
 
 @pytest.fixture
@@ -47,14 +63,7 @@ class TestBallsData:
         monkeypatch.setattr("pinsheet_balls.data.DATA_FILE", tmp_path / "nope.csv")
         from pinsheet_balls.blueprint import _clear_cache
         _clear_cache()
-        from flask import Flask
-        from pinsheet_balls.blueprint import bp
-        app = Flask(__name__)
-        app.config["SECRET_KEY"] = "test"
-        app.config["TESTING"] = True
-        app.config["LOGIN_DISABLED"] = True
-        app.register_blueprint(bp, url_prefix="/plugins/balls")
-        client = app.test_client()
+        client = _make_app().test_client()
         resp = client.get("/plugins/balls/data")
         assert resp.status_code == 503
 
@@ -62,14 +71,7 @@ class TestBallsData:
         monkeypatch.setattr("pinsheet_balls.data.DATA_FILE", empty_csv)
         from pinsheet_balls.blueprint import _clear_cache
         _clear_cache()
-        from flask import Flask
-        from pinsheet_balls.blueprint import bp
-        app = Flask(__name__)
-        app.config["SECRET_KEY"] = "test"
-        app.config["TESTING"] = True
-        app.config["LOGIN_DISABLED"] = True
-        app.register_blueprint(bp, url_prefix="/plugins/balls")
-        client = app.test_client()
+        client = _make_app().test_client()
         resp = client.get("/plugins/balls/data")
         assert resp.status_code == 503
 
