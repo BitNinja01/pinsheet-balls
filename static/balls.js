@@ -7,7 +7,9 @@
     meta: null,
     data: null,
     selectedBalls: [],
-    activeCondition: 'slow_driver',
+    activeCondition: null,
+    activeSpeed: null,
+    activeShot: null,
     sortBy: null,
     sortAsc: true,
     mode: 'rankings',
@@ -34,7 +36,11 @@
         if (data.error) throw new Error(data.error);
         state.meta = { balls: data.balls, conditions: data.conditions, metrics: data.metrics };
         state.data = data.rows;
-        state.activeCondition = data.conditions[0] || 'slow_driver';
+        var defaultCondition = data.conditions[0] || 'slow_driver';
+        state.activeCondition = defaultCondition;
+        var parsed = parseCondition(defaultCondition);
+        state.activeSpeed = parsed.speed;
+        state.activeShot = parsed.shot;
         state.rankingMetric = data.metrics[0] || null;
         state.mode = 'rankings';
         render();
@@ -46,6 +52,42 @@
             escapeHtml(err.message) + '</div>';
         }
       });
+  }
+
+  var CONDITION_PARSE = {
+    'slow_driver': { speed: 'Slow', shot: 'Driver' },
+    'slow_mid-iron': { speed: 'Slow', shot: '7-Iron' },
+    'wedge-35-percent_sand-wedge': { speed: '35%', shot: 'Sand Wedge' },
+    'wedge-full_sand-wedge': { speed: 'Full', shot: 'Sand Wedge' },
+  };
+
+  function parseCondition(condition) {
+    return CONDITION_PARSE[condition] || { speed: condition, shot: '' };
+  }
+
+  function conditionFor(speed, shot) {
+    for (var i = 0; i < state.meta.conditions.length; i++) {
+      var c = state.meta.conditions[i];
+      var p = parseCondition(c);
+      if (p.speed === speed && p.shot === shot) return c;
+    }
+    return null;
+  }
+
+  function getSpeedOptions() {
+    var seen = {};
+    state.meta.conditions.forEach(function (c) {
+      seen[parseCondition(c).speed] = true;
+    });
+    return Object.keys(seen);
+  }
+
+  function getShotOptions() {
+    var seen = {};
+    state.meta.conditions.forEach(function (c) {
+      seen[parseCondition(c).shot] = true;
+    });
+    return Object.keys(seen);
   }
 
   function escapeHtml(s) {
@@ -200,19 +242,25 @@
   }
 
   function renderConditionTabs() {
-    var labels = {
-      'slow_driver': 'Driver (Slow)',
-      'slow_mid-iron': '7-Iron (Slow)',
-      'wedge-35-percent_sand-wedge': '35% Wedge',
-      'wedge-full_sand-wedge': 'Full Wedge',
-    };
-    var h = '<div class="blls-condition-tabs">';
-    state.meta.conditions.forEach(function (c) {
-      var active = c === state.activeCondition ? ' blls-tab--active' : '';
-      var label = labels[c] || c;
-      h += '<button class="blls-tab' + active + '" data-condition="' + escapeAttr(c) + '">' + escapeHtml(label) + '</button>';
+    var h = '<div class="blls-condition-tabs"><div class="blls-cond-filters">';
+
+    h += '<div class="blls-cond-group">';
+    h += '<span class="blls-cond-label">Speed</span>';
+    getSpeedOptions().forEach(function (s) {
+      var active = s === state.activeSpeed ? ' blls-cond-btn--active' : '';
+      h += '<button class="blls-cond-btn' + active + '" data-cond-speed="' + escapeAttr(s) + '">' + escapeHtml(s) + '</button>';
     });
     h += '</div>';
+
+    h += '<div class="blls-cond-group">';
+    h += '<span class="blls-cond-label">Club</span>';
+    getShotOptions().forEach(function (s) {
+      var active = s === state.activeShot ? ' blls-cond-btn--active' : '';
+      h += '<button class="blls-cond-btn' + active + '" data-cond-shot="' + escapeAttr(s) + '">' + escapeHtml(s) + '</button>';
+    });
+    h += '</div>';
+
+    h += '</div></div>';
     return h;
   }
 
@@ -387,9 +435,19 @@
     var condContainer = document.getElementById('balls-content').querySelector('.blls-condition-tabs');
     if (condContainer) {
       condContainer.onclick = function (e) {
-        var tab = e.target.closest('.blls-tab');
-        if (tab && tab.getAttribute('data-condition')) {
-          setState({ activeCondition: tab.getAttribute('data-condition'), sortBy: null });
+        var speedBtn = e.target.closest('[data-cond-speed]');
+        if (speedBtn) {
+          var speed = speedBtn.getAttribute('data-cond-speed');
+          var c = conditionFor(speed, state.activeShot);
+          if (c) setState({ activeCondition: c, activeSpeed: speed, sortBy: null });
+          return;
+        }
+        var shotBtn = e.target.closest('[data-cond-shot]');
+        if (shotBtn) {
+          var shot = shotBtn.getAttribute('data-cond-shot');
+          var c = conditionFor(state.activeSpeed, shot);
+          if (c) setState({ activeCondition: c, activeShot: shot, sortBy: null });
+          return;
         }
       };
     }
