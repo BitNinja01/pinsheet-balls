@@ -276,3 +276,29 @@
   background: var(--ps-green);
   opacity: 0.7;
 }
+
+.blls-matrix-table th {
+  text-align: right;
+  min-width: 80px;
+}
+
+.blls-matrix-table th:first-child {
+  text-align: left;
+  min-width: 180px;
+}
+
+.blls-matrix-ball {
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.blls-matrix-cell {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.blls-matrix-bar {
+  display: block;
+  margin-top: 3px;
+  margin-left: auto;
+}

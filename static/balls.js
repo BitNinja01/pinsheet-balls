@@ -156,13 +156,15 @@
     html += '<div class="blls-controls">';
     html += renderBallSelectors();
     html += '</div>';
-    html += renderConditionTabs();
+    if (state.mode !== 'matrix') html += renderConditionTabs();
 
     if (state.mode === 'compare' && state.selectedBalls.length === 2) {
       html += renderCompareHeader();
     }
 
-    if (state.mode === 'rankings') {
+    if (state.mode === 'matrix') {
+      html += renderMatrixTable();
+    } else if (state.mode === 'rankings') {
       html += renderRankingsTable();
     } else if (state.selectedBalls.length === 0) {
       html += '<div class="blls-empty">Select a ball to view performance data.</div>';
@@ -176,11 +178,18 @@
     attachEvents();
   }
 
+  function conditionLabel(condition) {
+    var p = parseCondition(condition);
+    if (!p.shot) return condition;
+    return p.shot;
+  }
+
   function renderModeButtons() {
     var modes = [
       { id: 'single',   label: 'Single' },
       { id: 'compare',  label: 'Compare' },
       { id: 'rankings', label: 'Rankings' },
+      { id: 'matrix',   label: 'Matrix' },
     ];
     var h = '<div class="blls-mode-buttons">';
     modes.forEach(function (m) {
@@ -224,7 +233,7 @@
     var h = '';
     h += renderModeButtons();
 
-    if (state.mode === 'rankings') {
+    if (state.mode === 'rankings' || state.mode === 'matrix') {
       h += renderMetricSelector();
     } else {
       h += '<div class="blls-ball-selector">';
@@ -414,6 +423,66 @@
     return h;
   }
 
+  function renderMatrixTable() {
+    var metric = state.rankingMetric;
+    if (!metric) return '<div class="blls-empty">Select a metric.</div>';
+
+    var conditions = state.meta.conditions;
+    var metricLabel = metric.replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+
+    var ranges = {};
+    conditions.forEach(function (c) {
+      ranges[c] = getMetricRange(metric, c);
+    });
+
+    var ballRows = {};
+    state.data.forEach(function (r) {
+      if (!ballRows[r.ball]) ballRows[r.ball] = {};
+      ballRows[r.ball][r.condition] = r;
+    });
+
+    var ballNames = Object.keys(ballRows).sort(function (a, b) {
+      var ra = ballRows[a][conditions[0]];
+      var rb = ballRows[b][conditions[0]];
+      return (rb && rb[metric] || 0) - (ra && ra[metric] || 0);
+    });
+
+    var h = '<div class="blls-table-wrapper"><table class="blls-table blls-matrix-table">';
+    h += '<thead><tr>';
+    h += '<th>Ball</th>';
+    conditions.forEach(function (c) {
+      h += '<th>' + escapeHtml(conditionLabel(c)) + '</th>';
+    });
+    h += '</tr></thead><tbody>';
+
+    ballNames.forEach(function (ball) {
+      h += '<tr>';
+      h += '<td class="blls-matrix-ball">' + escapeHtml(ball) + '</td>';
+      conditions.forEach(function (c) {
+        var row = ballRows[ball][c];
+        var val = row ? row[metric] : undefined;
+        var best = conditions.reduce(function (bestVal, cond) {
+          var r = ballRows[ball] && ballRows[ball][cond];
+          return Math.max(bestVal, r ? (r[metric] || 0) : 0);
+        }, 0);
+        if (val === undefined) {
+          h += '<td class="blls-matrix-cell"><span class="blls-value">\u2014</span></td>';
+          return;
+        }
+        var range = ranges[c];
+        var bw = barWidth(val, range.min, range.max);
+        h += '<td class="blls-matrix-cell">';
+        h += '<span class="blls-value">' + fmt(val) + '</span>';
+        h += '<span class="blls-bar blls-matrix-bar" style="width:' + bw.toFixed(0) + '%"></span>';
+        h += '</td>';
+      });
+      h += '</tr>';
+    });
+
+    h += '</tbody></table></div>';
+    return h;
+  }
+
   function attachEvents() {
     var sel1 = document.getElementById('blls-ball-1');
     if (sel1) {
@@ -436,8 +505,8 @@
       btn.onclick = function () {
         var mode = this.getAttribute('data-mode');
         if (state.mode === mode) return;
-        if (mode === 'rankings') {
-          setState({ mode: 'rankings', selectedBalls: [], rankingMetric: state.rankingMetric || state.meta.metrics[0] });
+        if (mode === 'rankings' || mode === 'matrix') {
+          setState({ mode: mode, selectedBalls: [], rankingMetric: state.rankingMetric || state.meta.metrics[0] });
         } else if (mode === 'compare') {
           setState({ mode: 'compare', selectedBalls: state.selectedBalls.length > 0 ? [state.selectedBalls[0]] : [] });
         } else {
