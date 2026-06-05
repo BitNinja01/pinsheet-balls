@@ -405,17 +405,28 @@
     h += '<th>Ball</th>';
     h += '<th>' + escapeHtml(metricLabel) + '</th>';
     h += '<th>Range</th>';
+    h += '<th>vs Best</th>';
     h += '</tr></thead><tbody>';
+
+    var bestVal = rows.length > 0 ? rows[0][metric] : undefined;
 
     rows.forEach(function (r, i) {
       var val = r[metric];
       var bw = barWidth(val, range.min, range.max);
       var isBest = i === 0;
+      var gap = i > 0 && bestVal !== undefined ? bestVal - val : 0;
       h += '<tr class="' + (isBest ? 'blls-row--best' : '') + '">';
       h += '<td class="blls-rank-col">' + (i + 1) + '</td>';
       h += '<td>' + escapeHtml(r.ball) + '</td>';
       h += '<td><span class="blls-value' + (isBest ? ' blls-value--best' : '') + '">' + fmt(val) + '</span></td>';
       h += '<td class="blls-bar-cell"><span class="blls-bar' + (isBest ? ' blls-bar--best' : '') + '" style="width:' + bw.toFixed(0) + '%"></span></td>';
+      h += '<td>';
+      if (isBest) {
+        h += '<span class="blls-badge-best">\u25B2 best</span>';
+      } else {
+        h += '<span class="blls-gap">\u2212' + fmt(gap) + '</span>';
+      }
+      h += '</td>';
       h += '</tr>';
     });
 
@@ -430,15 +441,24 @@
     var conditions = state.meta.conditions;
     var metricLabel = metric.replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
 
-    var ranges = {};
+    var ballRows = {};
+    var bestPerCondition = {};
     conditions.forEach(function (c) {
-      ranges[c] = getMetricRange(metric, c);
+      bestPerCondition[c] = { val: -Infinity, ball: null };
     });
 
-    var ballRows = {};
     state.data.forEach(function (r) {
       if (!ballRows[r.ball]) ballRows[r.ball] = {};
       ballRows[r.ball][r.condition] = r;
+      var val = r[metric];
+      if (val !== undefined && val > bestPerCondition[r.condition].val) {
+        bestPerCondition[r.condition] = { val: val, ball: r.ball };
+      }
+    });
+
+    var ranges = {};
+    conditions.forEach(function (c) {
+      ranges[c] = getMetricRange(metric, c);
     });
 
     var ballNames = Object.keys(ballRows).sort(function (a, b) {
@@ -461,19 +481,28 @@
       conditions.forEach(function (c) {
         var row = ballRows[ball][c];
         var val = row ? row[metric] : undefined;
-        var best = conditions.reduce(function (bestVal, cond) {
-          var r = ballRows[ball] && ballRows[ball][cond];
-          return Math.max(bestVal, r ? (r[metric] || 0) : 0);
-        }, 0);
+        var best = bestPerCondition[c];
+        var isBest = best && best.ball === ball;
+
         if (val === undefined) {
           h += '<td class="blls-matrix-cell"><span class="blls-value">\u2014</span></td>';
           return;
         }
+
         var range = ranges[c];
         var bw = barWidth(val, range.min, range.max);
-        h += '<td class="blls-matrix-cell">';
-        h += '<span class="blls-value">' + fmt(val) + '</span>';
-        h += '<span class="blls-bar blls-matrix-bar" style="width:' + bw.toFixed(0) + '%"></span>';
+        var gap = best && !isBest ? best.val - val : 0;
+
+        h += '<td class="blls-matrix-cell' + (isBest ? ' blls-cell--best' : '') + '">';
+        h += '<div class="blls-matrix-val">';
+        h += '<span class="blls-value' + (isBest ? ' blls-value--best' : '') + '">' + fmt(val) + '</span>';
+        if (isBest) {
+          h += '<span class="blls-badge-best">\u25B2 best</span>';
+        } else if (gap > 0) {
+          h += '<span class="blls-gap">\u2212' + fmt(gap) + '</span>';
+        }
+        h += '</div>';
+        h += '<span class="blls-bar blls-matrix-bar' + (isBest ? ' blls-bar--best' : '') + '" style="width:' + bw.toFixed(0) + '%"></span>';
         h += '</td>';
       });
       h += '</tr>';

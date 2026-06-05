@@ -302,3 +302,33 @@
   margin-top: 3px;
   margin-left: auto;
 }
+
+.blls-matrix-val {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.blls-badge-best {
+  font-size: 9px;
+  color: var(--ps-green);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.blls-gap {
+  font-size: 10px;
+  color: var(--ps-ink-3);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.blls-cell--best {
+  background: rgba(93, 180, 154, 0.06);
+}
+
+.blls-cell--best:hover {
+  background: rgba(93, 180, 154, 0.1);
+}
