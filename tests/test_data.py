@@ -6,21 +6,19 @@ class TestLoadBallData:
         from pinsheet_balls.data import load_ball_data
         monkeypatch.setattr("pinsheet_balls.data.DATA_FILE", sample_csv)
         result = load_ball_data()
-        assert result["balls"] == ["Test Ball A", "Test Ball B"]
-        assert result["conditions"] == ["slow_driver", "slow_mid-iron"]
-        assert "ball-speed" in result["metrics"]
-        assert "carry" in result["metrics"]
-        assert "spin" in result["metrics"]
+        assert result["balls"] == ["Chrome Soft", "Pro V1", "TP5"]
+        assert result["conditions"] == ["fast_driver", "slow_driver"]
+        assert "Total" in result["metrics"]
+        assert "Spin" in result["metrics"]
 
     def test_pivots_rows_correctly(self, sample_csv, monkeypatch):
         from pinsheet_balls.data import load_ball_data
         monkeypatch.setattr("pinsheet_balls.data.DATA_FILE", sample_csv)
         result = load_ball_data()
         rows = result["rows"]
-        a_driver = [r for r in rows if r["ball"] == "Test Ball A" and r["condition"] == "slow_driver"][0]
-        assert a_driver["ball-speed"] == 120.5
-        assert a_driver["carry"] == 210.3
-        assert a_driver["spin"] == 2500.0
+        a_driver = [r for r in rows if r["ball"] == "Chrome Soft" and r["condition"] == "fast_driver"][0]
+        assert a_driver["Total"] == 305.8
+        assert a_driver["Spin"] == 2450.0
 
     def test_values_are_floats(self, sample_csv, monkeypatch):
         from pinsheet_balls.data import load_ball_data
@@ -38,10 +36,10 @@ class TestLoadBallData:
 
     def test_malformed_row_is_skipped(self, sample_csv, monkeypatch):
         sample_csv.write_text(
-            "metric,condition,ball,value\n"
-            "ball-speed,slow_driver,Good Ball,100.0\n"
+            "ball,metric,speed,club,value\n"
+            "Good Ball,ball-speed,fast,driver,100.0\n"
             "bad-line-no-commas\n"
-            "carry,slow_driver,Good Ball,200.0\n"
+            "Good Ball,carry,fast,driver,200.0\n"
         )
         from pinsheet_balls.data import load_ball_data
         monkeypatch.setattr("pinsheet_balls.data.DATA_FILE", sample_csv)
