@@ -34,16 +34,18 @@ def load_ball_data() -> dict | None:
     groups: dict[tuple[str, str], dict[str, float]] = {}
     for row in raw:
         b = (row.get("ball") or "").strip()
-        c = (row.get("condition") or "").strip()
+        speed = (row.get("speed") or "").strip()
+        club = (row.get("club") or "").strip()
         m = (row.get("metric") or "").strip()
         v = (row.get("value") or "").strip()
-        if not b or not c or not m:
+        if not b or not speed or not club or not m:
             continue
         try:
             val = float(v)
         except (ValueError, TypeError):
             log.warning("balls: skipping row with non-numeric value %r", v)
             continue
+        c = f"{speed}_{club}"
         groups.setdefault((b, c), {})[m] = val
 
     pivoted = [
