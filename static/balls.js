@@ -15,13 +15,6 @@
     scatterYMetric: null,
   };
 
-  function setState(update) {
-    for (var k in update) {
-      if (update.hasOwnProperty(k)) state[k] = update[k];
-    }
-    render();
-  }
-
   function fetchData() {
     var el = document.getElementById('blls-loading');
     if (el) el.textContent = 'Loading ball data...';
@@ -132,12 +125,6 @@
     return sign + d.toFixed(1) + ' (' + sign + pct + '%)';
   }
 
-  function deltaClass(d) {
-    if (d === undefined || d === null) return 'blls-delta--zero';
-    if (Math.abs(d) < 0.05) return 'blls-delta--zero';
-    return d > 0 ? 'blls-delta' : 'blls-delta--neg';
-  }
-
   function renderTableView() {
     var rows = rowsForSpeed(state.activeSpeed);
     var metric = state.activeMetric;
@@ -182,6 +169,7 @@
   }
 
   function render() {
+    if (!state.meta || !state.data) return;
     var html = '<div class="blls-controls">' +
       renderLayoutButtons() +
       '<span class="blls-ctrl-sep"></span>' +
@@ -207,344 +195,6 @@
     attachEvents();
   }
 
-  function conditionLabel(condition) {
-    var p = parseCondition(condition);
-    if (!p.shot) return condition;
-    return p.shot;
-  }
-
-  function renderModeButtons() {
-    var modes = [
-      { id: 'single',   label: 'Single' },
-      { id: 'compare',  label: 'Compare' },
-      { id: 'rankings', label: 'Rankings' },
-      { id: 'matrix',   label: 'Matrix' },
-      { id: 'cards',    label: 'Cards' },
-      { id: 'scatter',  label: 'Scatter' },
-    ];
-    var h = '<div class="blls-mode-buttons">';
-    modes.forEach(function (m) {
-      var active = state.mode === m.id ? ' blls-mode--active' : '';
-      h += '<button class="blls-mode-btn' + active + '" data-mode="' + m.id + '">' + m.label + '</button>';
-    });
-    h += '</div>';
-    return h;
-  }
-
-  function renderMetricSelector(id, stateKey, label) {
-    var h = '<div class="blls-ball-selector">';
-    h += '  <label>' + escapeHtml(label) + '</label>';
-    h += '  <select id="' + escapeAttr(id) + '">';
-    state.meta.metrics.forEach(function (m) {
-      var displayName = m.replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
-      var sel = state[stateKey] === m ? ' selected' : '';
-      h += '    <option value="' + escapeAttr(m) + '"' + sel + '>' + escapeHtml(displayName) + '</option>';
-    });
-    h += '  </select>';
-    h += '</div>';
-    return h;
-  }
-
-  function renderSingleMetricSelector() {
-    var h = '<div class="blls-ball-selector">';
-    h += '  <label>Metric</label>';
-    h += '  <select id="blls-single-metric">';
-    h += '    <option value="">All Metrics</option>';
-    state.meta.metrics.forEach(function (m) {
-      var displayName = m.replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
-      var sel = state.singleMetric === m ? ' selected' : '';
-      h += '    <option value="' + escapeAttr(m) + '"' + sel + '>' + escapeHtml(displayName) + '</option>';
-    });
-    h += '  </select>';
-    h += '</div>';
-    return h;
-  }
-
-  function renderBallSelectors() {
-    var h = '';
-    h += renderModeButtons();
-
-    if (state.mode === 'scatter') {
-      h += renderMetricSelector('blls-scatter-x', 'scatterXMetric', 'X Metric');
-      h += renderMetricSelector('blls-scatter-y', 'scatterYMetric', 'Y Metric');
-    } else if (state.mode === 'rankings' || state.mode === 'matrix' || state.mode === 'cards') {
-      h += renderMetricSelector('blls-metric', 'rankingMetric', 'Metric');
-    } else {
-      h += '<div class="blls-ball-selector">';
-      h += '  <label>Ball</label>';
-      h += '  <select id="blls-ball-1">';
-      h += '    <option value="">Select a ball...</option>';
-      state.meta.balls.forEach(function (b) {
-        var sel = state.selectedBalls[0] === b ? ' selected' : '';
-        if (state.mode === 'compare' && state.selectedBalls[1] === b) return;
-        h += '    <option value="' + escapeAttr(b) + '"' + sel + '>' + escapeHtml(b) + '</option>';
-      });
-      h += '  </select>';
-      h += '</div>';
-
-      if (state.mode === 'compare') {
-        h += '<div class="blls-ball-selector">';
-        h += '  <label>vs</label>';
-        h += '  <select id="blls-ball-2">';
-        h += '    <option value="">Select a ball...</option>';
-        state.meta.balls.forEach(function (b) {
-          var sel = state.selectedBalls[1] === b ? ' selected' : '';
-          if (state.selectedBalls[0] === b) return;
-          h += '    <option value="' + escapeAttr(b) + '"' + sel + '>' + escapeHtml(b) + '</option>';
-        });
-        h += '  </select>';
-        h += '</div>';
-      }
-
-      h += renderSingleMetricSelector();
-    }
-
-    return h;
-  }
-
-  function renderConditionTabs() {
-    var h = '<div class="blls-condition-tabs"><div class="blls-cond-filters">';
-
-    h += '<div class="blls-cond-group">';
-    h += '<span class="blls-cond-label">Speed</span>';
-    getSpeedOptions().forEach(function (s) {
-      var active = s === state.activeSpeed ? ' blls-cond-btn--active' : '';
-      h += '<button class="blls-cond-btn' + active + '" data-cond-speed="' + escapeAttr(s) + '">' + escapeHtml(s) + '</button>';
-    });
-    h += '</div>';
-
-    h += '<div class="blls-cond-group">';
-    h += '<span class="blls-cond-label">Club</span>';
-    getShotOptions().forEach(function (s) {
-      var active = s === state.activeShot ? ' blls-cond-btn--active' : '';
-      h += '<button class="blls-cond-btn' + active + '" data-cond-shot="' + escapeAttr(s) + '">' + escapeHtml(s) + '</button>';
-    });
-    h += '</div>';
-
-    h += '</div></div>';
-    return h;
-  }
-
-  function renderCompareHeader() {
-    var b1 = state.selectedBalls[0];
-    var b2 = state.selectedBalls[1];
-    return '<div class="blls-compare-header">' +
-      '<span>' + escapeHtml(b1) + '</span>' +
-      '<span class="blls-vs">vs</span>' +
-      '<span>' + escapeHtml(b2) + '</span>' +
-      '</div>';
-  }
-
-  function sortedMetrics(ballRow) {
-    if (!state.sortBy) return state.meta.metrics.slice();
-    var metrics = state.meta.metrics.slice();
-    metrics.sort(function (a, b) {
-      var va = ballRow ? (ballRow[a] || 0) : 0;
-      var vb = ballRow ? (ballRow[b] || 0) : 0;
-      return state.sortAsc ? va - vb : vb - va;
-    });
-    return metrics;
-  }
-
-  function sortArrow() {
-    if (!state.sortBy) return '';
-    return state.sortAsc ? ' \u25B2' : ' \u25BC';
-  }
-
-  function renderSingleTable() {
-    var ball = state.selectedBalls[0];
-    var ballRow = rowForBall(ball, state.activeCondition);
-    if (!ballRow) return '<div class="blls-empty">No data for ' + escapeHtml(ball) + ' under this condition.</div>';
-
-    var h = '<div class="blls-table-wrapper"><table class="blls-table">';
-    h += '<thead><tr>';
-    h += '<th>Metric</th>';
-    h += '<th class="blls-sortable' + (state.sortBy ? ' blls-sorted' : '') + '">' + escapeHtml(ball) + sortArrow() + '</th>';
-    h += '<th>Range</th>';
-    h += '</tr></thead><tbody>';
-
-    var metrics = sortedMetrics(ballRow);
-    if (state.singleMetric) metrics = metrics.filter(function (m) { return m === state.singleMetric; });
-    metrics.forEach(function (m) {
-      var range = getMetricRange(m, state.activeCondition);
-      var val = ballRow[m];
-      var bw = barWidth(val, range.min, range.max);
-      var displayName = m.replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
-      h += '<tr>';
-      h += '<td class="blls-metric-name">' + escapeHtml(displayName) + '</td>';
-      h += '<td><span class="blls-value">' + fmt(val) + '</span></td>';
-      h += '<td class="blls-bar-cell"><span class="blls-bar" style="width:' + bw.toFixed(0) + '%"></span></td>';
-      h += '</tr>';
-    });
-
-    h += '</tbody></table></div>';
-    return h;
-  }
-
-  function renderCompareTable() {
-    var b1 = state.selectedBalls[0];
-    var b2 = state.selectedBalls[1];
-    var r1 = rowForBall(b1, state.activeCondition);
-    var r2 = rowForBall(b2, state.activeCondition);
-
-    if (!r1 || !r2) {
-      return '<div class="blls-empty">One or both balls have no data for this condition.</div>';
-    }
-
-    var h = '<div class="blls-table-wrapper"><table class="blls-table">';
-    h += '<thead><tr>';
-    h += '<th>Metric</th>';
-    h += '<th>' + escapeHtml(b1) + '</th>';
-    h += '<th>' + escapeHtml(b2) + '</th>';
-    h += '<th>\u0394</th>';
-    h += '</tr></thead><tbody>';
-
-    var compareMetrics = state.meta.metrics.slice();
-    if (state.singleMetric) compareMetrics = compareMetrics.filter(function (m) { return m === state.singleMetric; });
-    compareMetrics.forEach(function (m) {
-      var v1 = r1[m];
-      var v2 = r2[m];
-      var d = (v2 !== undefined && v1 !== undefined) ? v2 - v1 : undefined;
-      var displayName = m.replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
-      h += '<tr>';
-      h += '<td class="blls-metric-name">' + escapeHtml(displayName) + '</td>';
-      h += '<td><span class="blls-value">' + fmt(v1) + '</span></td>';
-      h += '<td><span class="blls-value">' + fmt(v2) + '</span></td>';
-      h += '<td><span class="blls-value ' + deltaClass(d) + '">' + fmtDelta(v1, v2) + '</span></td>';
-      h += '</tr>';
-    });
-
-    h += '</tbody></table></div>';
-    return h;
-  }
-
-  function renderRankingsTable() {
-    var metric = state.rankingMetric;
-    if (!metric) return '<div class="blls-empty">Select a metric to rank balls.</div>';
-
-    var condition = state.activeCondition;
-    var rows = rowsForCondition(condition)
-      .filter(function (r) { return r[metric] !== undefined && r[metric] !== null; })
-      .slice()
-      .sort(function (a, b) { return b[metric] - a[metric]; });
-
-    if (rows.length === 0) return '<div class="blls-empty">No data for this condition.</div>';
-
-    var range = getMetricRange(metric, condition);
-    var metricLabel = metric.replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
-
-    var h = '<div class="blls-table-wrapper"><table class="blls-table blls-rank-table">';
-    h += '<thead><tr>';
-    h += '<th class="blls-rank-col">#</th>';
-    h += '<th>Ball</th>';
-    h += '<th>' + escapeHtml(metricLabel) + '</th>';
-    h += '<th>Range</th>';
-    h += '<th>vs Best</th>';
-    h += '</tr></thead><tbody>';
-
-    var bestVal = rows.length > 0 ? rows[0][metric] : undefined;
-
-    rows.forEach(function (r, i) {
-      var val = r[metric];
-      var bw = barWidth(val, range.min, range.max);
-      var isBest = i === 0;
-      var gap = i > 0 && bestVal !== undefined ? bestVal - val : 0;
-      h += '<tr class="' + (isBest ? 'blls-row--best' : '') + '">';
-      h += '<td class="blls-rank-col">' + (i + 1) + '</td>';
-      h += '<td>' + escapeHtml(r.ball) + '</td>';
-      h += '<td><span class="blls-value' + (isBest ? ' blls-value--best' : '') + '">' + fmt(val) + '</span></td>';
-      h += '<td class="blls-bar-cell"><span class="blls-bar' + (isBest ? ' blls-bar--best' : '') + '" style="width:' + bw.toFixed(0) + '%"></span></td>';
-      h += '<td>';
-      if (isBest) {
-        h += '<span class="blls-badge-best">\u25B2 best</span>';
-      } else {
-        h += '<span class="blls-gap">\u2212' + fmt(gap) + '</span>';
-      }
-      h += '</td>';
-      h += '</tr>';
-    });
-
-    h += '</tbody></table></div>';
-    return h;
-  }
-
-  function renderMatrixTable() {
-    var metric = state.rankingMetric;
-    if (!metric) return '<div class="blls-empty">Select a metric.</div>';
-
-    var conditions = state.meta.conditions;
-    var metricLabel = metric.replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
-
-    var ballRows = {};
-    var bestPerCondition = {};
-    conditions.forEach(function (c) {
-      bestPerCondition[c] = { val: -Infinity, ball: null };
-    });
-
-    state.data.forEach(function (r) {
-      if (!ballRows[r.ball]) ballRows[r.ball] = {};
-      ballRows[r.ball][r.condition] = r;
-      var val = r[metric];
-      if (val !== undefined && val > bestPerCondition[r.condition].val) {
-        bestPerCondition[r.condition] = { val: val, ball: r.ball };
-      }
-    });
-
-    var ranges = {};
-    conditions.forEach(function (c) {
-      ranges[c] = getMetricRange(metric, c);
-    });
-
-    var ballNames = Object.keys(ballRows).sort(function (a, b) {
-      var ra = ballRows[a][conditions[0]];
-      var rb = ballRows[b][conditions[0]];
-      return (rb && rb[metric] || 0) - (ra && ra[metric] || 0);
-    });
-
-    var h = '<div class="blls-table-wrapper"><table class="blls-table blls-matrix-table">';
-    h += '<thead><tr>';
-    h += '<th>Ball</th>';
-    conditions.forEach(function (c) {
-      h += '<th>' + escapeHtml(conditionLabel(c)) + '</th>';
-    });
-    h += '</tr></thead><tbody>';
-
-    ballNames.forEach(function (ball) {
-      h += '<tr>';
-      h += '<td class="blls-matrix-ball">' + escapeHtml(ball) + '</td>';
-      conditions.forEach(function (c) {
-        var row = ballRows[ball][c];
-        var val = row ? row[metric] : undefined;
-        var best = bestPerCondition[c];
-        var isBest = best && best.ball === ball;
-
-        if (val === undefined) {
-          h += '<td class="blls-matrix-cell"><span class="blls-value">\u2014</span></td>';
-          return;
-        }
-
-        var range = ranges[c];
-        var bw = barWidth(val, range.min, range.max);
-        var gap = best && !isBest ? best.val - val : 0;
-
-        h += '<td class="blls-matrix-cell' + (isBest ? ' blls-cell--best' : '') + '">';
-        h += '<div class="blls-matrix-val">';
-        h += '<span class="blls-value' + (isBest ? ' blls-value--best' : '') + '">' + fmt(val) + '</span>';
-        if (isBest) {
-          h += '<span class="blls-badge-best">\u25B2 best</span>';
-        } else if (gap > 0) {
-          h += '<span class="blls-gap">\u2212' + fmt(gap) + '</span>';
-        }
-        h += '</div>';
-        h += '<span class="blls-bar blls-matrix-bar' + (isBest ? ' blls-bar--best' : '') + '" style="width:' + bw.toFixed(0) + '%"></span>';
-        h += '</td>';
-      });
-      h += '</tr>';
-    });
-
-    h += '</tbody></table></div>';
-    return h;
-  }
 
   function renderCardsView() {
     var rows = rowsForSpeed(state.activeSpeed);
@@ -677,121 +327,64 @@
   }
 
   function attachEvents() {
-    var sel1 = document.getElementById('blls-ball-1');
-    if (sel1) {
-      sel1.onchange = function () {
-        var val = this.value;
-        if (val) setState({ selectedBalls: [val], sortBy: null });
-      };
-    }
+    var content = document.getElementById('balls-content');
+    if (!content) return;
 
-    var sel2 = document.getElementById('blls-ball-2');
-    if (sel2) {
-      sel2.onchange = function () {
-        var val = this.value;
-        if (val) setState({ selectedBalls: [state.selectedBalls[0], val] });
-      };
-    }
+    content.addEventListener('click', function(e) {
+      var btn = e.target.closest('[data-action]');
+      if (!btn) return;
+      var action = btn.getAttribute('data-action');
 
-    var modeBtns = document.querySelectorAll('.blls-mode-btn');
-    modeBtns.forEach(function (btn) {
-      btn.onclick = function () {
-        var mode = this.getAttribute('data-mode');
-        if (state.mode === mode) return;
-        if (mode === 'rankings' || mode === 'matrix' || mode === 'cards') {
-          setState({ mode: mode, selectedBalls: [], rankingMetric: state.rankingMetric || state.meta.metrics[0] });
-        } else if (mode === 'scatter') {
-          setState({ mode: 'scatter', selectedBalls: [] });
-        } else if (mode === 'compare') {
-          setState({ mode: 'compare', selectedBalls: state.selectedBalls.length > 0 ? [state.selectedBalls[0]] : [] });
-        } else {
-          setState({ mode: 'single', selectedBalls: state.selectedBalls.length > 0 ? [state.selectedBalls[0]] : [] });
-        }
-      };
+      if (action === 'set-mode') {
+        state.mode = btn.getAttribute('data-mode');
+        var clubs = clubsForSpeed(state.activeSpeed);
+        if (clubs.indexOf(state.activeClub) === -1) state.activeClub = clubs[0];
+        render();
+      } else if (action === 'set-speed') {
+        state.activeSpeed = btn.getAttribute('data-speed');
+        var clubs = clubsForSpeed(state.activeSpeed);
+        if (clubs.indexOf(state.activeClub) === -1) state.activeClub = clubs[0];
+        render();
+      } else if (action === 'set-club') {
+        state.activeClub = btn.getAttribute('data-club');
+        render();
+      }
     });
 
-    var singleMetricSel = document.getElementById('blls-single-metric');
-    if (singleMetricSel) {
-      singleMetricSel.onchange = function () {
-        setState({ singleMetric: this.value || null, sortBy: null });
-      };
-    }
+    content.addEventListener('change', function(e) {
+      var action = e.target.getAttribute('data-action');
+      if (action === 'set-metric') {
+        state.activeMetric = e.target.value;
+        render();
+      } else if (action === 'set-scatter-x') {
+        state.scatterXMetric = e.target.value;
+        render();
+      } else if (action === 'set-scatter-y') {
+        state.scatterYMetric = e.target.value;
+        render();
+      }
+    });
 
-    var metricSel = document.getElementById('blls-metric');
-    if (metricSel) {
-      metricSel.onchange = function () {
-        setState({ rankingMetric: this.value });
-      };
-    }
+    content.addEventListener('mouseover', function(e) {
+      var dot = e.target.closest('.blls-scatter-dot');
+      if (!dot) return;
+      var tip = document.getElementById('blls-scatter-tooltip');
+      if (!tip) return;
+      tip.textContent = dot.getAttribute('data-ball') +
+        ' \u00B7 X: ' + dot.getAttribute('data-x') +
+        ' \u00B7 Y: ' + dot.getAttribute('data-y');
+      tip.style.display = 'block';
+      var rect = dot.getBoundingClientRect();
+      tip.style.left = (rect.left + window.scrollX + 12) + 'px';
+      tip.style.top = (rect.top + window.scrollY - 28) + 'px';
+    });
 
-    var scatterXSel = document.getElementById('blls-scatter-x');
-    if (scatterXSel) {
-      scatterXSel.onchange = function () {
-        setState({ scatterXMetric: this.value });
-      };
-    }
-
-    var scatterYSel = document.getElementById('blls-scatter-y');
-    if (scatterYSel) {
-      scatterYSel.onchange = function () {
-        setState({ scatterYMetric: this.value });
-      };
-    }
-
-    var condContainer = document.getElementById('balls-content').querySelector('.blls-condition-tabs');
-    if (condContainer) {
-      condContainer.onclick = function (e) {
-        var speedBtn = e.target.closest('[data-cond-speed]');
-        if (speedBtn) {
-          var speed = speedBtn.getAttribute('data-cond-speed');
-          var c = conditionFor(speed, state.activeShot);
-          if (c) setState({ activeCondition: c, activeSpeed: speed, sortBy: null });
-          return;
-        }
-        var shotBtn = e.target.closest('[data-cond-shot]');
-        if (shotBtn) {
-          var shot = shotBtn.getAttribute('data-cond-shot');
-          var c = conditionFor(state.activeSpeed, shot);
-          if (c) setState({ activeCondition: c, activeShot: shot, sortBy: null });
-          return;
-        }
-      };
-    }
-
-    // Scatter tooltip
-    var scatterSvg = document.querySelector('.blls-scatter-svg');
-    if (scatterSvg) {
-      scatterSvg.addEventListener('mousemove', function (e) {
-        var target = e.target;
-        if (target.tagName === 'circle' && target.getAttribute('data-ball')) {
-          var tooltip = document.getElementById('blls-scatter-tooltip');
-          if (tooltip) {
-            tooltip.textContent = target.getAttribute('data-ball');
-            tooltip.style.display = 'block';
-            tooltip.style.left = (e.pageX + 12) + 'px';
-            tooltip.style.top = (e.pageY - 28) + 'px';
-          }
-        }
-      });
-      scatterSvg.addEventListener('mouseleave', function () {
-        var tooltip = document.getElementById('blls-scatter-tooltip');
-        if (tooltip) tooltip.style.display = 'none';
-      });
-    }
-
-    // Sort toggle on ball column header
-    var tableWrapper = document.querySelector('.blls-table-wrapper');
-    if (tableWrapper) {
-      tableWrapper.onclick = function (e) {
-        var th = e.target.closest('.blls-sortable');
-        if (!th) return;
-        if (!state.sortBy) {
-          setState({ sortBy: true, sortAsc: true });
-        } else {
-          setState({ sortAsc: !state.sortAsc });
-        }
-      };
-    }
+    content.addEventListener('mouseout', function(e) {
+      if (e.target.closest('.blls-scatter-dot')) {
+        var tip = document.getElementById('blls-scatter-tooltip');
+        if (tip) tip.style.display = 'none';
+      }
+    });
   }
 
   document.addEventListener('DOMContentLoaded', fetchData);
