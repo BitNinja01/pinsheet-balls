@@ -1,4 +1,76 @@
-/* Ball Comparison Plugin — styles */
+/* ── Controls bar ──────────────────────────── */
+.blls-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  flex-wrap: wrap;
+}
+
+.blls-ctrl-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.blls-ctrl-label {
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ps-ink-3);
+  margin-right: 4px;
+}
+
+.blls-ctrl-sep {
+  width: 1px;
+  height: 18px;
+  background: var(--ps-rule-c);
+  margin: 0 6px;
+  flex-shrink: 0;
+}
+
+.blls-btn {
+  font-family: var(--ps-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 11px;
+  border: 1px solid var(--ps-rule-c);
+  cursor: pointer;
+  line-height: 1;
+  color: var(--ps-ink-2);
+  background: transparent;
+  transition: color var(--ps-dur-quick) var(--ps-ease), background var(--ps-dur-quick) var(--ps-ease);
+}
+
+.blls-btn:hover {
+  color: var(--ps-ink);
+  background: var(--ps-accent-dim);
+}
+
+.blls-btn--active {
+  color: var(--ps-ink);
+  background: var(--ps-accent-dim);
+  border-color: var(--ps-accent);
+}
+
+.blls-btn-note {
+  font-size: 8px;
+  opacity: 0.55;
+  margin-left: 4px;
+}
+
+.blls-select {
+  font-family: var(--ps-font-mono);
+  font-size: 11px;
+  padding: 4px 8px;
+  border: 1px solid var(--ps-rule-c);
+  background: var(--ps-paper);
+  color: var(--ps-ink);
+  cursor: pointer;
+}
+
+/* ── Ball Comparison Plugin — styles ───────── */
 
 .blls-loading {
   margin-top: 48px;
@@ -20,93 +92,6 @@
   color: var(--ps-ink-2);
   font-size: 14px;
   padding: 48px 0;
-}
-
-.blls-controls {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  gap: 16px;
-  margin-top: 20px;
-  padding: 16px;
-  background: var(--ps-surf-1);
-  border-radius: 8px;
-}
-
-.blls-ball-selector {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.blls-ball-selector label {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--ps-ink-2);
-  font-weight: 600;
-}
-
-.blls-ball-selector select {
-  min-width: 240px;
-  padding: 6px 10px;
-  border: 1px solid var(--ps-bord);
-  border-radius: 6px;
-  background: var(--ps-surf-2);
-  color: var(--ps-ink-1);
-  font-size: 13px;
-}
-
-.blls-condition-tabs {
-  margin-top: 16px;
-}
-
-.blls-cond-filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 24px;
-  padding: 12px 16px;
-  background: var(--ps-surf-1);
-  border-radius: 8px;
-  align-items: center;
-}
-
-.blls-cond-group {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.blls-cond-label {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--ps-ink-2);
-  font-weight: 600;
-  margin-right: 2px;
-}
-
-.blls-cond-btn {
-  padding: 5px 12px;
-  border: 1px solid var(--ps-bord);
-  border-radius: 6px;
-  background: transparent;
-  color: var(--ps-ink-2);
-  font-size: 11px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.15s, color 0.15s;
-}
-
-.blls-cond-btn:hover {
-  background: var(--ps-surf-2);
-  color: var(--ps-ink-1);
-}
-
-.blls-cond-btn--active {
-  background: var(--ps-surf-3);
-  color: var(--ps-ink-1);
-  font-weight: 600;
 }
 
 .blls-table-wrapper {
@@ -176,19 +161,6 @@
   opacity: 0.5;
   min-width: 2px;
   vertical-align: middle;
-}
-
-.blls-delta {
-  color: var(--ps-green);
-  font-weight: 600;
-}
-
-.blls-delta--neg {
-  color: var(--ps-warn);
-}
-
-.blls-delta--zero {
-  color: var(--ps-ink-2);
 }
 
 .blls-table th.blls-sorted {
@@ -275,39 +247,6 @@
 .blls-bar--best {
   background: var(--ps-green);
   opacity: 0.7;
-}
-
-.blls-matrix-table th {
-  text-align: right;
-  min-width: 80px;
-}
-
-.blls-matrix-table th:first-child {
-  text-align: left;
-  min-width: 180px;
-}
-
-.blls-matrix-ball {
-  white-space: nowrap;
-  font-weight: 500;
-}
-
-.blls-matrix-cell {
-  text-align: right;
-  white-space: nowrap;
-}
-
-.blls-matrix-bar {
-  display: block;
-  margin-top: 3px;
-  margin-left: auto;
-}
-
-.blls-matrix-val {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  justify-content: flex-end;
 }
 
 .blls-badge-best {
