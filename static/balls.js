@@ -139,37 +139,28 @@
   }
 
   function render() {
-    if (!state.meta) return;
-    var container = document.getElementById('balls-content');
-    if (!container) return;
+    var html = '<div class="blls-controls">' +
+      renderLayoutButtons() +
+      '<span class="blls-ctrl-sep"></span>' +
+      renderSpeedButtons() +
+      '<span class="blls-ctrl-sep"></span>' +
+      renderMetricSelector() +
+      renderClubSelector() +
+      '</div>';
 
-    var html = '';
-    html += '<div class="blls-controls">';
-    html += renderBallSelectors();
-    html += '</div>';
-    if (state.mode !== 'matrix' && state.mode !== 'cards') html += renderConditionTabs();
+    html += '<div class="blls-content">';
 
-    if (state.mode === 'compare' && state.selectedBalls.length === 2) {
-      html += renderCompareHeader();
-    }
-
-    if (state.mode === 'cards') {
-      html += renderCardsView();
+    if (state.mode === 'table') {
+      // renderTableView will be added in a later task
+    } else if (state.mode === 'cards') {
+      // renderCardsView will be added in a later task
     } else if (state.mode === 'scatter') {
-      html += renderScatterView();
-    } else if (state.mode === 'matrix') {
-      html += renderMatrixTable();
-    } else if (state.mode === 'rankings') {
-      html += renderRankingsTable();
-    } else if (state.selectedBalls.length === 0) {
-      html += '<div class="blls-empty">Select a ball to view performance data.</div>';
-    } else if (state.mode === 'compare' && state.selectedBalls.length === 2) {
-      html += renderCompareTable();
-    } else {
-      html += renderSingleTable();
+      // renderScatterView will be added in a later task
     }
 
-    container.innerHTML = html;
+    html += '</div>';
+
+    document.getElementById('balls-content').innerHTML = html;
     attachEvents();
   }
 
@@ -604,6 +595,61 @@
     h += '<div class="blls-scatter-tooltip" id="blls-scatter-tooltip"></div>';
     h += '</div>';
     return h;
+  }
+
+  function renderLayoutButtons() {
+    var layouts = [
+      { id: 'table', label: 'Table' },
+      { id: 'cards', label: 'Cards' },
+      { id: 'scatter', label: 'Scatter' },
+    ];
+    return '<div class="blls-ctrl-group">' +
+      '<span class="blls-ctrl-label">Layout</span>' +
+      layouts.map(function(l) {
+        var active = state.mode === l.id ? ' blls-btn--active' : '';
+        return '<button class="blls-btn' + active + '" data-action="set-mode" data-mode="' + l.id + '">' + l.label + '</button>';
+      }).join('') +
+      '</div>';
+  }
+
+  function renderSpeedButtons() {
+    var speeds = ['slow', 'mid', 'fast', 'wedge'];
+    return '<div class="blls-ctrl-group">' +
+      '<span class="blls-ctrl-label">Speed</span>' +
+      speeds.map(function(s) {
+        var info = SPEED_LABELS[s];
+        var active = state.activeSpeed === s ? ' blls-btn--active' : '';
+        return '<button class="blls-btn' + active + '" data-action="set-speed" data-speed="' + s + '">' +
+          info.label + '<span class="blls-btn-note">' + info.note + '</span>' +
+          '</button>';
+      }).join('') +
+      '</div>';
+  }
+
+  function renderMetricSelector() {
+    return '<div class="blls-ctrl-group">' +
+      '<span class="blls-ctrl-label">Metric</span>' +
+      '<select class="blls-select" data-action="set-metric">' +
+      state.meta.metrics.map(function(m) {
+        var sel = state.activeMetric === m ? ' selected' : '';
+        return '<option' + sel + '>' + m + '</option>';
+      }).join('') +
+      '</select>' +
+      '</div>';
+  }
+
+  function renderClubSelector() {
+    if (state.mode !== 'scatter') return '';
+    var clubs = clubsForSpeed(state.activeSpeed);
+    return '<div class="blls-ctrl-group">' +
+      '<span class="blls-ctrl-label">Club</span>' +
+      clubs.map(function(c) {
+        var active = state.activeClub === c ? ' blls-btn--active' : '';
+        return '<button class="blls-btn' + active + '" data-action="set-club" data-club="' + c + '">' +
+          CLUB_LABELS[c] +
+          '</button>';
+      }).join('') +
+      '</div>';
   }
 
   function attachEvents() {
