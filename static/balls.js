@@ -6,15 +6,11 @@
   var state = {
     meta: null,
     data: null,
-    selectedBalls: [],
-    activeCondition: null,
-    activeSpeed: null,
-    activeShot: null,
-    sortBy: null,
-    sortAsc: true,
-    mode: 'rankings',
-    rankingMetric: null,
-    singleMetric: null,
+    activeSpeed: 'mid',
+    activeClub: 'driver',
+    activeMetric: 'Total',
+    mode: 'table',
+    sortAsc: false,
     scatterXMetric: null,
     scatterYMetric: null,
   };
@@ -39,15 +35,13 @@
         if (data.error) throw new Error(data.error);
         state.meta = { balls: data.balls, conditions: data.conditions, metrics: data.metrics };
         state.data = data.rows;
-        var defaultCondition = data.conditions[0] || 'slow_driver';
-        state.activeCondition = defaultCondition;
-        var parsed = parseCondition(defaultCondition);
-        state.activeSpeed = parsed.speed;
-        state.activeShot = parsed.shot;
-        state.rankingMetric = data.metrics[0] || null;
-        state.scatterXMetric = data.metrics[0] || null;
-        state.scatterYMetric = data.metrics[1] || data.metrics[0] || null;
-        state.mode = 'rankings';
+        state.activeSpeed = 'mid';
+        state.activeClub = 'driver';
+        state.activeMetric = state.meta.metrics.includes('Total') ? 'Total' : state.meta.metrics[0];
+        state.mode = 'table';
+        state.sortAsc = false;
+        state.scatterXMetric = state.meta.metrics[1] || state.meta.metrics[0];
+        state.scatterYMetric = state.meta.metrics[0];
         render();
       })
       .catch(function (err) {
@@ -59,40 +53,41 @@
       });
   }
 
-  var CONDITION_PARSE = {
-    'slow_driver': { speed: 'Slow', shot: 'Driver' },
-    'slow_mid-iron': { speed: 'Slow', shot: '7-Iron' },
-    'wedge-35-percent_sand-wedge': { speed: '35%', shot: 'Sand Wedge' },
-    'wedge-full_sand-wedge': { speed: 'Full', shot: 'Sand Wedge' },
+  var SPEED_LABELS = {
+    slow: { label: 'Slow', note: '86' },
+    mid: { label: 'Mid', note: '102' },
+    fast: { label: 'Fast', note: '116' },
+    wedge: { label: 'Wedge', note: '42' },
   };
 
-  function parseCondition(condition) {
-    return CONDITION_PARSE[condition] || { speed: condition, shot: '' };
+  var CLUB_LABELS = {
+    driver: 'Driver',
+    'mid-iron': '7-Iron',
+    'full-sand-wedge': 'Wedge (full)',
+    '35-percent-sand-wedge': 'Wedge (35%)',
+  };
+
+  function clubsForSpeed(speed) {
+    if (speed === 'wedge') return ['full-sand-wedge', '35-percent-sand-wedge'];
+    return ['driver', 'mid-iron'];
   }
 
-  function conditionFor(speed, shot) {
-    for (var i = 0; i < state.meta.conditions.length; i++) {
-      var c = state.meta.conditions[i];
-      var p = parseCondition(c);
-      if (p.speed === speed && p.shot === shot) return c;
-    }
-    return null;
+  function conditionKey(speed, club) {
+    return speed + '_' + club;
   }
 
-  function getSpeedOptions() {
-    var seen = {};
-    state.meta.conditions.forEach(function (c) {
-      seen[parseCondition(c).speed] = true;
-    });
-    return Object.keys(seen);
+  function conditionsForSpeed(speed) {
+    if (speed === 'wedge') return ['wedge_full-sand-wedge'];
+    return [speed + '_driver'];
   }
 
-  function getShotOptions() {
-    var seen = {};
-    state.meta.conditions.forEach(function (c) {
-      seen[parseCondition(c).shot] = true;
-    });
-    return Object.keys(seen);
+  function rowsForSpeed(speed) {
+    var conds = conditionsForSpeed(speed);
+    return state.data.filter(function(r) { return conds.indexOf(r.condition) !== -1; });
+  }
+
+  function rowsForCondition(cond) {
+    return state.data.filter(function(r) { return r.condition === cond; });
   }
 
   function escapeHtml(s) {
@@ -105,15 +100,7 @@
     return String(s).replace(/"/g, '&quot;').replace(/'/g, '&#39;');
   }
 
-  function rowsForCondition(condition) {
-    return state.data.filter(function (r) { return r.condition === condition; });
-  }
 
-  function rowForBall(ball, condition) {
-    return state.data.filter(function (r) {
-      return r.ball === ball && r.condition === condition;
-    })[0] || null;
-  }
 
   function getMetricRange(metric, condition) {
     var vals = state.data
