@@ -138,6 +138,49 @@
     return d > 0 ? 'blls-delta' : 'blls-delta--neg';
   }
 
+  function renderTableView() {
+    var rows = rowsForSpeed(state.activeSpeed);
+    var metric = state.activeMetric;
+
+    rows.sort(function (a, b) {
+      var va = a[metric] || 0;
+      var vb = b[metric] || 0;
+      return state.sortAsc ? va - vb : vb - va;
+    });
+
+    if (rows.length === 0) return '<div class="blls-empty">No data for this condition.</div>';
+
+    var bestVal = rows[0][metric];
+    var condition = rows[0].condition;
+    var range = getMetricRange(metric, condition);
+
+    var html = '<div class="blls-table-wrapper"><table class="blls-table">' +
+      '<thead><tr>' +
+      '<th class="blls-th-rank">#</th>' +
+      '<th class="blls-th-ball">Ball</th>' +
+      '<th class="blls-th-val">' + metric + '</th>' +
+      '<th class="blls-th-bar"></th>' +
+      '</tr></thead><tbody>';
+
+    rows.forEach(function (r, i) {
+      var val = r[metric];
+      var isBest = i === 0;
+      var pct = barWidth(val, range.min, range.max);
+      var bestBadge = isBest ? '<span class="blls-badge-best">&#9650; Best</span>' : '';
+      var gap = isBest ? '' : '<span class="blls-gap">\u2212' + fmt(bestVal - val) + '</span>';
+
+      html += '<tr class="' + (isBest ? 'blls-row--best' : '') + '">' +
+        '<td class="blls-rank">' + (i + 1) + '</td>' +
+        '<td class="blls-ball">' + escapeHtml(r.ball) + '</td>' +
+        '<td class="blls-val">' + fmt(val) + ' ' + gap + '</td>' +
+        '<td class="blls-bar-cell">' + bestBadge + '<div class="blls-bar" style="width:' + pct + '%"></div></td>' +
+        '</tr>';
+    });
+
+    html += '</tbody></table></div>';
+    return html;
+  }
+
   function render() {
     var html = '<div class="blls-controls">' +
       renderLayoutButtons() +
@@ -151,7 +194,7 @@
     html += '<div class="blls-content">';
 
     if (state.mode === 'table') {
-      // renderTableView will be added in a later task
+      html += renderTableView();
     } else if (state.mode === 'cards') {
       // renderCardsView will be added in a later task
     } else if (state.mode === 'scatter') {
