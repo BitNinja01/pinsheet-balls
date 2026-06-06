@@ -198,7 +198,7 @@
     } else if (state.mode === 'cards') {
       html += renderCardsView();
     } else if (state.mode === 'scatter') {
-      // renderScatterView will be added in a later task
+      html += renderScatterView();
     }
 
     html += '</div>';
@@ -577,48 +577,48 @@
   }
 
   function renderScatterView() {
-    var xMetric = state.scatterXMetric;
-    var yMetric = state.scatterYMetric;
-    if (!xMetric || !yMetric) return '<div class="blls-empty">Select X and Y metrics.</div>';
+    var cond = conditionKey(state.activeSpeed, state.activeClub);
+    var rows = rowsForCondition(cond);
 
-    var condition = state.activeCondition;
-    var rows = rowsForCondition(condition);
-    if (rows.length === 0) return '<div class="blls-empty">No data for this condition.</div>';
+    if (!rows.length) return '<div class="blls-empty">No data for this selection</div>';
 
-    var xRange = getMetricRange(xMetric, condition);
-    var yRange = getMetricRange(yMetric, condition);
+    var metrics = state.meta.metrics;
+    var xMetric = state.scatterXMetric || metrics[0];
+    var yMetric = state.scatterYMetric || (metrics[1] || metrics[0]);
+    var xRange = getMetricRange(xMetric, cond);
+    var yRange = getMetricRange(yMetric, cond);
 
-    var W = 700, H = 420;
-    var PAD = { top: 16, right: 16, bottom: 40, left: 56 };
-    var plotW = W - PAD.left - PAD.right;
-    var plotH = H - PAD.top - PAD.bottom;
+    var W = 600, H = 400, PAD = 40;
+    var xScale = function(v) { return PAD + (v - xRange.min) / (xRange.max - xRange.min || 1) * (W - 2 * PAD); };
+    var yScale = function(v) { return H - PAD - (v - yRange.min) / (yRange.max - yRange.min || 1) * (H - 2 * PAD); };
 
-    function scaleX(v) { return PAD.left + ((v - xRange.min) / ((xRange.max - xRange.min) || 1)) * plotW; }
-    function scaleY(v) { return PAD.top + plotH - ((v - yRange.min) / ((yRange.max - yRange.min) || 1)) * plotH; }
+    var html = '<div class="blls-scatter-ctrl">' +
+      'X: <select data-action="set-scatter-x">' +
+        metrics.map(function(m) { return '<option' + (m === xMetric ? ' selected' : '') + '>' + m + '</option>'; }).join('') +
+      '</select> ' +
+      'Y: <select data-action="set-scatter-y">' +
+        metrics.map(function(m) { return '<option' + (m === yMetric ? ' selected' : '') + '>' + m + '</option>'; }).join('') +
+      '</select>' +
+      '</div>';
 
-    var xLabel = xMetric.replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
-    var yLabel = yMetric.replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+    html += '<div class="blls-scatter-container"><svg class="blls-scatter-svg" viewBox="0 0 ' + W + ' ' + H + '">';
 
-    var h = '<div class="blls-scatter-container">';
-    h += '<svg width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '" class="blls-scatter-svg">';
+    html += '<line x1="' + PAD + '" y1="' + (H - PAD) + '" x2="' + (W - PAD) + '" y2="' + (H - PAD) + '" stroke="var(--ps-rule-c)" stroke-width="1"/>';
+    html += '<line x1="' + PAD + '" y1="' + PAD + '" x2="' + PAD + '" y2="' + (H - PAD) + '" stroke="var(--ps-rule-c)" stroke-width="1"/>';
 
-    h += '<line x1="' + PAD.left + '" y1="' + PAD.top + '" x2="' + PAD.left + '" y2="' + (PAD.top + plotH) + '" stroke="var(--ps-bord)" />';
-    h += '<line x1="' + PAD.left + '" y1="' + (PAD.top + plotH) + '" x2="' + (PAD.left + plotW) + '" y2="' + (PAD.top + plotH) + '" stroke="var(--ps-bord)" />';
-
-    h += '<text x="' + (PAD.left + plotW / 2) + '" y="' + (H - 6) + '" text-anchor="middle" font-size="11" fill="var(--ps-ink-2)" font-family="var(--ps-font-mono, monospace)">' + escapeHtml(xLabel) + '</text>';
-    h += '<text x="12" y="' + (PAD.top + plotH / 2) + '" text-anchor="middle" font-size="11" fill="var(--ps-ink-2)" font-family="var(--ps-font-mono, monospace)" transform="rotate(-90, 12, ' + (PAD.top + plotH / 2) + ')">' + escapeHtml(yLabel) + '</text>';
-
-    rows.forEach(function (r) {
+    rows.forEach(function(r) {
       var xv = r[xMetric], yv = r[yMetric];
-      if (xv === undefined || yv === undefined) return;
-      var cx = scaleX(xv), cy = scaleY(yv);
-      h += '<circle cx="' + cx + '" cy="' + cy + '" r="4" fill="var(--ps-green)" opacity="0.55" class="blls-scatter-dot" data-ball="' + escapeAttr(r.ball) + '" />';
+      if (xv == null || yv == null) return;
+      var cx = xScale(xv), cy = yScale(yv);
+      html += '<circle class="blls-scatter-dot" cx="' + cx + '" cy="' + cy + '" r="4" ' +
+        'data-ball="' + escapeAttr(r.ball) + '" ' +
+        'data-x="' + fmt(xv) + '" data-y="' + fmt(yv) + '"/>';
     });
 
-    h += '</svg>';
-    h += '<div class="blls-scatter-tooltip" id="blls-scatter-tooltip"></div>';
-    h += '</div>';
-    return h;
+    html += '</svg></div>';
+    html += '<div class="blls-scatter-tooltip" id="blls-scatter-tooltip"></div>';
+
+    return html;
   }
 
   function renderLayoutButtons() {
