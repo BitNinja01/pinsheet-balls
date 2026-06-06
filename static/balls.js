@@ -196,7 +196,7 @@
     if (state.mode === 'table') {
       html += renderTableView();
     } else if (state.mode === 'cards') {
-      // renderCardsView will be added in a later task
+      html += renderCardsView();
     } else if (state.mode === 'scatter') {
       // renderScatterView will be added in a later task
     }
@@ -547,52 +547,33 @@
   }
 
   function renderCardsView() {
-    var metric = state.rankingMetric;
-    if (!metric) return '<div class="blls-empty">Select a metric.</div>';
+    var rows = rowsForSpeed(state.activeSpeed);
+    var metric = state.activeMetric;
 
-    var metricLabel = metric.replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
-    var h = '<div class="blls-cards-grid">';
+    rows.sort(function (a, b) { return (b[metric] || 0) - (a[metric] || 0); });
+    if (rows.length === 0) return '<div class="blls-empty">No data for this condition.</div>';
 
-    state.meta.conditions.forEach(function (c) {
-      var condRows = rowsForCondition(c)
-        .filter(function (r) { return r[metric] !== undefined && r[metric] !== null; })
-        .slice()
-        .sort(function (a, b) { return b[metric] - a[metric]; });
+    var bestVal = rows[0][metric];
+    var condition = rows[0].condition;
+    var range = getMetricRange(metric, condition);
 
-      if (condRows.length === 0) return;
+    var html = '<div class="blls-cards-grid">';
 
-      var range = getMetricRange(metric, c);
-      var bestVal = condRows[0][metric];
+    rows.forEach(function (r) {
+      var val = r[metric];
+      var pct = barWidth(val, range.min, range.max);
+      var isBest = val === bestVal;
+      var bestBadge = isBest ? '<span class="blls-badge-best">&#9650;</span>' : '';
 
-      h += '<div class="blls-card">';
-      h += '<div class="blls-card-header">' + escapeHtml(conditionLabel(c)) + '</div>';
-      h += '<div class="blls-card-body">';
-
-      condRows.forEach(function (r, i) {
-        var val = r[metric];
-        var bw = barWidth(val, range.min, range.max);
-        var isBest = i === 0;
-        var gap = i > 0 ? bestVal - val : 0;
-        h += '<div class="blls-card-row' + (isBest ? ' blls-row--best' : '') + '">';
-        h += '<span class="blls-card-rank">' + (i + 1) + '</span>';
-        h += '<span class="blls-card-ball">' + escapeHtml(r.ball) + '</span>';
-        h += '<span class="blls-card-val"><span class="blls-value' + (isBest ? ' blls-value--best' : '') + '">' + fmt(val) + '</span></span>';
-        h += '<span class="blls-card-gap">';
-        if (isBest) {
-          h += '<span class="blls-badge-best">\u25B2 best</span>';
-        } else {
-          h += '<span class="blls-gap">\u2212' + fmt(gap) + '</span>';
-        }
-        h += '</span>';
-        h += '<span class="blls-card-bar"><span class="blls-bar' + (isBest ? ' blls-bar--best' : '') + '" style="width:' + bw.toFixed(0) + '%"></span></span>';
-        h += '</div>';
-      });
-
-      h += '</div></div>';
+      html += '<div class="blls-card' + (isBest ? ' blls-card--best' : '') + '">' +
+        '<div class="blls-card-name">' + escapeHtml(r.ball) + bestBadge + '</div>' +
+        '<div class="blls-card-val">' + fmt(val) + '</div>' +
+        '<div class="blls-card-bar-cell"><div class="blls-bar" style="width:' + pct + '%"></div></div>' +
+        '</div>';
     });
 
-    h += '</div>';
-    return h;
+    html += '</div>';
+    return html;
   }
 
   function renderScatterView() {
