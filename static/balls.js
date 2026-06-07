@@ -361,9 +361,7 @@
       if (!dot) return;
       var tip = document.getElementById('blls-scatter-tooltip');
       if (!tip) return;
-      tip.textContent = dot.getAttribute('data-ball') +
-        ' \u00B7 X: ' + dot.getAttribute('data-x') +
-        ' \u00B7 Y: ' + dot.getAttribute('data-y');
+      tip.textContent = dot.getAttribute('data-ball');
       tip.style.display = 'block';
       var rect = dot.getBoundingClientRect();
       tip.style.left = (rect.left + window.scrollX + 12) + 'px';
