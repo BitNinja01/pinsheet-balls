@@ -266,7 +266,7 @@
       var xv = r[xMetric], yv = r[yMetric];
       if (xv == null || yv == null) return;
       var cx = xScale(xv), cy = yScale(yv);
-      html += '<circle class="blls-scatter-dot" cx="' + cx + '" cy="' + cy + '" r="2.5" ' +
+      html += '<circle class="blls-scatter-dot" cx="' + cx + '" cy="' + cy + '" r="2.5" fill="var(--ps-accent)" ' +
         'data-ball="' + escapeAttr(r.ball) + '" ' +
         'data-x="' + fmt(xv) + '" data-y="' + fmt(yv) + '"/>';
     });
