@@ -251,6 +251,8 @@
 
     html += '<line x1="' + PAD + '" y1="' + (H - PAD) + '" x2="' + (W - PAD) + '" y2="' + (H - PAD) + '" stroke="var(--ps-rule-c)" stroke-width="1"/>';
     html += '<line x1="' + PAD + '" y1="' + PAD + '" x2="' + PAD + '" y2="' + (H - PAD) + '" stroke="var(--ps-rule-c)" stroke-width="1"/>';
+    html += '<text x="' + (W / 2) + '" y="' + (H - 12) + '" text-anchor="middle" fill="var(--ps-ink-3)" font-size="10" font-family="var(--ps-font-mono)">' + escapeHtml(xMetric) + '</text>';
+    html += '<text transform="rotate(-90, ' + (PAD - 10) + ', ' + (H / 2) + ')" x="' + (PAD - 10) + '" y="' + (H / 2) + '" text-anchor="middle" fill="var(--ps-ink-3)" font-size="10" font-family="var(--ps-font-mono)">' + escapeHtml(yMetric) + '</text>';
 
     rows.forEach(function(r) {
       var xv = r[xMetric], yv = r[yMetric];
