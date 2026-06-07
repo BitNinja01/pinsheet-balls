@@ -51,6 +51,7 @@
     mid: { label: 'Mid', note: '102' },
     fast: { label: 'Fast', note: '116' },
     wedge: { label: 'Wedge', note: '42' },
+    'wedge-35': { label: 'Wedge 35%', note: '' },
   };
 
   var CLUB_LABELS = {
@@ -61,16 +62,19 @@
   };
 
   function clubsForSpeed(speed) {
-    if (speed === 'wedge') return ['full-sand-wedge', '35-percent-sand-wedge'];
+    if (speed === 'wedge') return ['full-sand-wedge'];
+    if (speed === 'wedge-35') return ['35-percent-sand-wedge'];
     return ['driver', 'mid-iron'];
   }
 
   function conditionKey(speed, club) {
+    if (speed === 'wedge-35') return 'wedge_' + club;
     return speed + '_' + club;
   }
 
   function conditionsForSpeed(speed) {
     if (speed === 'wedge') return ['wedge_full-sand-wedge'];
+    if (speed === 'wedge-35') return ['wedge_35-percent-sand-wedge'];
     return [speed + '_driver'];
   }
 
@@ -287,7 +291,7 @@
   }
 
   function renderSpeedButtons() {
-    var speeds = ['slow', 'mid', 'fast', 'wedge'];
+    var speeds = ['slow', 'mid', 'fast', 'wedge', 'wedge-35'];
     return '<div class="blls-ctrl-group">' +
       '<span class="blls-ctrl-label">Speed</span>' +
       speeds.map(function(s) {
