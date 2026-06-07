@@ -50,37 +50,28 @@
     slow: { label: 'Slow', note: '86' },
     mid: { label: 'Mid', note: '102' },
     fast: { label: 'Fast', note: '116' },
-    wedge: { label: 'Wedge', note: '42' },
-    'wedge-35': { label: 'Wedge 35%', note: '' },
   };
 
   var CLUB_LABELS = {
     driver: 'Driver',
-    'mid-iron': '7-Iron',
-    'full-sand-wedge': 'Wedge (full)',
-    '35-percent-sand-wedge': 'Wedge (35%)',
+    'mid-iron': 'Iron',
+    'full-sand-wedge': 'Wedge',
+    '35-percent-sand-wedge': 'Wedge 35%',
   };
 
-  function clubsForSpeed(speed) {
-    if (speed === 'wedge') return ['full-sand-wedge'];
-    if (speed === 'wedge-35') return ['35-percent-sand-wedge'];
-    return ['driver', 'mid-iron'];
+  function clubsForSpeed() {
+    return ['driver', 'mid-iron', 'full-sand-wedge', '35-percent-sand-wedge'];
   }
 
-  function conditionKey(speed, club) {
-    if (speed === 'wedge-35') return 'wedge_' + club;
-    return speed + '_' + club;
+  function activeCondition() {
+    if (state.activeClub === 'full-sand-wedge' || state.activeClub === '35-percent-sand-wedge') {
+      return 'wedge_' + state.activeClub;
+    }
+    return state.activeSpeed + '_' + state.activeClub;
   }
 
-  function conditionsForSpeed(speed) {
-    if (speed === 'wedge') return ['wedge_full-sand-wedge'];
-    if (speed === 'wedge-35') return ['wedge_35-percent-sand-wedge'];
-    return [speed + '_driver'];
-  }
-
-  function rowsForSpeed(speed) {
-    var conds = conditionsForSpeed(speed);
-    return state.data.filter(function(r) { return conds.indexOf(r.condition) !== -1; });
+  function rowsForSelection() {
+    return rowsForCondition(activeCondition());
   }
 
   function rowsForCondition(cond) {
@@ -130,7 +121,7 @@
   }
 
   function renderTableView() {
-    var rows = rowsForSpeed(state.activeSpeed);
+    var rows = rowsForSelection();
     var metric = state.activeMetric;
 
     rows.sort(function (a, b) {
@@ -201,7 +192,7 @@
 
 
   function renderCardsView() {
-    var rows = rowsForSpeed(state.activeSpeed);
+    var rows = rowsForSelection();
     var metric = state.activeMetric;
 
     rows.sort(function (a, b) { return (b[metric] || 0) - (a[metric] || 0); });
@@ -231,7 +222,7 @@
   }
 
   function renderScatterView() {
-    var cond = conditionKey(state.activeSpeed, state.activeClub);
+    var cond = activeCondition();
     var rows = rowsForCondition(cond);
 
     if (!rows.length) return '<div class="blls-empty">No data for this selection</div>';
@@ -291,7 +282,7 @@
   }
 
   function renderSpeedButtons() {
-    var speeds = ['slow', 'mid', 'fast', 'wedge', 'wedge-35'];
+    var speeds = ['slow', 'mid', 'fast'];
     return '<div class="blls-ctrl-group">' +
       '<span class="blls-ctrl-label">Speed</span>' +
       speeds.map(function(s) {
@@ -317,8 +308,7 @@
   }
 
   function renderClubSelector() {
-    if (state.mode !== 'scatter') return '';
-    var clubs = clubsForSpeed(state.activeSpeed);
+    var clubs = clubsForSpeed();
     return '<div class="blls-ctrl-group">' +
       '<span class="blls-ctrl-label">Club</span>' +
       clubs.map(function(c) {
@@ -341,13 +331,9 @@
 
       if (action === 'set-mode') {
         state.mode = btn.getAttribute('data-mode');
-        var clubs = clubsForSpeed(state.activeSpeed);
-        if (clubs.indexOf(state.activeClub) === -1) state.activeClub = clubs[0];
         render();
       } else if (action === 'set-speed') {
         state.activeSpeed = btn.getAttribute('data-speed');
-        var clubs = clubsForSpeed(state.activeSpeed);
-        if (clubs.indexOf(state.activeClub) === -1) state.activeClub = clubs[0];
         render();
       } else if (action === 'set-club') {
         state.activeClub = btn.getAttribute('data-club');
