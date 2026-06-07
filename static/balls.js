@@ -170,8 +170,9 @@
       '<span class="blls-ctrl-sep"></span>' +
       renderSpeedButtons() +
       '<span class="blls-ctrl-sep"></span>' +
-      renderMetricSelector() +
       renderClubSelector() +
+      '<span class="blls-ctrl-sep"></span>' +
+      renderMetricSelector() +
       '</div>';
 
     html += '<div class="blls-content">';
