@@ -239,10 +239,10 @@
     var yScale = function(v) { return H - PAD - (v - yRange.min) / (yRange.max - yRange.min || 1) * (H - 2 * PAD); };
 
     var html = '<div class="blls-scatter-ctrl">' +
-      'X: <select data-action="set-scatter-x">' +
+      'X: <select class="blls-select" data-action="set-scatter-x">' +
         metrics.map(function(m) { return '<option' + (m === xMetric ? ' selected' : '') + '>' + m + '</option>'; }).join('') +
       '</select> ' +
-      'Y: <select data-action="set-scatter-y">' +
+      'Y: <select class="blls-select" data-action="set-scatter-y">' +
         metrics.map(function(m) { return '<option' + (m === yMetric ? ' selected' : '') + '>' + m + '</option>'; }).join('') +
       '</select>' +
       '</div>';
