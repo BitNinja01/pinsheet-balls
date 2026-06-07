@@ -249,6 +249,14 @@
 
     html += '<div class="blls-scatter-container"><svg class="blls-scatter-svg" viewBox="0 0 ' + W + ' ' + H + '">';
 
+    for (var gi = 1; gi < 5; gi++) {
+      var gf = gi / 5;
+      var gx = PAD + gf * (W - 2 * PAD);
+      var gy = PAD + gf * (H - 2 * PAD);
+      html += '<line x1="' + gx + '" y1="' + PAD + '" x2="' + gx + '" y2="' + (H - PAD) + '" stroke="var(--ps-rule-c)" stroke-width="0.5" opacity="0.35"/>';
+      html += '<line x1="' + PAD + '" y1="' + gy + '" x2="' + (W - PAD) + '" y2="' + gy + '" stroke="var(--ps-rule-c)" stroke-width="0.5" opacity="0.35"/>';
+    }
+
     html += '<line x1="' + PAD + '" y1="' + (H - PAD) + '" x2="' + (W - PAD) + '" y2="' + (H - PAD) + '" stroke="var(--ps-rule-c)" stroke-width="1"/>';
     html += '<line x1="' + PAD + '" y1="' + PAD + '" x2="' + PAD + '" y2="' + (H - PAD) + '" stroke="var(--ps-rule-c)" stroke-width="1"/>';
     html += '<text x="' + (W / 2) + '" y="' + (H - 12) + '" text-anchor="middle" fill="var(--ps-ink-3)" font-size="10" font-family="var(--ps-font-mono)">' + escapeHtml(xMetric) + '</text>';
@@ -258,7 +266,7 @@
       var xv = r[xMetric], yv = r[yMetric];
       if (xv == null || yv == null) return;
       var cx = xScale(xv), cy = yScale(yv);
-      html += '<circle class="blls-scatter-dot" cx="' + cx + '" cy="' + cy + '" r="4" ' +
+      html += '<circle class="blls-scatter-dot" cx="' + cx + '" cy="' + cy + '" r="2.5" ' +
         'data-ball="' + escapeAttr(r.ball) + '" ' +
         'data-x="' + fmt(xv) + '" data-y="' + fmt(yv) + '"/>';
     });
